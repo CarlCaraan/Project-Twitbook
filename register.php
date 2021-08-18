@@ -78,7 +78,7 @@ $date = date("Y-m-d"); //Current date
 		array_push($error_array, "Emails don't match<br>");
 	}
 
-	
+
 	if(strlen($fname) > 25 || strlen($fname) < 2) {
 		array_push($error_array, "Your first name must be between 2 and 25 characters<br>");
 	}
@@ -98,6 +98,22 @@ $date = date("Y-m-d"); //Current date
 
 	if(strlen($password > 30 || strlen($password) < 5)) {
 		array_push($error_array, "Your password must be betwen 5 and 30 characters<br>");
+	}
+
+	if(empty($error_array)) { //If no error
+		$password = md5($password); //Encrypt password before sending to database
+
+		//Generate username by concatinating first name and last name
+		$username = strtolower($fname . "_" . $lname);
+		$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
+
+		//if username exist add number to username
+		$i = 0;
+		while(mysqli_num_rows($check_username_query) !=0) {
+			$i++; //Add 1 to i
+			$username = $username . "_" . $i;
+			$check_username_query = mysqli_query(con, "SELECT username FROM users WHERE username='$username'");
+		}
 	}
 
 }
@@ -152,8 +168,7 @@ $date = date("Y-m-d"); //Current date
 		else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Your password must be betwen 5 and 30 characters<br>"; ?>
 
 
-		<input type="submit" name="register_button" value="Register">
-		<br>
+		<input type="submit" name="register_button" value="Register"><br>
 	</form>
 <!-- Start Form Section -->
 
