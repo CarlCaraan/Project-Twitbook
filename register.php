@@ -51,7 +51,7 @@ $password2 = strip_tags($_POST['reg_password2']); //Remove html tags
 $date = date("Y-m-d"); //Current date
 
 
-//-- Email, Name and Password Validation Message --//
+//-- Start Email, Name, and Password Validation Message --//
 	if($em == $em2) {
 		//Check if email is in valid format
 		if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
@@ -99,7 +99,10 @@ $date = date("Y-m-d"); //Current date
 	if(strlen($password > 30 || strlen($password) < 5)) {
 		array_push($error_array, "Your password must be betwen 5 and 30 characters<br>");
 	}
+//-- End Email, Name, and Password Validation Message --//
 
+
+//-- Start No Error Validation --//
 	if(empty($error_array)) { //If no error
 		$password = md5($password); //Encrypt password before sending to database
 
@@ -114,7 +117,16 @@ $date = date("Y-m-d"); //Current date
 			$username = $username . "_" . $i;
 			$check_username_query = mysqli_query(con, "SELECT username FROM users WHERE username='$username'");
 		}
-	}
+
+		//Profile picture assignment
+		$rand = rand(1, 2); //Random number between 1 and 2
+
+		if($rand == 1)
+			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+		else if($rand == 2)
+			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
+
+	} //-- End No Error Validation --//
 
 }
 
@@ -170,7 +182,7 @@ $date = date("Y-m-d"); //Current date
 
 		<input type="submit" name="register_button" value="Register"><br>
 	</form>
-<!-- Start Form Section -->
+<!-- End Form Section -->
 
 </body>
 </html>
