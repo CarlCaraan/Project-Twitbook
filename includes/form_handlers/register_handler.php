@@ -96,7 +96,7 @@ $date = date("Y-m-d"); //Current date
 
 
 //-- Start of Error Validation --//
-	if(empty($error_array)) { //If no error
+	if(empty($error_array)) { //If No Error Statement
 		$password = md5($password); //Encrypt password before sending to database
 
 		//Generate username by concatinating first name and last name
