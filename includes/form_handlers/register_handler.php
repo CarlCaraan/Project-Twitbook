@@ -108,7 +108,7 @@ $date = date("Y-m-d"); //Current date
 		while(mysqli_num_rows($check_username_query) !=0) {
 			$i++; //Add 1 to i
 			$username = $username . "_" . $i;
-			$check_username_query = mysqli_query(con, "SELECT username FROM users WHERE username='$username'");
+			$check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
 		}
 
 		//Profile picture assignment
