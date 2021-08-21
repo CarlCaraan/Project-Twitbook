@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/*============= ALL FONTS =============*/
+@font-face {
+    font-family: 'Bellota-LightItalic';
+    src: url('assets/fonts/Bellota-LightItalic.ttf');
+}
+@font-face {
+    font-family: 'Bellota-BoldItalic';
+    src: url('assets/fonts/Bellota-BoldItalic.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMono-Bold';
+    src: url('assets/fonts/JetBrainsMono-Bold.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMono-Regular';
+    src: url('assets/fonts/JetBrainsMono-Regular.ttf');
+}
+
 body{
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
@@ -16,17 +34,10 @@ body{
   background-image: url('assets/images/background.jpg');
   z-index: -1;
 }
-.btn-lg {
-  border-width: medium;
-  border-radius: 0;
-  padding: .8rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  display: inline-block!important;
-}
 .center {
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 #container-prop {
   background-color: rgba(255, 255, 255, 0.15);
@@ -41,8 +52,8 @@ body{
     margin: 0 auto;
     max-width: 499px;
 }
-
 .control h3{
+    font-family: 'Bellota-BoldItalic', sans-serif;
     color: white;
     text-transform: uppercase;
     text-shadow: .1rem .1rem .8rem black;
@@ -51,13 +62,67 @@ body{
     border-bottom: .1rem solid white;
 }
 .control label{
+    font-family: 'JetBrainsMono-Regular', sans-serif;
     color: white;
     text-shadow: .1rem .1rem 1rem black;
 }
-.copy {
-    margin: .8rem;
-    color: #131313;
+.fa-layers svg.svg-inline--fa{
+    color: #5EAADA;
 }
+.btn-lg {
+  font-family: 'Bellota-BoldItalic', sans-serif;
+  border-width: medium;
+  border-radius: 0;
+  padding: .8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block!important;
+  margin: 2rem;
+}
+a.signin,
+a.signup {
+    text-decoration: none;
+    color: #5EAADA;
+}
+a.signin:hover,
+a.signup:hover {
+    text-decoration: none;
+    color: #5194be;
+}
+.spinner-border {
+    color: white;
+    position: absolute;
+    margin: 332px auto;
+    opacity: .75
+}
+
+/*--- Input Fields --*/
+.form-control {
+  background-color: white;
+  border-radius: 0;
+  border: .12rem solid #8b8b8b;
+  color: black!important;
+  font-size: 1.1rem;
+}
+.form-control:focus {
+  background: white;
+  border: .15rem solid #487dbb;
+}
+.form-group input::placeholder {
+  color: #a3a3a3!important;
+}
+input.btn {
+  cursor: pointer;
+}
+#fixform1 {
+    margin-top: 70px
+}
+/*--- Login and Register Wrapper --*/
+.register__wrapper {
+    display: none;
+}
+
 
 
 
