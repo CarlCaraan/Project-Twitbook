@@ -114,7 +114,6 @@ require 'includes/form_handlers/login_handler.php';
 				<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Your last name must be between 2 and 25 characters<br>"; ?>
 			</div>
 
-
 			<div class="form-group">
 				<label for="reg_email">Email:</label>
 				<input class="form-control" type="email" name="reg_email" placeholder="Email" value="<?php
@@ -122,7 +121,6 @@ require 'includes/form_handlers/login_handler.php';
 					echo $_SESSION['reg_email'];
 				} ?>" required>
 			</div>
-
 
 			<div class="form-group">
 				<input class="form-control" type="email" name="reg_email2" placeholder="Confirm Email" value="<?php
@@ -133,7 +131,6 @@ require 'includes/form_handlers/login_handler.php';
 				else if(in_array("Invalid email format<br>", $error_array)) echo "Invalid email format<br>";
 				else if(in_array("Emails don't match<br>", $error_array)) echo "Emails don't match<br>"; ?>
 			</div>
-
 
 			<div class="form-group">
 				<label for="reg_password">Password:</label>
