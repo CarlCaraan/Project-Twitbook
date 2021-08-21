@@ -89,7 +89,7 @@ $date = date("Y-m-d"); //Current date
 		}
 	}
 
-	if(strlen($password > 30 || strlen($password) < 5)) {
+	if(strlen($password < 5 || strlen($password) > 30)) {
 		array_push($error_array, "Your password must be between 5 and 30 characters<br>");
 	}
 //-- End Email, Name, and Password Validation Message --//

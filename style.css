@@ -23,7 +23,6 @@ body{
   font-family: 'Lato', sans-serif;
   color: #505962;
 }
-
 /*--- Extra Bootstrap Column Padding --*/
 [class*="col-"] {
   padding: 1rem;
@@ -78,6 +77,8 @@ body{
   font-weight: 400;
   text-transform: uppercase;
   display: inline-block!important;
+}
+#ibtn-lg{ /*-- add extra margin --*/
   margin: 1rem;
 }
 a.signin,
@@ -96,7 +97,6 @@ a.signup:hover {
     margin: 332px auto;
     opacity: .75
 }
-
 /*--- Input Fields --*/
 .form-control {
   background-color: white;
@@ -115,7 +115,6 @@ a.signup:hover {
 input.btn {
   cursor: pointer;
 }
-
 /*--- Login and Register Wrapper --*/
 .register__wrapper {
     display: none;
