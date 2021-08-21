@@ -8,6 +8,7 @@ $(document).ready(function() {
 			$(".register__wrapper").slideDown("slow");
 		});
 			$(".spinner-border").hide(); //onclick signin show spinner	});
+	});
 
 	//On click signin, hide registration and show login form
 	$("#signin").click(function() {
