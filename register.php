@@ -97,7 +97,7 @@ require 'includes/form_handlers/login_handler.php';
 			</div>
 			<h3>Login or Sign Up Below</h3>
 
-			<div class="form-group" id="fixform1">
+			<div class="form-group">
 				<label for="reg_fname">Full Name:</label>
 				<input class="form-control" type="text" name="reg_fname" placeholder="First Name" value="<?php
 				if(isset($_SESSION['reg_fname'])) { //Start the SESSION to remain users input
@@ -144,7 +144,7 @@ require 'includes/form_handlers/login_handler.php';
 				<input class="form-control" type="password" name="reg_password2" placeholder="Confirm Password" required>
 				<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>";
 				else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Your password can only contain english characters or numbers<br>";
-				else if(in_array("Your password must be betwen 5 and 30 characters<br>", $error_array)) echo "Your password must be betwen 5 and 30 characters<br>"; ?>
+				else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>"; ?>
 			</div>
 
 			<div class="center">

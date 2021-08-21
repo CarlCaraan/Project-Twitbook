@@ -78,7 +78,7 @@ body{
   font-weight: 400;
   text-transform: uppercase;
   display: inline-block!important;
-  margin: 2rem;
+  margin: 1rem;
 }
 a.signin,
 a.signup {
@@ -115,9 +115,7 @@ a.signup:hover {
 input.btn {
   cursor: pointer;
 }
-#fixform1 {
-    margin-top: 70px
-}
+
 /*--- Login and Register Wrapper --*/
 .register__wrapper {
     display: none;
