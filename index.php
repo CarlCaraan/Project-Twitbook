@@ -13,6 +13,6 @@ require 'config/config.php';
   <title>Twitter Clone</title>
 </head>
 <body>
-
+<p>Carl!</p>
 </body>
 </html>
