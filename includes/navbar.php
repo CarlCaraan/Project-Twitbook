@@ -1,9 +1,10 @@
 <?php
-require 'config/config.php';
-
 //Stop access when not logged in!
 if (isset($_SESSION['username'])) {
     $userLoggedIn = $_SESSION['username'];
+    //Show username in navbar
+    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+    $user = mysqli_fetch_array($user_details_query);
 }
 else {
     header("Location: register.php");
@@ -25,55 +26,56 @@ else {
 				<a class="nav-link" href="index.php">
 					<i class="fas fa-home fa-inverse <?php if($page=='home'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='home'){echo 'heading-underline';}?>"></div>
-
 			</li>
+
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link" href="#">
 					<i class="fas fa-envelope fa-inverse <?php if($page=='messages'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
-
 			</li>
+
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link" href="#">
 					<i class="fas fa-globe-americas fa-inverse <?php if($page=='notification'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
-
 			</li>
+
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link" href="#">
 					<i class="fas fa-users fa-inverse <?php if($page=='friendrequest'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
-
 			</li>
+
+			<li class="nav-item text-center mx-auto">
+				<a class="nav-link <?php if($page=='profile'){echo 'active';}?>" href="profile.php">
+					 <?php echo $user['first_name']; ?>
+                </a>
+                <div class="underline-spacing"></div>
+                <div class=" <?php if($page=='profile'){echo 'heading-underline';}?>"></div>
+			</li>
+
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link" href="settings.php">
 					<i class="fas fa-cog fa-inverse <?php if($page=='settings'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='settings'){echo 'heading-underline';}?>"></div>
-
 			</li>
+
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link" href="#">
 					<i class="fas fa-sign-out-alt fa-inverse <?php if($page=='logout'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
-
 			</li>
 		</ul>
 	</div>

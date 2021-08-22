@@ -1,29 +1,39 @@
 <?php
 require 'config/config.php';
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Twitter</title>
+	
+	<title><?php
+    $userLoggedIn = $_SESSION['username'];
+    //Show username in navbar
+    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+    $user = mysqli_fetch_array($user_details_query);
+
+    echo $user['first_name'];// Put user first name on Title
+    ?> | Twitter
+	</title>
 </head>
 
 <body>
 
-<!--- Start Home section -->
-<div id="home">
+<!--- Start Profile section -->
+<div id="profile">
 
-<?php $page = 'home';include 'includes/navbar.php';
+<?php $page = 'profile';include 'includes/navbar.php';
 //session_destroy();
-?>
+ ?>
+
 
 
 
 
 
 </div>
-<!--- End Home section -->
+<!--- End Profile section -->
 
 <div class="container mt-5 pt-5 ">
 	<br><br><br><br><br><br><br><br><br>

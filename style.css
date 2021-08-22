@@ -147,6 +147,10 @@ input.btn {
   letter-spacing: .1rem;
   transition: background-color .5s ease 0s;
 }
+.navbar-brand {
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+}
 .navbar-brand img {
   height: 2rem;
   margin-top: 0;
@@ -161,8 +165,10 @@ input.btn {
 .navbar-nav .nav-link {
   color: white;
 }
-.navbar-nav .nav-link .active,
-.navbar-nav .nav-link :hover {
+.navbar-nav .nav-link .active, /*-- for icon --*/
+.navbar-nav .nav-link.active, /*-- for text --*/
+.navbar-nav .nav-link :hover, /*-- for icon --*/
+.navbar-nav .nav-link:hover  { /*-- for text --*/
   color: #5EAADA;
 }
 .navbar.solid {
@@ -176,7 +182,8 @@ input.btn {
   background-color: #5EAADA;
 }
 .underline-spacing {
-  width: 100px;
+    width: 100px;
+    height: 18%;
 }
 
 
