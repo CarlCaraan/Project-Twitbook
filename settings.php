@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Twitter</title>
+	<title>Settings | Twitter</title>
 </head>
 
 <body>
 
 <!--- Start Home section -->
-<div id="home">
+<div id="settings">
 
-<?php $page = 'home';include 'includes/navbar.php';
+<?php $page = 'settings';include 'includes/navbar.php';
 //session_destroy();
-?>
+ ?>
+
 
 
 

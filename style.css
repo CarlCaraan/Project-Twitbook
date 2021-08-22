@@ -10,6 +10,10 @@
     src: url('assets/fonts/Bellota-BoldItalic.ttf');
 }
 @font-face {
+    font-family: 'Bellota-Bold';
+    src: url('assets/fonts/Bellota-Bold.ttf');
+}
+@font-face {
     font-family: 'JetBrainsMono-Bold';
     src: url('assets/fonts/JetBrainsMono-Bold.ttf');
 }
@@ -22,13 +26,24 @@ body{
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
   color: #505962;
+  background-color: gray;
 }
+
+/*--- Nav Scrolling Offset --*/
+.offset:before {
+  height: 4rem;
+  margin-top: -4rem;
+  content: "";
+  display: block;
+}
+
 /*--- Extra Bootstrap Column Padding --*/
 [class*="col-"] {
   padding: 1rem;
 }
 
 /*============= REGISTER FORM =============*/
+
 #fixed {
   background-image: url('assets/images/background.jpg');
   z-index: -1;
@@ -42,7 +57,7 @@ body{
   background-color: rgba(255, 255, 255, 0.15);
   padding: 2rem;
   margin: 2rem auto;
-  border-top: .2rem solid #57bee9;
+  border-top: .2rem solid #5EAADA;
   box-shadow: 0 0 .8rem rgba(0, 0, 0, 0.2);
   border-radius: 0.4rem;
   backdrop-filter: blur(5px);
@@ -78,7 +93,7 @@ body{
   text-transform: uppercase;
   display: inline-block!important;
 }
-#ibtn-lg{ /*-- add extra margin --*/
+#ibtn-lg{ /*-- button add extra margin --*/
   margin: 1rem;
 }
 a.signin,
@@ -118,6 +133,46 @@ input.btn {
 /*--- Login and Register Wrapper --*/
 .register__wrapper {
     display: none;
+}
+
+/*============= NAVIGATION =============*/
+
+.navbar {
+  font-family: 'Bellota-Bold', sans-serif;
+  padding: .7rem 1rem;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 700px;
+  letter-spacing: .1rem;
+  transition: background-color .5s ease 0s;
+}
+.navbar-brand img {
+  height: 2rem;
+}
+.svg-inline--fa.fa-w-14 {
+  color: white;
+  font-size: 1.6rem;
+}
+.navbar-nav li {
+  padding: 0 3rem 0 3rem;
+  border: 1px solid red;
+}
+.navbar-nav .nav-link {
+  color: white;
+  padding-top: .8rem;
+}
+.navbar-nav .nav-link .active,
+.navbar-nav .nav-link :hover {
+  color: #5EAADA;
+}
+.navbar.solid {
+  background: rgba(0, 0, 0, 0.7)!important;
+  transition: background-color 1s ease 0s;
+}
+.navbar-nav  .heading-underline {
+  width: 100%;
+  height: .2rem;
+  background-color: #1EBBA3;
 }
 
 
