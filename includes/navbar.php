@@ -13,7 +13,7 @@ else {
 ?>
 
 <!--- Navigation -->
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-md fixed-top always-solid">
 <div class="container-fluid">
 	<a class="navbar-brand" href="index.php"><img src="assets/images/twitter.png" alt=""></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -53,10 +53,11 @@ else {
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
 			</li>
-
+            <hr>
 			<li class="nav-item text-center mx-auto">
 				<a class="nav-link <?php if($page=='profile'){echo 'active';}?>" href="profile.php">
-					 <?php echo $user['first_name']; ?>
+                    <img src="<?php echo $user['profile_pic']; ?>" class="rounded-circle" style="max-width: 21px">
+					<?php echo $user['first_name']; ?>
                 </a>
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='profile'){echo 'heading-underline';}?>"></div>
