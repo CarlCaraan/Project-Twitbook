@@ -47,14 +47,14 @@ require 'includes/form_handlers/login_handler.php';
 	<div class="login__wrapper">
 		<form class="" action="register.php" method="POST">
 			<!-- Logo and Header -->
-			<div class="center">
+			<div class="center os-animation" data-animation="bounceInUp" data-delay=".7s">
 				<span class="fa-layers fa-4x">
 					<i class="fab fa-twitter fa-inverse shadow" data-fa-transform="shrink-6"></i>
 				</span>
 			</div>
-			<h3>Login or Sign Up Below</h3>
+			<h3 class="os-animation" data-animation="bounceInUp" data-delay=".8s">Login or Sign Up Below</h3>
 
-			<div class="form-group">
+			<div class="form-group os-animation" data-animation="bounceInUp" data-delay=".8s">
 			<label for="log_email">Email:</label>
 				<input type="email" class="form-control" name="log_email" placeholder="Email Address" value="<?php
 				if(isset($_SESSION['log_email'])) { //Start the SESSION to remain users input
@@ -62,25 +62,25 @@ require 'includes/form_handlers/login_handler.php';
 				} ?>" required>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group os-animation" data-animation="bounceInUp" data-delay=".8s">
 				<label for="log_password">Password:</label>
 				<input class="form-control" type="password" name="log_password" placeholder="Password">
 			</div>
 
 				<?php if(in_array("Email or password was incorrect<br>", $error_array)) echo "Email or password was incorrect<br>"; ?><!-- Show Error Message -->
 
-			<div class="center">
+			<div class="center os-animation" data-animation="bounceInUp" data-delay=".9s">
 				<input class="btn btn-outline-light btn-lg shadow-sm" id="ibtn-lg" type="submit" name="login_button" value="Login"><br>
 			</div>
 
-			<div class="text-center">
+			<div class="text-center os-animation" data-animation="bounceInUp" data-delay="1s">
 				<a href="#" class="signup" id="signup">Need an account? Register here!</a>
 			</div>
 		</form>
 	</div> <!-- End Login Wrapper -->
 
 	<!-- Register Form -->
-	<div class="register__wrapper">
+	<div class="register__wrapper os-animation" data-animation="zoomInDown" data-delay="">
 		<form  class"" action="register.php" method="POST">
 			<!-- Logo and Header -->
 			<div class="center">

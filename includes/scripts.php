@@ -3,4 +3,6 @@
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="assets/js/waypoints.js"></script> <!-- Waypoints + animate.css -->
+<script src="assets/js/jquery.waypoints.min.js"></script> <!-- Waypoints + animate.css -->
 <!-- End of Script Source Files -->

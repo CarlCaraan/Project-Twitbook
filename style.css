@@ -71,7 +71,7 @@ body{
     color: white;
     text-transform: uppercase;
     text-shadow: .1rem .1rem .8rem black;
-    margin: 2rem 0 2.4rem 0;
+    margin: 2rem 0 2.4rem 0!important;
     text-align: center;
     border-bottom: .1rem solid white;
 }
