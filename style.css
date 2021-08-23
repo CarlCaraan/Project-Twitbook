@@ -204,8 +204,34 @@ input.btn {
     background-color: #242526;
 }
 .content.position-fixed {
-    max-width: 450px;
+    max-width: 420px;
 }
+/*-- Cards --*/
+.card {
+    border: 0;
+    border-radius: 5px;
+    margin: 0rem 6rem;
+}
+.card-body {
+    background-color: gray;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+.card-title {
+  font-family: 'Bellota-Bold', sans-serif;
+  margin-bottom: .2rem;
+}
+.card-text {
+  font-family: 'JetbrainsMono-Regular', sans-serif;
+  font-size: .85rem;
+  margin-bottom: .4rem;
+}
+
+
+
+
+
 
 
 
