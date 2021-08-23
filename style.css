@@ -22,7 +22,14 @@
     src: url('assets/fonts/JetBrainsMono-Regular.ttf');
 }
 
-/*--- Global Class --*/
+/*!
+* Global Class Reference
+* Version - 6.9
+* github https://github.com/CarlCaraan
+* Licensed under the MIT license - http://opensource.org/licenses/MIT
+*
+* Copyright (c) 2021 Carl Caraan
+*/
 body{
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
@@ -38,6 +45,10 @@ body{
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+.socket {
+    max-width: 100%;
+    border-bottom: .1px solid rgba(128, 128, 128, .4);
 }
 
 /*--- Nav Scrolling Offset --*/
@@ -155,6 +166,7 @@ input.btn {
   font-weight: 700px;
   letter-spacing: .1rem;
   transition: background-color .5s ease 0s;
+  border-bottom: .1px solid rgba(128, 128, 128, .4);
 }
 .navbar-brand {
     margin-top: .4rem;
