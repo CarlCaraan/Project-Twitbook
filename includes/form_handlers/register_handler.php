@@ -118,9 +118,9 @@ $date = date("Y-m-d"); //Current date
 
 		//Profile picture assignment
 		if($gender == "Male")
-			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
+			$profile_pic = "assets/images/profile_pics/defaults/head_Male.png";
 		else if($gender == "Female")
-			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
+			$profile_pic = "assets/images/profile_pics/defaults/head_Female.png";
 
 		//Insert Data to database
 		$query = mysqli_query($con, "INSERT INTO users VALUES (
