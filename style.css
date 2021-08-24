@@ -92,7 +92,7 @@ body{
     text-align: center;
     border-bottom: .1rem solid white;
 }
-.control label{
+label {
     font-family: 'JetBrainsMono-Regular', sans-serif;
     color: white;
     text-shadow: .1rem .1rem 1rem black;
@@ -212,13 +212,10 @@ input.btn {
 #content {
     padding-top: 3.45rem;
 }
-#middle-section {
-    background-color: #242526;
-}
 .content.position-fixed {
     max-width: 420px;
 }
-/*-- Cards --*/
+/*-- Left Section --*/
 .card {
     border: 0;
     border-radius: 5px;
@@ -239,7 +236,109 @@ input.btn {
   font-size: .85rem;
   margin-bottom: .4rem;
 }
+/*-- Middle Section --*/
+#middle-section {
+    background-color: #242526;
+}
+.btn-sm {
+  font-family: 'Bellota-BoldItalic', sans-serif;
+  border-width: medium;
+  border-radius: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block!important;
+  border: 3px solid #5EAADA;
+  color: #5EAADA;
+}
+.btn-sm:hover {
+  color: white;
+  background-color: #5EAADA;
+  border: 3px solid #5EAADA;
+}
+.form-control#post_text {
+    background-color: gray;
+    border: 0;
+    border-radius: 2px;
+    color: white!important;
+}
+.form-control#post_text::placeholder  {
+    color: white;
+}
+.form-control#post_text:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+}
+#post-container {
+    padding: 3rem;
+    border-radius: 5px;
+    background: rgba(48, 48, 48)!important;
+}
+#post-container:hover {
+    background: rgba(48, 48, 48, .7)!important;
+}
 
+/*============= MEDIA QUERIES =============*/
+
+/* Custom Queries with Devices under 1400px (xxl) */
+@media (max-width: 1399px) {
+    #left-section {
+      display: none;
+    }
+}
+
+/* Devices under 1200px (xl) */
+@media (max-width: 1199px) {
+    #left-section {
+      display: none;
+    }
+    #right-section {
+      display: none;
+    }
+}
+
+/* Devices under 992px (lg) */
+@media (max-width: 991px) {
+    .btn-lg {
+    padding: .7rem 1.2rem;
+    font-size: 1rem;
+    }
+    .btn-sm {
+    font-size: .8rem;
+    }
+}
+
+/* Devices under 768px (md) */
+@media (max-width: 767px) {
+    .btn-lg {
+    padding: .6rem 1.1rem;
+    font-size: 1rem;
+    }
+    .top-scroll { /*-- top-scrol icon --*/
+    display: none!important;
+    }
+    #post-container {
+        padding: 1rem 1rem 3rem 1rem;
+    }
+    .form-control#post_text::placeholder  {
+        color: white;
+        font-size: 1rem;
+    }
+
+}
+
+/* Devices under 576px (sm) */
+@media (max-width: 575px) {
+    .btn-lg {
+    padding: .4rem .9rem;
+    font-size: .9rem;
+    }
+    .narrow {
+    width: 85%;
+    }
+    .form-control#post_text::placeholder  {
+        color: white;
+        font-size: 1rem;
+    }
+}
 
 
 

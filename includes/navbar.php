@@ -53,9 +53,9 @@ else {
                 <div class="underline-spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
 			</li>
-            <hr>
+
 			<li class="nav-item text-center mx-auto">
-				<a class="nav-link <?php if($page=='profile'){echo 'active';}?>" href="profile.php">
+				<a class="nav-link <?php if($page=='profile'){echo 'active';}?>" href="<?php echo $userLoggedIn; ?>">
                     <img src="<?php echo $user['profile_pic']; ?>" class="rounded-circle" style="max-width: 21px">
 					<?php echo $user['first_name']; ?>
                 </a>
