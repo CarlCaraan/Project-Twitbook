@@ -8,6 +8,7 @@ $password = ""; //password
 $password2 = ""; //password 2
 $date = ""; //Sign up date
 $error_array = array(); //Holds error messages
+$gender = ""; //gender
 
 //-- Start Register Button --//
 if(isset($_POST['register_button'])){
@@ -36,6 +37,10 @@ $em2 = strip_tags($_POST['reg_email2']); //Remove html tags
 $em2 = str_replace(' ', '', $em2); //remove spaces
 $em2 = ucfirst(strtolower($em2)); //Uppercase first letter
 $_SESSION['reg_email2'] = $em2; //Stores email2 into session variable
+
+//gender
+$gender = strip_tags($_POST['gender']); //Remove html tags
+$gender = ucfirst(strtolower($gender)); //Uppercase first letter
 
 //Password
 $password = strip_tags($_POST['reg_password']); //Remove html tags
@@ -112,16 +117,14 @@ $date = date("Y-m-d"); //Current date
 		}
 
 		//Profile picture assignment
-		$rand = rand(1, 2); //Random number between 1 and 2
-
-		if($rand == 1)
+		if($gender == "Male")
 			$profile_pic = "assets/images/profile_pics/defaults/head_deep_blue.png";
-		else if($rand == 2)
+		else if($gender == "Female")
 			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
 
 		//Insert Data to database
 		$query = mysqli_query($con, "INSERT INTO users VALUES (
-			'', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ','
+			'', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',', '$gender'
 		)");
 
 		//Register Successful Message

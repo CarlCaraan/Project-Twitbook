@@ -137,6 +137,16 @@ require 'includes/form_handlers/login_handler.php';
 				else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>"; ?>
 			</div>
 
+			<div class="form-check">
+			  <label class="form-check-label">
+			    <input type="radio" class="form-check-input" name="gender" value="male" required>Male
+			  </label>
+			</div>
+			<div class="form-check">
+			  <label class="form-check-label">
+			    <input type="radio" class="form-check-input" name="gender" value="female">Female
+			  </label>
+			</div>
 			<div class="center">
 				<input class="btn btn-outline-light btn-lg shadow-sm" type="submit" name="register_button" value="Register">
 			</div>
