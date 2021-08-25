@@ -1,6 +1,7 @@
 <?php
 require 'config/config.php';
- ?>
+include 'includes/classes/User.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -6,16 +6,17 @@ require 'config/config.php';
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	
-	<title><?php
-    $userLoggedIn = $_SESSION['username'];
-    //Show username in navbar
-    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-    $user = mysqli_fetch_array($user_details_query);
+	<!-- Display First Name on Profile Page title -->
+	<title>
+		<?php
+	    $userLoggedIn = $_SESSION['username'];
 
-    echo $user['first_name'];// Put user first name on Title
-    ?> | Twitter
-	</title>
+	    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	    $user = mysqli_fetch_array($user_details_query);
+
+	    echo $user['first_name'];
+	    ?> | Twitter
+ 	</title>
 </head>
 
 <body>

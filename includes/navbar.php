@@ -72,7 +72,7 @@ else {
 			</li>
 
 			<li class="nav-item text-center mx-auto">
-				<a class="nav-link" href="register.php">
+				<a class="nav-link" href="includes/handlers/logout.php">
 					<i class="fas fa-sign-out-alt fa-inverse <?php if($page=='logout'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
                 <div class="underline-spacing"></div>
