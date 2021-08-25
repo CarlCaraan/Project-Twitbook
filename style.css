@@ -206,6 +206,22 @@ input.btn {
     width: 100px;
     height: 18%;
 }
+/*-- BOOTSTRAP TOOLTIP --*/
+.tooltip-inner {
+    max-width: 200px;
+    padding: 6px 14px;
+    color: black;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: .5rem;
+    font-size: .8rem;
+    box-shadow: 0.5px 0.5px .3rem;
+    margin-top: .4rem;
+}
+.tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
+    display: none;
+}
+
 
 /*============= Home Section =============*/
 
@@ -275,6 +291,44 @@ input.btn {
 #post-container:hover {
     background: rgba(48, 48, 48, .7)!important;
 }
+
+/*============= TOOLTIP CSS CHEATSHEET =============*/
+/*
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    border-radius: .25rem;
+}
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before {
+    margin-left: -3px;
+    content: "";
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+}
+.tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before, .tooltip.bs-tooltip-right .arrow::before {
+    margin-top: -3px;
+    content: "";
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000;
+}
+.tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
+    margin-left: -3px;
+    content: "";
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+}
+.tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before, .tooltip.bs-tooltip-left .arrow::before {
+    right: 0;
+    margin-top: -3px;
+    content: "";
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000;
+}
+*/
+
 
 /*============= MEDIA QUERIES =============*/
 

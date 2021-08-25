@@ -47,3 +47,15 @@ $(document).ready(function () { //when document loads completely.
         }
     });
 });
+
+/*========== BOOTSTRAP TOOLTIP ==========*/
+
+$(document).ready(function(){
+  $('.nav-link#home').tooltip({title: "Home", placement: "bottom"});
+  $('.nav-link#messages').tooltip({title: "Messages", placement: "bottom"});
+  $('.nav-link#notification').tooltip({title: "Notifications", placement: "bottom"});
+  $('.nav-link#friendrequest').tooltip({title: "Friend Request", placement: "bottom"});
+  $('.nav-link#profile').tooltip({title: "Profile", placement: "bottom"});
+  $('.nav-link#settings').tooltip({title: "Settings", placement: "bottom"});
+  $('.nav-link#logout').tooltip({title: "LogOut", placement: "bottom"});
+});
