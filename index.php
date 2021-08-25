@@ -1,6 +1,7 @@
 <?php
 require 'config/config.php';
 include 'includes/classes/User.php';
+include 'includes/classes/Post.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +16,18 @@ include 'includes/classes/User.php';
 <!-- Start Home section -->
 <div id="home">
 
-<?php $page = 'home';include 'includes/navbar.php';
-//session_destroy();
+<?php $page = 'home';include 'includes/navbar.php'; ?>
+
+<?php
+    if(isset($_POST['post'])){
+    $post = new Post($con, $userLoggedIn);
+    $post->submitPost($_POST['post_text'], 'none');
+} 
 ?>
+
+
+
+
 
     <!-- Start Three Section -->
     <div class="container-fluid" id="content">
@@ -54,7 +64,7 @@ include 'includes/classes/User.php';
                   <label for="post_text">Create Post:</label>
                   <textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right">Tweet</button>
+                <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" id="post_button" value="Tweet"></input>
               </form>
             </div>
 

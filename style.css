@@ -222,7 +222,6 @@ input.btn {
     display: none;
 }
 
-
 /*============= Home Section =============*/
 
 #content {
@@ -286,10 +285,10 @@ input.btn {
 #post-container {
     padding: 3rem;
     border-radius: 5px;
-    background: rgba(48, 48, 48)!important;
+    background: rgba(48, 48, 48, .7)!important;
 }
 #post-container:hover {
-    background: rgba(48, 48, 48, .7)!important;
+    background: rgba(48, 48, 48)!important;
 }
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/
@@ -393,12 +392,6 @@ input.btn {
         font-size: 1rem;
     }
 }
-
-
-
-
-
-
 
 /*============ BOOTSTRAP BREAK POINTS:
 
