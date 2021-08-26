@@ -26,32 +26,32 @@ else {
 				<a class="nav-link" href="index.php" id="home">
 					<i class="fas fa-home fa-inverse <?php if($page=='home'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='home'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='home'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
 				<a class="nav-link" href="#" id="messages">
 					<i class="fas fa-envelope fa-inverse <?php if($page=='messages'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
 				<a class="nav-link" href="#" id="notification">
 					<i class="fas fa-globe-americas fa-inverse <?php if($page=='notification'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
 				<a class="nav-link" href="#" id="friendrequest">
 					<i class="fas fa-users fa-inverse <?php if($page=='friendrequest'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
@@ -59,24 +59,24 @@ else {
                     <img src="<?php echo $user['profile_pic']; ?>" class="rounded-circle" style="max-width: 21px">
 					<?php echo $user['first_name']; ?>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='profile'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='profile'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
 				<a class="nav-link" href="settings.php" id="settings">
 					<i class="fas fa-cog fa-inverse <?php if($page=='settings'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='settings'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='settings'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
 				<a class="nav-link" href="includes/handlers/logout.php" id="logout">
 					<i class="fas fa-sign-out-alt fa-inverse <?php if($page=='logout'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
-                <div class="heading-spaces"></div>
-                <div class=" <?php if($page=='#'){echo 'heading-underline';}?>"></div>
+                <div class="spacing"></div>
+                <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
 			</li>
 		</ul>
 	</div>

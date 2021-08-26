@@ -210,11 +210,11 @@ a.navbar-brand:hover {
     margin: 0 3px 0 3px;
 }
 /*--- Nav-link underline --*/
-.navbar-nav .heading-underline {
+.navbar-nav .underline-active {
   height: .2rem;
   background-color: #5EAADA;
 }
-.heading-spaces {
+.spacing {
     height: 18%;
 }
 /*-- BOOTSTRAP TOOLTIP --*/
