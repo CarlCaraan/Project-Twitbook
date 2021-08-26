@@ -172,6 +172,14 @@ input.btn {
     margin-top: .4rem;
     margin-bottom: .4rem;
 }
+a.navbar-brand {
+  color: white;
+}
+a.navbar-brand:hover {
+  text-decoration: none;
+  text-shadow: .1rem .1rem .8rem black;
+  color: white;
+}
 .navbar-brand img {
   height: 2rem;
   margin-top: 0;
@@ -180,30 +188,33 @@ input.btn {
   color: white;
   font-size: 1.6rem;
 }
-.navbar-nav li {
-
-}
 .navbar-nav .nav-link {
   color: white;
 }
+/*.navbar-nav .nav-link :hover,*/ /*-- for icon --*/
+/*.navbar-nav .nav-link:hover*/ /*-- for text --*/
 .navbar-nav .nav-link .active, /*-- for icon --*/
-.navbar-nav .nav-link.active, /*-- for text --*/
-.navbar-nav .nav-link :hover, /*-- for icon --*/
-.navbar-nav .nav-link:hover  { /*-- for text --*/
+.navbar-nav .nav-link.active {/*-- for text --*/
   color: #5EAADA;
 }
 .navbar.solid {
   background: rgb(48, 48, 48, 0.9)!important; /*-- 0.7 for transparent nav scrolling --*/
   transition: background-color 1s ease 0s;
 }
-/*--- Navbar link underline --*/
-.navbar-nav  .heading-underline {
-  width: 100%;
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+.nav-item {
+    width: 150px;
+    margin: 0 3px 0 3px;
+}
+/*--- Nav-link underline --*/
+.navbar-nav .heading-underline {
   height: .2rem;
   background-color: #5EAADA;
 }
-.underline-spacing {
-    width: 100px;
+.heading-spaces {
     height: 18%;
 }
 /*-- BOOTSTRAP TOOLTIP --*/
