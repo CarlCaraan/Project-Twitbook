@@ -6,7 +6,7 @@ require 'config/config.php';
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Settings | Twitter</title>
+	<title>Settings | Twitbook</title>
 </head>
 
 <body>

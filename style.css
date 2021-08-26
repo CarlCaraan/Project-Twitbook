@@ -206,7 +206,7 @@ a.navbar-brand:hover {
     border-radius: 5px;
 }
 .nav-item {
-    width: 150px;
+    width: 100px;
     margin: 0 3px 0 3px;
 }
 /*--- Nav-link underline --*/
@@ -351,9 +351,6 @@ a.navbar-brand:hover {
 
 /* Devices under 1200px (xl) */
 @media (max-width: 1199px) {
-    #left-section {
-      display: none;
-    }
     #right-section {
       display: none;
     }
@@ -367,6 +364,12 @@ a.navbar-brand:hover {
     }
     .btn-sm {
     font-size: .8rem;
+    }
+    a.navbar-brand {
+        font-size: 0px;
+    }
+    .nav-item {
+        margin: 0;
     }
 }
 
@@ -386,7 +389,6 @@ a.navbar-brand:hover {
         color: white;
         font-size: 1rem;
     }
-
 }
 
 /* Devices under 576px (sm) */

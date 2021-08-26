@@ -8,7 +8,7 @@ include 'includes/classes/Post.php';
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Twitter</title>
+	<title>Twitbook</title>
 </head>
 
 <body>

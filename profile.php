@@ -15,7 +15,7 @@ require 'config/config.php';
 	    $user = mysqli_fetch_array($user_details_query);
 
 	    echo $user['first_name'];
-	    ?> | Twitter
+	    ?> | Twitbook
  	</title>
 </head>
 

@@ -9,7 +9,7 @@ require 'includes/form_handlers/login_handler.php';
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Login | Register | Twitter</title>
+	<title>Login | Register | Twitbook</title>
 </head>
 <body>
 
