@@ -18,16 +18,13 @@ require 'includes/form_handlers/login_handler.php';
 
 	if(isset($_POST['register_button'])) {
 		echo '
-		<script>
-
-		$(document).ready(function() {
-			$(".login__wrapper").hide();
-			$(".register__wrapper").show();
-			$(".spinner-border").hide();
-		});
-
-		</script>
-
+			<script>
+				$(document).ready(function() {
+					$(".login__wrapper").hide();
+					$(".register__wrapper").show();
+					$(".spinner-border").hide();
+				});
+			</script>
 		';
 	}
 

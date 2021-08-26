@@ -25,10 +25,6 @@ include 'includes/classes/Post.php';
 }
 ?>
 
-
-
-
-
     <!-- Start Three Section -->
     <div class="container-fluid" id="content">
       <div class="row">
@@ -67,6 +63,13 @@ include 'includes/classes/Post.php';
                 <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" id="post_button" value="Tweet"></input>
               </form>
             </div>
+
+			<?php
+
+			$post = new Post($con, $userLoggedIn);
+			$post->loadPostsFriends();
+
+			?>
 
         </div>
         <!-- End Middle Section -->
