@@ -137,22 +137,21 @@ class Post {
                     $time_message = $interval->s . " seconds ago";
                 }
             }
-            $str .= "<div class='status_post'>
-                        <div class='post_profile_pic'>
-                            <img src='$profile_pic' width='50'>
+            //Same as $str .=
+            $str = $str . "<div class='card'>
+                        <div class='card-body' style='color: #ACACAC;'>
+                            <img class='rounded-circle' src='$profile_pic' width='50'>
+                            <a href='$added_by' id='post-name'> $first_name $last_name</a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
                         </div>
 
-                        <div class='posted_by' style='color: #ACACAC;'>
-                            <a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+                        <img class='card-img' src='assets/images/test.jpg' alt='' style='width: 100%; border-radius: 0'>
+
+                        <div class='card-body'>
+                            $body<br>
                         </div>
+                    </div> <!-- end card --> ";
 
-                        <div id='post_body'>
-                        $body<br>
-                        </div>
-
-                    </div>";
-
-        }
+        } /*-- End While --*/
 
         echo $str;
 

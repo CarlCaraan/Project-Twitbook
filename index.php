@@ -32,13 +32,13 @@ include 'includes/classes/Post.php';
         <!-- Start Left Section-->
         <div class="col-xl-3" id="left-section">
             <div class="content position-fixed">
-                <div class="card"> <!-- Cards -->
+                <div class="card" id="card"> <!-- Cards -->
                     <a href="<?php echo $userLoggedIn; ?>"> <!-- go to profile using .htaccess -->
                         <img class="card-img-top"  src="<?php echo $user['profile_pic'] ?>" alt="Card image" style="width:100%">
                     </a>
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo $user['first_name'] . " " . $user['last_name']; ?></h4>
-                        <p class="card-text">Some example text some example text. Carl is Web Developer!</p>
+                    <div class="card-body" id="card-body">
+                        <h4 class="card-title" id="card-title"><?php echo $user['first_name'] . " " . $user['last_name']; ?></h4>
+                        <p class="card-text" id="card-text">Some example text some example text. Carl is Web Developer!</p>
                         <?php
                         echo "Posts: " . $user['num_posts'] . "<br>";
                         echo "Likes: " . $user['num_likes'];
@@ -54,7 +54,7 @@ include 'includes/classes/Post.php';
 
         <!-- Start Middle Section -->
         <div class="col-xl-6" id="middle-section">
-            <div class="container-fluid" id="post-container">
+            <div id="post-container">
               <form action="index.php" method="POST">
                 <div class="form-group">
                   <label for="post_text">Create Post:</label>

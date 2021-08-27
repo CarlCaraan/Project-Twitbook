@@ -126,7 +126,7 @@ a.signup:hover {
 .spinner-border {
     color: white;
     position: absolute;
-    margin: 332px auto;
+    margin: 243px auto;
     opacity: .75
 }
 /*--- Input Fields --*/
@@ -177,7 +177,7 @@ a.navbar-brand {
 }
 a.navbar-brand:hover {
   text-decoration: none;
-  text-shadow: .1rem .1rem .8rem black;
+  text-shadow: 0 .1rem .8rem black;
   color: white;
 }
 .navbar-brand img {
@@ -226,7 +226,7 @@ a.navbar-brand:hover {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: .5rem;
     font-size: .8rem;
-    box-shadow: 0.5px 0.5px .3rem;
+    box-shadow: 0.1px 0.5px .3rem;
     margin-top: .4rem;
 }
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
@@ -242,22 +242,22 @@ a.navbar-brand:hover {
     max-width: 420px;
 }
 /*-- Left Section --*/
-.card {
+#card {
     border: 0;
     border-radius: 5px;
     margin: 0rem 6rem;
 }
-.card-body {
+#card-body {
     background-color: gray;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     text-align: center;
 }
-.card-title {
+#card-title {
   font-family: 'Bellota-Bold', sans-serif;
   margin-bottom: .2rem;
 }
-.card-text {
+#card-text {
   font-family: 'JetbrainsMono-Regular', sans-serif;
   font-size: .85rem;
   margin-bottom: .4rem;
@@ -293,14 +293,35 @@ a.navbar-brand:hover {
 .form-control#post_text:focus {
     box-shadow: inset 0 -1px 0 #ddd;
 }
-#post-container {
-    padding: 3rem;
+#post-container,
+#post-container:hover {
+    padding: 1.7rem 2rem 3rem 2rem;
     border-radius: 5px;
     background: rgba(48, 48, 48, .7)!important;
+    margin: 0 0 1rem;
 }
 #post-container:hover {
     background: rgba(48, 48, 48)!important;
 }
+#post-name,
+#post-name:hover {
+    font-family: 'JetBrainsMono-Bold', sans-serif;
+    color: white;
+}
+/*-- CARDS --*/
+#middle-section .card {
+    color: white;
+    background: rgba(48, 48, 48, .7)!important;
+    margin: 0 0 1rem;
+}
+#middle-section .card:hover {
+    background: rgba(48, 48, 48)!important;
+}
+#middle-section .card-body {
+
+}
+
+
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/
 /*
@@ -347,12 +368,20 @@ a.navbar-brand:hover {
     #left-section {
       display: none;
     }
+    #content {
+        padding-left: 0;
+        padding-right: 0;
+        width: 1799px;
+    }
 }
 
 /* Devices under 1200px (xl) */
 @media (max-width: 1199px) {
     #right-section {
       display: none;
+    }
+    #content {
+        width: 100%;
     }
 }
 
@@ -383,7 +412,7 @@ a.navbar-brand:hover {
     display: none!important;
     }
     #post-container {
-        padding: 1rem 1rem 3rem 1rem;
+        padding: 1.7rem 2rem 3rem 2rem;
     }
     .form-control#post_text::placeholder  {
         color: white;
@@ -399,6 +428,10 @@ a.navbar-brand:hover {
     }
     .narrow {
     width: 85%;
+    }
+    #post-container,
+    #post-container:hover {
+        padding: 1.2rem 1.5rem 3rem 1.5rem;
     }
     .form-control#post_text::placeholder  {
         color: white;
