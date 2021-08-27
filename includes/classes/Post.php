@@ -58,7 +58,7 @@ class Post {
             else {
                 $user_to_obj = new User($con, $row['user_to']);
                 $user_to_name = $user_to_obj->getFirstAndLastName();
-                $user_to = "to <a href='" . $row ['user_to'] ."'>" . $user_to_name . "</a>";
+                $user_to = "to <a href='" . $row ['user_to'] . "'>" . $user_to_name . "</a>";
             }
 
             //Check if user who posted, has their account closed
