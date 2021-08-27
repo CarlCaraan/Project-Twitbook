@@ -303,11 +303,6 @@ a.navbar-brand:hover {
 #post-container:hover {
     background: rgba(48, 48, 48)!important;
 }
-#post-name,
-#post-name:hover {
-    font-family: 'JetBrainsMono-Bold', sans-serif;
-    color: white;
-}
 /*-- CARDS --*/
 #middle-section .card {
     color: white;
@@ -318,9 +313,28 @@ a.navbar-brand:hover {
     background: rgba(48, 48, 48)!important;
 }
 #middle-section .card-body {
-
+    padding: .8rem .8rem 0 .8rem;
 }
-
+#middle-section .card-body img {
+    width: 50px;
+    padding: 0;
+}
+.card .card-img {
+    width: 100%;
+    border-radius: 0;
+}
+#middle-section .card-body a,
+#middle-section .card-body a:hover {
+    font-family: 'JetBrainsMono-Bold', sans-serif;
+    color: white;
+}
+#middle-section .card-body span {
+    color: #ACACAC;
+    font-size: .9rem;
+}
+#middle-section .card-body p {
+    padding: .4rem 0 0 0;
+}
 
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/

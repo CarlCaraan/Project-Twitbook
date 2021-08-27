@@ -137,19 +137,16 @@ class Post {
                     $time_message = $interval->s . " seconds ago";
                 }
             }
-            //Same as $str .=
-            $str = $str . "<div class='card'>
-                        <div class='card-body' style='color: #ACACAC;'>
-                            <img class='rounded-circle' src='$profile_pic' width='50'>
-                            <a href='$added_by' id='post-name'> $first_name $last_name</a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
-                        </div>
-
-                        <img class='card-img' src='assets/images/test.jpg' alt='' style='width: 100%; border-radius: 0'>
-
-                        <div class='card-body'>
-                            $body<br>
-                        </div>
-                    </div> <!-- end card --> ";
+        //Same as $str .=
+         $str = $str . "<div class='card'>
+                            <div class='card-body'>
+                                <img class='rounded-circle' src='$profile_pic'>
+                                <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
+                                <p>$body</p>
+                            </div>
+                            <img class='card-img' src='assets/images/test.jpg' alt=''>
+                            <p>Like</p>
+                        </div> <!-- end card --> ";
 
         } /*-- End While --*/
 
