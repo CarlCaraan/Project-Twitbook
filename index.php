@@ -71,8 +71,31 @@ include 'includes/classes/Post.php';
 
 			?>
 
+			<img id="loading" src="assets/images/icons/loading.gif">
+
         </div>
+
+		<!-- Ajax Script limit post -->
+		<script>
+		var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+
+		//-- Start JQuery Function  --//
+		$(document).ready(function(){
+			$('#loading').show();
+
+			//Original Ajax request for loading first post
+			$.ajax({
+				url: "includes/handlers/ajax_load_posts.php",
+				type: "POST",
+				data: "page=1&userLoggedIn=" + userLoggedIn,
+				cache: false,
+			}); //End $.ajax({
+
+
+		}); //-- End JQuery Function --//
+		</script>
         <!-- End Middle Section -->
+
 
         <!-- Start Right Section -->
         <div class="col-xl-3" id="right-section">
