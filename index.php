@@ -64,7 +64,7 @@ include("includes/classes/Post.php");
               </form>
             </div>
 
-			<!-- Loading GIF -->
+			<!-- Display Posts and Loading GIF -->
 			<div class="posts_area"></div>
 			<img id="loading" src="assets/images/icons/loading.gif">
 
@@ -98,7 +98,7 @@ include("includes/classes/Post.php");
 				var page = $('.posts_area').find('.nextPage').val();
 				var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-				if($(window).scrollTop() == $(document).height() - $(window).height() && noMorePosts == 'false') {	
+				if($(window).scrollTop() == $(document).height() - $(window).height() && noMorePosts == 'false') {
 					$('#loading').show();
 
 					var ajaxReq = $.ajax({
@@ -124,9 +124,7 @@ include("includes/classes/Post.php");
 
 
 		});
-
 		</script>
-
         <!-- End Middle Section -->
 
 
