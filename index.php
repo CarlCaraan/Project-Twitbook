@@ -98,9 +98,8 @@ include("includes/classes/Post.php");
 				var page = $('.posts_area').find('.nextPage').val();
 				var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-				if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+				if($(window).scrollTop() == $(document).height() - $(window).height() && noMorePosts == 'false') {	
 					$('#loading').show();
-
 
 					var ajaxReq = $.ajax({
 						url: "includes/handlers/ajax_load_posts.php",
