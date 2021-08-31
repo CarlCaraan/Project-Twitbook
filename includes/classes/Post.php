@@ -108,6 +108,21 @@ class Post {
                     $profile_pic = $user_row['profile_pic'];
 
 
+                    ?>
+                    <script>
+                        function toggle<?php echo $id;?>() {
+
+                            var element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+                            if(element.style.display == "block")
+                                element.style.display = "none";
+                            else
+                                element.style.display = "block";
+                        }
+                    </script>
+                    <?php
+
+
                     //Timeframe
                     $date_time_now = date("Y-m-d H:i:s");
                     $start_date = new DateTime($date_time); //Time of post
@@ -172,16 +187,25 @@ class Post {
                         }
                     }
                     //Same as $str .=
-                    $str .= "<div class='card'>
+                    $str .= "<div class='card' onClick='javascript:toggle$id()'>
                                 <div class='card-body'>
                                     <img class='rounded-circle' src='$profile_pic'>
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
                                     <p>$body</p>
                                 </div>
                                 <img class='card-img' src='assets/images/test1.jpg' alt=''>
-                            </div> <!-- end card --> ";
 
-                } //-- Display only friend posts --//
+                                <!-- load comment -->
+                                <div class='post_comment' id='toggleComment$id'>
+                                    <iframe src='comment_frame.php?post_id=$id' id='comment_iframe'></iframe>
+                                </div>
+                            </div> <!-- End card -->
+
+                            ";
+
+
+
+                } //-- End Display only friend posts --//
 
             } //-- End While loop --//
 

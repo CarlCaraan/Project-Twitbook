@@ -303,7 +303,7 @@ a.navbar-brand:hover {
 #post-container:hover {
     background: rgba(48, 48, 48)!important;
 }
-/*-- CARDS --*/
+/*-- CARDS(POSTS) --*/
 #middle-section .card {
     color: white;
     background: rgba(48, 48, 48, .7)!important;
@@ -334,6 +334,17 @@ a.navbar-brand:hover {
 }
 #middle-section .card-body p {
     padding: .4rem 0 0 0;
+}
+/*-- Comment --*/
+.post_comment {
+    display: none;
+}
+#comment_iframe {
+    border: 0;
+}
+.comment_section img{
+    width: 30px;
+    padding: 0;
 }
 
 
