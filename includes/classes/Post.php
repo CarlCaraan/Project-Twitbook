@@ -107,8 +107,9 @@ class Post {
                     $last_name = $user_row['last_name'];
                     $profile_pic = $user_row['profile_pic'];
 
-
                     ?>
+
+
                     <script>
                         function toggle<?php echo $id;?>() {
 
@@ -120,9 +121,9 @@ class Post {
                                 element.style.display = "block";
                         }
                     </script>
+
+
                     <?php
-
-
                     //Timeframe
                     $date_time_now = date("Y-m-d H:i:s");
                     $start_date = new DateTime($date_time); //Time of post
@@ -187,16 +188,29 @@ class Post {
                         }
                     }
                     //Same as $str .=
-                    $str .= "<div class='card' onClick='javascript:toggle$id()'>
+                    $str .= "<div class='card'>
                                 <div class='card-body'>
                                     <img class='rounded-circle' src='$profile_pic'>
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
                                     <p>$body</p>
                                 </div>
-                                <img class='card-img' src='assets/images/test1.jpg' alt=''>
+
+                                <img class='card-img' src='assets/images/test.jpg' alt=''>
+                                <hr class='socket'>
+
+                                <!-- like & post -->
+                                <div class='row center'>
+                                    <div class='col'>
+                                        <a><i class='far fa-thumbs-up'></i></i> Like</a>
+                                    </div>
+                                    <div class='col' onClick='javascript:toggle$id()'>
+                                        <a><i class='far fa-comment-alt'></i> Comment</a>
+                                    </div>
+                                </div>
 
                                 <!-- load comment -->
                                 <div class='post_comment' id='toggleComment$id'>
+                                    <hr class='socket'>
                                     <iframe src='comment_frame.php?post_id=$id' id='comment_iframe'></iframe>
                                 </div>
                             </div> <!-- End card -->

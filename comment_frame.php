@@ -57,6 +57,8 @@
     }
 
     ?>
+
+    <!-- Submit Comment -->
     <form action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="<?php echo $post_id; ?>" method="POST">
         <textarea name="post_body"></textarea>
         <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
@@ -143,20 +145,24 @@
 
             $user_obj = new User($con, $posted_by);
 
+            ?>
+
+            <div class="comment_section">
+                <a href="<?php echo $posted_by; ?>" target="_parent">
+                    <img class="rounded-circle" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $posted_by; ?>">
+                </a>
+                <a href="<?php echo $posted_by; ?>" target="_parent">
+                    <?php echo $user_obj->getFirstAndLastName(); ?>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $time_message . "<br>" . $comment_body; ?>
+            </div>
+
+            <?php
         } //-- End While --//
     } //-- End if --//
 
     ?>
 
-    <div class="comment_section">
-        <a href="<?php echo $posted_by; ?>" target="_parent">
-            <img class="rounded-circle" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $posted_by; ?>">
-        </a>
-        <a href="<?php echo $posted_by; ?>" target="_parent">
-            <?php echo $user_obj->getFirstAndLastName(); ?>
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $time_message; ?>
-    </div>
 
 </body>
 </html>

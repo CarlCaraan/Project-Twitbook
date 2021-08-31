@@ -49,6 +49,7 @@ body{
 .socket {
     max-width: 100%;
     border-bottom: .1px solid rgba(128, 128, 128, .4);
+    margin: .3rem;
 }
 
 /*--- Nav Scrolling Offset --*/
@@ -284,7 +285,7 @@ a.navbar-brand:hover {
 .form-control#post_text {
     background-color: gray;
     border: 0;
-    border-radius: 2px;
+    border-radius: 5px;
     color: white!important;
 }
 .form-control#post_text::placeholder  {
@@ -296,7 +297,7 @@ a.navbar-brand:hover {
 #post-container,
 #post-container:hover {
     padding: 1.7rem 2rem 3rem 2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     background: rgba(48, 48, 48, .7)!important;
     margin: 0 0 1rem;
 }
@@ -306,14 +307,16 @@ a.navbar-brand:hover {
 /*-- CARDS(POSTS) --*/
 #middle-section .card {
     color: white;
+    border-radius: 8px;
     background: rgba(48, 48, 48, .7)!important;
     margin: 0 0 1rem;
+    padding: 0 0 .2rem;
 }
 #middle-section .card:hover {
     background: rgba(48, 48, 48)!important;
 }
 #middle-section .card-body {
-    padding: .8rem .8rem 0 .8rem;
+    padding: .6rem .8rem .2rem .8rem;
 }
 #middle-section .card-body img {
     width: 50px;
@@ -333,7 +336,8 @@ a.navbar-brand:hover {
     font-size: .9rem;
 }
 #middle-section .card-body p {
-    padding: .4rem 0 0 0;
+    padding-top: .4rem;
+    margin: 0;
 }
 /*-- Comment --*/
 .post_comment {
@@ -345,6 +349,21 @@ a.navbar-brand:hover {
 .comment_section img{
     width: 30px;
     padding: 0;
+    margin: 0;
+}
+.card .row a,
+.card .row a:hover {
+    color: #ACACAC;
+    text-decoration: none;
+}
+.card .row .col {
+    padding: .25rem;
+    margin: 0 .1rem;
+    border-radius: 3px;
+}
+.card .row .col:hover {
+    background: rgb(60, 60, 60);
+    transition: background-color .2s ease 0s;
 }
 
 
