@@ -57,7 +57,7 @@ else {
 			<li class="nav-item text-center">
 				<a class="nav-link <?php if($page=='profile'){echo 'active';}?>" href="<?php echo $userLoggedIn; ?>" id="profile">
                     <img src="<?php echo $user['profile_pic']; ?>" class="rounded-circle" style="max-width: 21px">
-					<?php echo $user['first_name']; ?>
+					<span><?php echo $user['first_name']; ?></span>
                 </a>
                 <div class="spacing"></div>
                 <div class=" <?php if($page=='profile'){echo 'underline-active';}?>"></div>

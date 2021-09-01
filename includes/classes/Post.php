@@ -211,7 +211,7 @@ class Post {
                                 <!-- load comment -->
                                 <div class='post_comment' id='toggleComment$id'>
                                     <hr class='socket'>
-                                    <iframe src='comment_frame.php?post_id=$id' id='comment_iframe'></iframe>
+                                    <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' height='450'></iframe>
                                 </div>
                             </div> <!-- End card -->
 

@@ -210,6 +210,9 @@ a.navbar-brand:hover {
     width: 100px;
     margin: 0 3px 0 3px;
 }
+.navbar span {
+    font-size: .6rem;
+}
 /*--- Nav-link underline --*/
 .navbar-nav .underline-active {
   height: .2rem;
@@ -242,7 +245,9 @@ a.navbar-brand:hover {
 .content.position-fixed {
     max-width: 420px;
 }
-/*-- Left Section --*/
+
+/*============= Left Home Section =============*/
+
 #card {
     border: 0;
     border-radius: 5px;
@@ -263,7 +268,9 @@ a.navbar-brand:hover {
   font-size: .85rem;
   margin-bottom: .4rem;
 }
-/*-- Middle Section --*/
+
+/*============= Middle Home Section =============*/
+
 #middle-section {
     background-color: #242526;
 }
@@ -283,6 +290,7 @@ a.navbar-brand:hover {
   border: 3px solid #5EAADA;
 }
 .form-control#post_text {
+    overflow: hidden;
     background-color: gray;
     border: 0;
     border-radius: 5px;
@@ -304,7 +312,7 @@ a.navbar-brand:hover {
 #post-container:hover {
     background: rgba(48, 48, 48)!important;
 }
-/*-- CARDS(POSTS) --*/
+/*-- Middle Posting(Card Style) --*/
 #middle-section .card {
     color: white;
     border-radius: 8px;
@@ -339,18 +347,7 @@ a.navbar-brand:hover {
     padding-top: .4rem;
     margin: 0;
 }
-/*-- Comment --*/
-.post_comment {
-    display: none;
-}
-#comment_iframe {
-    border: 0;
-}
-.comment_section img{
-    width: 30px;
-    padding: 0;
-    margin: 0;
-}
+/*-- Like & Comment --*/
 .card .row a,
 .card .row a:hover {
     color: #ACACAC;
@@ -365,6 +362,69 @@ a.navbar-brand:hover {
     background: rgb(60, 60, 60);
     transition: background-color .2s ease 0s;
 }
+
+/*============= Load Comment Section(IFrame) =============*/
+
+/* -- Load Comment(Posting Section) --*/
+.post_comment {
+    display: none;
+}
+#comment_iframe {
+    width: 100%;
+    border: 0;
+}
+#comment_form textarea {
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: rgb(70, 70, 70);
+    border: 0;
+    padding-top: .4rem!important;
+    color: white!important;
+}
+#comment_form textarea::placeholder,
+#comment_form textarea:focus{
+    font-size: 1rem;
+    color: white!important;
+    box-shadow: inset 0 0 #ddd;
+}
+#comment_profilepic {
+    width: 40px;
+    float: right;
+    margin-right: 3px;
+}
+#comment_container [class*="col-"]{
+    padding: 0 0 0 .5rem;
+}
+/* -- Load Comment(Load Section) --*/
+#comment_loadposts a {
+    font-family: 'JetBrainsMono-Bold', sans-serif;
+    color: white;
+}
+#comment_loadposts span {
+    font-size: .9rem;
+    color: #ACACAC;
+    margin-left: 6rem;
+}
+#load_textcomment {
+    background-color: rgb(70, 70, 70);
+    padding: .5rem;
+    border-radius: 15px;
+}
+.comment_section img{
+    width: 30px;
+    padding: 0;
+    margin-right: 5px;
+}
+/*-- Load Comment(FIX All Background) --*/
+.frame_body {
+    background: #2D2D2D;
+}
+.frame_body:hover {
+    background: rgba(48, 48, 48 );
+}
+
+
+
 
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/
@@ -427,6 +487,9 @@ a.navbar-brand:hover {
     #content {
         width: 100%;
     }
+    #comment_loadposts span {
+        margin-left: 7rem;
+    }
 }
 
 /* Devices under 992px (lg) */
@@ -443,6 +506,9 @@ a.navbar-brand:hover {
     }
     .nav-item {
         margin: 0;
+    }
+    #comment_loadposts span {
+        margin-left: 6rem;
     }
 }
 
@@ -462,6 +528,9 @@ a.navbar-brand:hover {
         color: white;
         font-size: 1rem;
     }
+    #comment_loadposts span {
+        margin-left: 5.5rem;
+    }
 }
 
 /* Devices under 576px (sm) */
@@ -480,6 +549,13 @@ a.navbar-brand:hover {
     .form-control#post_text::placeholder  {
         color: white;
         font-size: 1rem;
+    }
+    #load_textcomment a,
+    #load_textcomment {
+        font-size: .9rem;
+    }
+    #comment_loadposts span {
+        margin-left: 5rem;
     }
 }
 

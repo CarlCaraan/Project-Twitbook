@@ -64,6 +64,23 @@ include("includes/classes/Post.php");
               </form>
             </div>
 
+		    <!-- Autogrow Text Area -->
+		    <script>
+		        var textarea = document.querySelector('textarea');
+
+		        textarea.addEventListener('keydown', autosize);
+
+		        function autosize(){
+		          var el = this;
+		          setTimeout(function(){
+		            el.style.cssText = 'height:auto; padding:0';
+		            // for box-sizing other than "content-box" use:
+		            // el.style.cssText = '-moz-box-sizing:content-box';
+		            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+		          },0);
+		        }
+		    </script>
+
 			<!-- Display Posts and Loading GIF -->
 			<div class="posts_area"></div>
 			<img id="loading" src="assets/images/icons/loading.gif">
