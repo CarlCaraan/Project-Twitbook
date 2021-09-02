@@ -109,21 +109,30 @@ class Post {
 
                     ?>
 
-
+                    <!-- Toggle Comment -->
                     <script>
                         function toggle<?php echo $id;?>() {
 
-                            var element = document.getElementById("toggleComment<?php echo $id; ?>");
+                            //var target = $(event.target);
+                            //if(!target.is("")) {
 
-                            if(element.style.display == "block")
-                                element.style.display = "none";
-                            else
-                                element.style.display = "block";
+                                var element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+                                if(element.style.display == "block")
+                                    element.style.display = "none";
+                                else
+                                    element.style.display = "block";
+                            //}
                         }
                     </script>
 
 
                     <?php
+                    //Count the number of comment
+                    $comments_check = mysqli_query($this->con, "SELECT * FROM comments WHERE post_id='$id'");
+                    $comments_check_num = mysqli_num_rows($comments_check);
+
+
                     //Timeframe
                     $date_time_now = date("Y-m-d H:i:s");
                     $start_date = new DateTime($date_time); //Time of post
@@ -187,15 +196,17 @@ class Post {
                             $time_message = $interval->s . " seconds ago";
                         }
                     }
-                    //Same as $str .=
+                    //Same as $str = $str . " "
                     $str .= "<div class='card'>
                                 <div class='card-body'>
-                                    <img class='rounded-circle' src='$profile_pic'>
+                                    <a href='$added_by' id='profilepic_atag'>
+                                        <img class='rounded-circle' src='$profile_pic'>
+                                    </a>
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
                                     <p>$body</p>
                                 </div>
 
-                                <img class='card-img' src='assets/images/test.jpg' alt=''>
+                                <img class='card-img' src='assets/images/test1.jpg' alt=''>
                                 <hr class='socket'>
 
                                 <!-- like & post -->
@@ -204,11 +215,11 @@ class Post {
                                         <a><i class='far fa-thumbs-up'></i></i> Like</a>
                                     </div>
                                     <div class='col' onClick='javascript:toggle$id()'>
-                                        <a><i class='far fa-comment-alt'></i> Comment</a>
+                                        <a><i class='far fa-comment-alt'></i> Comment($comments_check_num)</a>
                                     </div>
                                 </div>
 
-                                <!-- load comment -->
+                                <!-- load comment(iframe) -->
                                 <div class='post_comment' id='toggleComment$id'>
                                     <hr class='socket'>
                                     <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' height='450'></iframe>

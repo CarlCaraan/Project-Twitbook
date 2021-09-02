@@ -1,5 +1,7 @@
 <?php
 require 'config/config.php';
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
 ?>
 
 <!DOCTYPE html>
@@ -7,16 +9,7 @@ require 'config/config.php';
 <head>
 	<?php include 'includes/head.php'; ?>
 	<!-- Display First Name on Profile Page title -->
-	<title>
-		<?php
-	    $userLoggedIn = $_SESSION['username'];
-
-	    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-	    $user = mysqli_fetch_array($user_details_query);
-
-	    echo $user['first_name'];
-	    ?> | Twitbook
- 	</title>
+	<title> Profile | Twitbook </title>
 </head>
 
 <body>

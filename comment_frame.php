@@ -1,3 +1,21 @@
+<?php
+require("config/config.php");
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+
+//Stop access when not logged in!
+if (isset($_SESSION['username'])) {
+    $userLoggedIn = $_SESSION['username'];
+    //$user is to select all data from users table
+    $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+    $user = mysqli_fetch_array($user_details_query);
+}
+else {
+    header("Location: register.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,23 +27,7 @@
 </head>
 <body class="frame_body">
 
-    <?php
-    require("config/config.php");
-    include("includes/classes/User.php");
-    include("includes/classes/Post.php");
-
-    //Stop access when not logged in!
-    if (isset($_SESSION['username'])) {
-        $userLoggedIn = $_SESSION['username'];
-        //$user is to select all data from users table
-        $user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-        $user = mysqli_fetch_array($user_details_query);
-    }
-    else {
-        header("Location: register.php");
-    }
-
-    ?>
+    <!-- Toggle comment -->
     <script>
         function toggle() {
             var element = document.getElementById("comment_section");
@@ -78,9 +80,9 @@
         <form action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="<?php echo $post_id; ?>" method="POST">
                 <div class="row">
                     <div class="col-1">
-                        <a href="<?php echo $posted_by; ?>" target="_parent">
+                        <a href="<?php echo $userLoggedIn; ?>" target="_parent">
                     </div>
-                            <img class="rounded-circle" id="comment_profilepic" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $posted_by; ?>">
+                            <img class="rounded-circle" id="comment_profilepic" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $user_obj->getFirstAndLastName(); ?>">
                         </a>
 
                     <div class="col-8">
@@ -194,7 +196,7 @@
 
             ?>
 
-            <div class="narrow comment_section" id="comment_loadposts">
+            <div class="container comment_section" id="comment_loadposts">
                 <div class="row">
                     <div class="col-1" >
                         <a href="<?php echo $posted_by; ?>" target="_parent">
@@ -216,9 +218,16 @@
 
             <?php
         } //-- End While --//
-    } //-- End if --//
+    }
+    else {
+        echo "<div class='center'>
+                No Comments to Show!
+            </div>";
+    } //-- End If Else --//
 
     ?>
+
+
 
 <?php include 'includes/scripts.php'; ?>
 
