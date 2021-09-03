@@ -209,10 +209,10 @@ class Post {
                                 <img class='card-img' src='assets/images/test1.jpg' alt=''>
                                 <hr class='socket'>
 
-                                <!-- like & post -->
+                                <!-- like & comment button -->
                                 <div class='row center'>
                                     <div class='col'>
-                                        <a><i class='far fa-thumbs-up'></i></i> Like</a>
+                                        <iframe src='like.php?post_id=$id'></iframe>
                                     </div>
                                     <div class='col' onClick='javascript:toggle$id()'>
                                         <a><i class='far fa-comment-alt'></i> Comment($comments_check_num)</a>

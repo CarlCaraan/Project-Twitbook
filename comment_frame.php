@@ -19,11 +19,8 @@ else {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
 	<?php include 'includes/head.php'; ?>
+    <title></title>
 </head>
 <body class="frame_body">
 
@@ -89,7 +86,9 @@ else {
                         <textarea class="form-control" rows="1" name="post_body" placeholder="Write a comment..."></textarea>
                     </div>
                     <div class="col-1">
-                        <input class="btn btn-sm" type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
+                        <button class="btn btn-sm" type="submit" name="postComment<?php echo $post_id; ?>" value="">
+                            <i class="far fa-paper-plane" data-fa-transform="grow-10"></i>
+                        </button>
                     </div>
                 </div>
         </form>
