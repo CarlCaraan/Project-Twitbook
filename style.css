@@ -373,7 +373,7 @@ a.navbar-brand:hover {
 
 /*============= Load Comment Section(IFrame) =============*/
 
-/* -- Load Comment(Posting Section) --*/
+/*-- Load Comment(Posting Section) --*/
 .post_comment {
     display: none;
 }
@@ -410,7 +410,7 @@ iframe {
 #comment_container {
     margin-bottom: 1rem;
 }
-/* -- Load Comment(Load Section) --*/
+/*-- Load Comment(Load Section) --*/
 #comment_loadposts a {
     font-family: 'JetBrainsMono-Bold', sans-serif;
     color: white;
