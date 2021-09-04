@@ -56,7 +56,7 @@ body{
     margin: .3rem;
 }
 
-/*--- Nav Scrolling Offset --*/
+/*-- Nav Scrolling Offset --*/
 .offset:before {
   height: 4rem;
   margin-top: -4rem;
@@ -64,13 +64,14 @@ body{
   display: block;
 }
 
-/*--- Extra Bootstrap Column Padding --*/
+/*-- Extra Bootstrap Column Padding --*/
 [class*="col-"] {
   padding: 1rem;
 }
 
 /*============= REGISTER FORM =============*/
 
+/*===== FIXED BACKGROUND IMG =====*/
 #fixed {
   background-image: url('assets/images/background.jpg');
   z-index: -1;
@@ -115,8 +116,8 @@ label {
   text-transform: uppercase;
   display: inline-block!important;
 }
-#ibtn-lg{ /*-- button add extra margin --*/
-  margin: 1rem;
+#ibtn-lg{
+  margin: 1rem;/*button add extra margin*/
 }
 a.signin,
 a.signup {
@@ -134,7 +135,7 @@ a.signup:hover {
     margin: 243px auto;
     opacity: .75
 }
-/*--- Input Fields --*/
+/*-- Input Fields --*/
 .form-control {
   background-color: white;
   border-radius: 0;
@@ -152,14 +153,14 @@ a.signup:hover {
 input.btn {
   cursor: pointer;
 }
-/*--- Login and Register Wrapper --*/
+/*-- Login and Register Wrapper --*/
 .register__wrapper {
     display: none;
 }
 
 /*============= NAVIGATION =============*/
 
-.navbar.always-solid { /*-- add this class for solid nav --*/
+.navbar.always-solid { /*Add this class for solid nav*/
   background: rgb(48, 48, 48)!important;
 }
 .navbar {
@@ -196,14 +197,14 @@ a.navbar-brand:hover {
 .navbar-nav .nav-link {
   color: white;
 }
-/*.navbar-nav .nav-link :hover,*/ /*-- for icon --*/
-/*.navbar-nav .nav-link:hover*/ /*-- for text --*/
-.navbar-nav .nav-link .active, /*-- for icon --*/
-.navbar-nav .nav-link.active {/*-- for text --*/
+/*.navbar-nav .nav-link :hover,*/ /*for icon*/
+/*.navbar-nav .nav-link:hover*/ /*for text*/
+.navbar-nav .nav-link .active, /*for icon*/
+.navbar-nav .nav-link.active {/*for text*/
   color: #5EAADA;
 }
 .navbar.solid {
-  background: rgb(48, 48, 48, 0.9)!important; /*-- 0.7 for transparent nav scrolling --*/
+  background: rgb(48, 48, 48, 0.9)!important; /*Change 0.7 for transparent nav scrolling*/
   transition: background-color 1s ease 0s;
 }
 .nav-item:hover {
@@ -217,7 +218,7 @@ a.navbar-brand:hover {
 .navbar span {
     font-size: .6rem;
 }
-/*--- Nav-link underline --*/
+/*-- Nav-link underline --*/
 .navbar-nav .underline-active {
   height: .2rem;
   background-color: #5EAADA;
@@ -436,6 +437,25 @@ iframe {
 }
 #iframe_body_like {
     overflow: hidden;
+}
+
+/*============= PROFILE SECTION =============*/
+
+/*===== FIXED BACKGROUND IMG DARK =====*/
+
+#fixed-2 {
+  background-image: url('assets/images/fixed/background_dark.jpg');
+  z-index: -1;
+  height: 31%!important; /*Change Height of Image*/
+}
+.dark {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 1rem 1rem;
+  z-index: 1000!important;
+}
+/*-- Header Profile Section --*/
+.narrow img {
+    border: 3px solid #ACACAC;
 }
 
 

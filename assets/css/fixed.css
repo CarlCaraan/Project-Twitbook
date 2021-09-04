@@ -31,7 +31,7 @@ margin-right: 0px!important;
   top: 0;
   left: 0;
   width: 100%;
-  height: 157%; /* Change height of fixed image. */
+  height: 100%;
   background-size: cover;
   background-position: center center;
   -webkit-transform: translateZ(0);
@@ -53,7 +53,7 @@ margin-right: 0px!important;
   height: 100%;
   z-index: -999!important;
 }
-/*--- Features Dark Background Image --*/
+/*--- Register Default Background Image --*/
 #fixed {
   position: fixed;
   display: block;
@@ -67,7 +67,7 @@ margin-right: 0px!important;
           transform: translateZ(0);
   will-change: transform;
 }
-/*--- Team Light Background Image --*/
+/*--- Profile Dark Background Image --*/
 #fixed-2 {
   position: fixed;
   display: block;
