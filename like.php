@@ -4,7 +4,8 @@
 	<?php include 'includes/head.php'; ?>
     <title></title>
 </head>
-<body class="frame_body">
+
+<body class="iframe_body center" id="iframe_body_like">
     <?php
     require("config/config.php");
     include("includes/classes/User.php");
@@ -64,6 +65,17 @@
         $num_rows = mysqli_fetch_array($check_query);
 
         if($num_rows > 0) {
+			if($total_likes < 2) {
+            echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
+                    <button type="submit" class="comment_like" name="unlike_button" value="">
+                        <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
+                    </button>
+						<span>(' . $total_likes . ' Like)</span>
+                </form>
+            ';
+			}
+			else {
+			//grammar of 1likes
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="unlike_button" value="">
                         <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
@@ -71,17 +83,31 @@
 						<span>(' . $total_likes . ' Likes)</span>
                 </form>
             ';
-        }
+			}
+        } //-- End If --//
         else {
+			//grammar of 1likes
+			if($total_likes < 2) {
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="like_button" value="">
                         <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Like
+                    </button>
+						<span>(' . $total_likes . ' Like)</span>
+                </form>
+
+            ';
+			}
+			else {
+            echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
+                    <button type="submit" class="comment_like" name="like_button" value="">
+                        <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Likes
                     </button>
 						<span>(' . $total_likes . ' Likes)</span>
                 </form>
 
             ';
-        }
+			}
+        } //-- End Else --//
 
     ?>
 

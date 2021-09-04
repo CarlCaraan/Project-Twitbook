@@ -212,7 +212,7 @@ class Post {
                                 <!-- like & comment button -->
                                 <div class='row center'>
                                     <div class='col'>
-                                        <iframe src='like.php?post_id=$id'></iframe>
+                                        <iframe id='comment_iframe' src='like.php?post_id=$id'></iframe>
                                     </div>
                                     <div class='col' onClick='javascript:toggle$id()'>
                                         <a><i class='far fa-comment-alt'></i> Comment($comments_check_num)</a>
@@ -222,7 +222,7 @@ class Post {
                                 <!-- load comment(iframe) -->
                                 <div class='post_comment' id='toggleComment$id'>
                                     <hr class='socket'>
-                                    <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' height='450'></iframe>
+                                    <iframe src='comment_frame.php?post_id=$id' height='450'></iframe>
                                 </div>
                             </div> <!-- End card -->
 

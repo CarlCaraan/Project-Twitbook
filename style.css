@@ -30,6 +30,10 @@
 *
 * Copyright (c) 2021 Carl Caraan
 */
+* {
+    margin: 0;
+    padding: 0;
+}
 body{
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
@@ -377,6 +381,9 @@ iframe {
     width: 100%;
     border: 0;
 }
+#comment_iframe {
+    height: 19.5px;
+}
 #comment_form textarea {
     border-radius: 25px;
     overflow: hidden;
@@ -424,8 +431,11 @@ iframe {
     margin-right: 5px;
 }
 /*-- Load Comment(FIX All Background color) --*/
-.frame_body {
+.iframe_body {
     background: 0;
+}
+#iframe_body_like {
+    overflow: hidden;
 }
 
 

@@ -22,7 +22,7 @@ else {
 	<?php include 'includes/head.php'; ?>
     <title></title>
 </head>
-<body class="frame_body">
+<body class="iframe_body">
 
     <!-- Toggle comment -->
     <script>
