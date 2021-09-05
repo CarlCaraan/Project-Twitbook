@@ -59,3 +59,71 @@ $(document).ready(function(){
   $('.nav-link#settings').tooltip({title: "Settings", placement: "bottom", animation: true});
   $('.nav-link#logout').tooltip({title: "LogOut", placement: "bottom", animation: true});
 });
+
+/*========== OWL-CAROUSEL CERTIFICATE SECTION ==========*/
+//theCarousel
+$(document).ready(function(){ //when document is ready
+  $("#team-slider").owlCarousel({ //owlCarousel settings
+        items:3, //by default there are 3 slides display.
+        autoplay:true, //the slides will change automatically.
+        smartSpeed:700, //speed of changing wil be 700
+        loop:true, //infinite loop; after the last slide, first slide starts
+        autoplayHoverPause:true, //when you put mouse over Carousel, slide changing will stop
+        responsive : { //responsiveness as screen size changes
+            // min-width: 0px
+            0 : {
+                items: 1 //on devices with width 0 to 579px show 1 slide
+            },
+            // min-width: 579px
+            576 : {
+                items: 1 //on devices with width 579px to 768px show show 2 slides
+            },
+            // min-width: 768px
+            768 : {
+                items: 1 //on devices with width 768px and above show 3 slides
+            }
+        }
+  }
+  );
+});
+
+/*========== SMOOTH SCROLLING TO LINKS ==========*/
+
+$(document).ready(function(){ //document is loaded
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {//click on any link;anchor tag;
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") { //for e.g. website.com#home - #home
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+      //console.log('hash:',hash)
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({ //animate whole html and body elements
+        scrollTop: $(hash).offset().top //scroll to the element with that hash
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash; //website.com - website.com#home
+        //Optional remove "window.location.hash = hash;" to prevent transparent navbar on load
+      });
+    } // End if
+  });
+});
+
+/*========== TOP SCROLL BUTTON ==========*/
+
+$(document).ready(function() { //when document is ready
+  $(window).scroll(function() { //when webpage is scrolled
+    if ($(this).scrollTop() > 500) { //if scroll from top is more than 500
+      $('.top-scroll').fadeIn(); //display element with class 'top-scroll'; opacity increases
+    } else { //if not
+      $('.top-scroll').fadeOut(); //hide element with class 'top-scroll'; opacity decreases
+    }
+  });
+});

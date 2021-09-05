@@ -195,7 +195,8 @@ else {
 
             ?>
 
-            <div class="container comment_section" id="comment_loadposts">
+            <!-- load comment -->
+            <div class="container" id="comment_loadposts">
                 <div class="row">
                     <div class="col-1" >
                         <a href="<?php echo $posted_by; ?>" target="_parent">

@@ -242,7 +242,7 @@ a.navbar-brand:hover {
     display: none;
 }
 
-/*============= Home Section =============*/
+/*============= HOME SECTION =============*/
 
 #content {
     padding-top: 3.45rem;
@@ -251,7 +251,7 @@ a.navbar-brand:hover {
     max-width: 420px;
 }
 
-/*============= Left Home Section =============*/
+/*============= LEFT HOME SECTION =============*/
 
 #card {
     border: 0;
@@ -274,7 +274,7 @@ a.navbar-brand:hover {
   margin-bottom: .4rem;
 }
 
-/*============= Middle Home Section =============*/
+/*============= MIDDLE HOME SECTION =============*/
 
 #middle-section {
     background-color: #242526;
@@ -324,6 +324,12 @@ a.navbar-brand:hover {
     margin: 0 0 1rem;
     padding: 0 0 .2rem;
 }
+#middle-section #profilepic_atag:hover {
+    text-decoration: none;
+}
+#middle-section .card-img {
+    border-radius: 0;
+}
 #middle-section .card-body {
     padding: .6rem .8rem .2rem .8rem;
 }
@@ -331,17 +337,10 @@ a.navbar-brand:hover {
     width: 50px;
     padding: 0;
 }
-.card .card-img {
-    width: 100%;
-    border-radius: 0;
-}
 #middle-section .card-body a,
 #middle-section .card-body a:hover {
     font-family: 'JetBrainsMono-Bold', sans-serif;
     color: white;
-}
-#middle-section #profilepic_atag:hover {
-    text-decoration: none;
 }
 #middle-section .card-body span {
     color: #ACACAC;
@@ -372,7 +371,7 @@ a.navbar-brand:hover {
     color: #ACACAC;
 }
 
-/*============= Load Comment Section(IFrame) =============*/
+/*============= LOAD COMMENT SECTION(IFrame) =============*/
 
 /*-- Load Comment(Posting Section) --*/
 .post_comment {
@@ -421,15 +420,15 @@ iframe {
     color: #ACACAC;
     margin-left: 6rem;
 }
+#comment_loadposts img{
+    width: 30px;
+    padding: 0;
+    margin-right: 5px;
+}
 #load_textcomment {
     background-color: rgb(70, 70, 70);
     padding: .5rem;
     border-radius: 15px;
-}
-.comment_section img{
-    width: 30px;
-    padding: 0;
-    margin-right: 5px;
 }
 /*-- Load Comment(FIX All Background color) --*/
 .iframe_body {
@@ -437,6 +436,13 @@ iframe {
 }
 #iframe_body_like {
     overflow: hidden;
+}
+
+/*============= RIGHT HOME SECTION =============*/
+
+.owl-dot.active span,
+.owl-dot:hover span {
+  background: #5EAADA!important;
 }
 
 /*============= PROFILE SECTION =============*/
@@ -460,6 +466,25 @@ iframe {
 
 
 
+/*============= TOP SCROLL =============*/
+
+.top-scroll svg.svg-inline--fa {
+  font-size: 3rem;
+  height: 1.7rem;
+  color: #53595f;
+  background: white;
+}
+a.top-scroll {
+  right: 1.2rem;
+  bottom: 1.2rem;
+  position: fixed;
+  opacity: .3;
+  z-index: 1000;
+  display: none;
+}
+a.top-scroll:hover {
+  opacity: .5;
+}
 
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/

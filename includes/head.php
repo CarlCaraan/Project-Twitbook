@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="assets/css/fixed.css">
 	<link rel="stylesheet" href="assets/css/animate.css"> <!-- animation.css -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!-- animation.css CDN Latest -->
 	<link rel="stylesheet" href="assets/css/waypoints.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">

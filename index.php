@@ -155,12 +155,44 @@ include("includes/classes/Post.php");
         <div class="col-xl-3" id="right-section">
 
         <div class="content position-fixed">
-	          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-	          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-	          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+        <div class="row">
+
+        	<div class="col-md-12">
+
+			<!-- Heading Text -->
+    		<div class="os-animation" data-animation="fadeInRight">
+        	    <label for="post_text">Ads:</label>
+			</div>
+
+				<!-- Start Animation -->
+        		<div class="os-animation" data-animation="fadeInRight" data-delay=.1s>
+        		<div id="team-slider" class="owl-carousel owl-theme">
+
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert1.jpg" alt="">
+					</div>
+
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert2.jpg" alt="">
+					</div>
+
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert3.jpg" alt="">
+					</div>
+
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert4.jpg" alt="">
+					</div>
+
+        		</div>
+			</div> <!-- End Animation -->
+        	</div> <!-- End col-12 -->
+
+        </div> <!-- End Row -->
+
         </div>
-		
+
         </div>
 		</aside>
         <!-- End Right Section -->
@@ -174,6 +206,14 @@ include("includes/classes/Post.php");
 
 </div>
 <!-- End Home section -->
+
+
+<!--- Top Scroll -->
+<a href="#home" class="top-scroll">
+	<i class="fas fa-angle-up"></i>
+</a>
+<!--- End of Top Scroll -->
+
 
 <?php include 'includes/scripts.php'; ?>
 
