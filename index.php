@@ -36,7 +36,7 @@ include("includes/classes/Post.php");
         <!-- Start Left Section-->
         <div class="col-md-3" id="left-section">
 
-        <div class="content position-fixed">
+        <div class="content position-fixed" id="left_width">
             <div class="card" id="card"> <!-- Cards -->
                 <a href="<?php echo $userLoggedIn; ?>"> <!-- go to profile using .htaccess -->
                     <img class="card-img-top"  src="<?php echo $user['profile_pic'] ?>" alt="Card image" style="width:100%">

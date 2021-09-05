@@ -253,7 +253,7 @@ a.navbar-brand:hover {
 #content {
     padding-top: 3.45rem;
 }
-.content.position-fixed {
+#left_width {
     max-width: 420px;
 }
 
@@ -450,6 +450,9 @@ iframe {
 .owl-dot:hover span {
   background: #5EAADA!important;
 }
+#content_certificate {
+    width: 23vw;
+}
 
 /*============= PROFILE SECTION =============*/
 
@@ -531,19 +534,6 @@ a.top-scroll:hover {
 
 /*============= MEDIA QUERIES =============*/
 
-/* Custom Query Devices under 1700px */
-@media (max-width: 1699px) {
-    #content_certificate {
-        max-width: 350px;
-    }
-}
-/* Custom Query Devices under 1400px */
-@media (max-width: 1399px) {
-    #content_certificate {
-        max-width: 300px;
-    }
-}
-
 /*-- Devices under 1200px (xl) --*/
 @media (max-width: 1199px) {
     #comment_loadposts span {
@@ -556,21 +546,9 @@ a.top-scroll:hover {
         display: none;
     }
     #content {
-        width: 1499px;
+        width: 150%;
         padding-left: 0;
         padding-right: 0;
-    }
-}
-
-/* Custom Query Devices under 1100px */
-@media (max-width: 1100px) {
-    #content {
-        width: 1199px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #content_certificate {
-        max-width: 260px;
     }
 }
 
@@ -588,23 +566,6 @@ a.top-scroll:hover {
     }
     #comment_loadposts span {
         margin-left: 6rem;
-    }
-    #content {
-        width: 1159px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-/* Custom Query Devices under 867px */
-@media (max-width: 866px) {
-    #content {
-        width: 998px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #content_certificate {
-        max-width: 250px;
     }
 }
 
