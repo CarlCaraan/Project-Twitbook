@@ -34,7 +34,7 @@ include("includes/classes/Post.php");
 
  	<div class="row">
         <!-- Start Left Section-->
-        <div class="col-xl-3" id="left-section">
+        <div class="col-md-3" id="left-section">
 
         <div class="content position-fixed">
             <div class="card" id="card"> <!-- Cards -->
@@ -58,7 +58,7 @@ include("includes/classes/Post.php");
         <!-- End Left Section -->
 
         <!-- Start Middle Section -->
-        <div class="col-xl-6" id="middle-section">
+        <div class="col-md-6" id="middle-section">
 
         <div id="post-container">
           <form action="index.php" method="POST">
@@ -151,14 +151,13 @@ include("includes/classes/Post.php");
 
 
         <!-- Start Right Section -->
-		<aside>
-        <div class="col-xl-3" id="right-section">
+        <div class="col-md-3" id="right-section">
 
-        <div class="content position-fixed">
+        <div class="content position-fixed" id="content_certificate">
 
         <div class="row">
 
-        	<div class="col-md-12">
+        	<div class="col-lg-12">
 
 			<!-- Heading Text -->
     		<div class="os-animation" data-animation="fadeInRight">
@@ -194,7 +193,6 @@ include("includes/classes/Post.php");
         </div>
 
         </div>
-		</aside>
         <!-- End Right Section -->
 
 

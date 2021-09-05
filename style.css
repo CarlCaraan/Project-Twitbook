@@ -178,6 +178,12 @@ input.btn {
     margin-top: .4rem;
     margin-bottom: .4rem;
 }
+#navbar_brand_text {
+    font-size: 1.4rem!important;
+    position: absolute;
+    margin-left: .6rem;
+    margin-top: 0;
+}
 a.navbar-brand {
   color: white;
 }
@@ -256,7 +262,7 @@ a.navbar-brand:hover {
 #card {
     border: 0;
     border-radius: 5px;
-    margin: 0rem 6rem;
+    margin: 0 12rem 0 0;
 }
 #card-body {
     background-color: gray;
@@ -527,32 +533,50 @@ a.top-scroll:hover {
 
 /*============= MEDIA QUERIES =============*/
 
-/* Custom Queries with Devices under 1400px (xxl) */
-@media (max-width: 1399px) {
-    #left-section {
-      display: none;
+/* Custom Query Devices under 1700px */
+@media (max-width: 1699px) {
+    #content_certificate {
+        max-width: 350px;
     }
-    #content {
-        padding-left: 0;
-        padding-right: 0;
-        width: 1799px;
+}
+/* Custom Query Devices under 1400px */
+@media (max-width: 1399px) {
+    #content_certificate {
+        max-width: 300px;
     }
 }
 
-/* Devices under 1200px (xl) */
+/*-- Devices under 1200px (xl) --*/
 @media (max-width: 1199px) {
-    #right-section {
-      display: none;
-    }
-    #content {
-        width: 100%;
-    }
     #comment_loadposts span {
         margin-left: 7rem;
     }
+    #navbar_brand_text {
+        display: none;
+    }
+    #left-section {
+        display: none;
+    }
+    #content {
+        width: 1499px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-/* Devices under 992px (lg) */
+/* Custom Query Devices under 1100px */
+@media (max-width: 1100px) {
+    #content {
+        width: 1199px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #content_certificate {
+        max-width: 260px;
+    }
+}
+
+/*-- Devices under 992px (lg) --*/
 @media (max-width: 991px) {
     .btn-lg {
     padding: .7rem 1.2rem;
@@ -561,18 +585,32 @@ a.top-scroll:hover {
     .btn-sm {
     font-size: .8rem;
     }
-    a.navbar-brand {
-        font-size: 0px;
-    }
     .nav-item {
         margin: 0;
     }
     #comment_loadposts span {
         margin-left: 6rem;
     }
+    #content {
+        width: 1159px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-/* Devices under 768px (md) */
+/* Custom Query Devices under 867px */
+@media (max-width: 866px) {
+    #content {
+        width: 998px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #content_certificate {
+        max-width: 250px;
+    }
+}
+
+/*-- Devices under 768px (md) --*/
 @media (max-width: 767px) {
     .btn-lg {
     padding: .6rem 1.1rem;
@@ -591,9 +629,15 @@ a.top-scroll:hover {
     #comment_loadposts span {
         margin-left: 5.5rem;
     }
+    #right-section {
+        display: none;
+    }
+    #content {
+        width: 100%;
+    }
 }
 
-/* Devices under 576px (sm) */
+/*-- Devices under 576px (sm) --*/
 @media (max-width: 575px) {
     .btn-lg {
     padding: .4rem .9rem;
