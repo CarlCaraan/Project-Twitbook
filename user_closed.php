@@ -25,7 +25,7 @@ include("includes/classes/Post.php");
             <img src="assets/images/no_content.png" alt=""><br>
 
             <!-- add extra spacing -->
-            <a href="index.php">Go back to Main Menu.</a>
+            <a href="index.php">Go back to home page.</a>
         </pre>
     </div>
 </div>
