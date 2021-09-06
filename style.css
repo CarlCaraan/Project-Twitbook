@@ -181,7 +181,7 @@ input.btn {
 #navbar_brand_text {
     font-size: 1.4rem!important;
     position: absolute;
-    margin-left: .6rem;
+    text-indent: .6rem;
     margin-top: 0;
 }
 a.navbar-brand {
