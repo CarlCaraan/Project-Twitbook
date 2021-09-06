@@ -472,6 +472,21 @@ iframe {
 .narrow img {
     border: 3px solid #ACACAC;
 }
+/*-- Section Content --*/
+#icon_wrapper {
+    width: 30px;
+    text-align: center;
+    color: #ACACAC;
+}
+#text_wrapper,
+#icon_wrapper {
+    display: inline-block;
+}
+#col-wrapper {
+    margin: 1rem .5rem;
+    background: rgba(48, 48, 48, .7);
+    border-radius: 8px;
+}
 
 /*============= TOP SCROLL =============*/
 
