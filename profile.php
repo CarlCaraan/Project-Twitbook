@@ -8,7 +8,6 @@ include("includes/classes/Post.php");
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<!-- Display First Name on Profile Page title -->
 	<title> Profile | Twitbook </title>
 </head>
 
@@ -63,9 +62,9 @@ if(isset($_GET['profile_username'])) {
 			<div class="row">
 
 				<!-- Start Intro Column -->
-				<div class="col-lg-4" id="col-wrapper">
-					<label id="post_text">Intro</label><br>
+				<div class="col-lg-4" id="col-wrapper1">
 
+					<label id="post_text">Intro</label><br>
 					<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
 					<div id="text_wrapper"><?php echo "Posts: " . $user_array['num_posts']; ?></div><br>
 
@@ -73,13 +72,37 @@ if(isset($_GET['profile_username'])) {
 					<div id="text_wrapper"><?php echo "Likes: " . $user_array['num_likes']; ?></div><br>
 
 					<div id="icon_wrapper"><i class="fas fa-user-friends"></i></div>
-					<div id="text_wrapper"><?php echo "Friends: " . $num_friends; ?></div>
+					<div id="text_wrapper"><?php echo "Friends: " . $num_friends; ?></div><br>
+
+					<hr class="socket">
+
+					<form class="" action="<?php echo $username; ?>">
+						<?php
+						$profile_user_obj = new User($con, $username);
+						if($profile_user_obj->isClosed()) {
+							header("Location: user_closed.php");
+						}
+
+						$logged_in_user_obj = new User($con, $userLoggedIn);
+
+						if($userLoggedIn != $username) {
+							if($logged_in_user_obj->isFriend($username)) {
+								echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
+							}
+						}
+						?>
+
+					</form>
 
 				</div>
 				<!-- End Intro Column -->
 
-				<div class="col-lg-7" id="col-wrapper">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<div class="col-lg-7" id="col-wrapper2">
+					<h1>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</h1>
 				</div>
 
 			</div> <!-- End Row -->
@@ -93,6 +116,13 @@ if(isset($_GET['profile_username'])) {
 
 </div>
 <!--- End Profile section -->
+
+
+<!--- Top Scroll -->
+<a href="#profile" class="top-scroll">
+	<i class="fas fa-angle-up"></i>
+</a>
+<!--- End of Top Scroll -->
 
 
 <?php include 'includes/scripts.php'; ?>

@@ -461,7 +461,6 @@ iframe {
 #fixed-2 {
   background-image: url('assets/images/fixed/background_dark.jpg');
   z-index: -1;
-  height: 31%!important; /*Change Height of Image*/
 }
 .dark {
   background-color: rgba(0, 0, 0, 0.75);
@@ -469,7 +468,7 @@ iframe {
   z-index: 1000!important;
 }
 /*-- Header Profile Section --*/
-.narrow img {
+header .narrow img {
     border: 3px solid #ACACAC;
 }
 /*-- Section Content --*/
@@ -482,10 +481,14 @@ iframe {
 #icon_wrapper {
     display: inline-block;
 }
-#col-wrapper {
+#col-wrapper1,
+#col-wrapper2 {
     margin: 1rem .5rem;
     background: rgba(48, 48, 48, .7);
     border-radius: 8px;
+}
+#col-wrapper1 {
+    height: 50vh;
 }
 
 /*============= TOP SCROLL =============*/

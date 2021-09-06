@@ -66,7 +66,7 @@ include("includes/classes/Post.php");
               <label for="post_text">Create Post:</label>
               <textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
             </div>
-            <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" id="post_button" value="Tweet"></input>
+            <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" value="Tweet"></input>
           </form>
         </div>
 
