@@ -188,6 +188,10 @@ include("includes/classes/Post.php");
 						<img class="card-img-top" src="assets/images/certificate/cert5.jpg" alt="">
 					</div>
 
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert6.png" alt="">
+					</div>
+
         		</div>
 			</div> <!-- End Animation -->
         	</div> <!-- End col-12 -->

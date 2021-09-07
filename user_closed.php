@@ -22,11 +22,13 @@ include("includes/classes/Post.php");
         <pre>
 
             <!-- add extra spacing -->
-            <img src="assets/images/no_content.png" alt=""><br>
-
+			<div class="pr-5">
+            	<img src="assets/images/no_content.png" class="pr-5 mr-5"alt=""><br>
+			</div>
             <!-- add extra spacing -->
+
+		</pre>
             <a href="index.php">Go back to home page.</a>
-        </pre>
     </div>
 </div>
 

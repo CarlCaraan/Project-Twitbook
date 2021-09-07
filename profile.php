@@ -34,7 +34,7 @@ if(isset($_GET['profile_username'])) {
 	<div class="dark">
 
 		<div class="narrow center">
-				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle" width="200" alt=""><br>
+				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle animate__animated animate__fadeInDown" width="200" alt=""><br>
 				<?php echo $username; ?>
 		</div> <!-- End narrow -->
 
@@ -62,7 +62,7 @@ if(isset($_GET['profile_username'])) {
 			<div class="row">
 
 				<!-- Start Intro Column -->
-				<div class="col-lg-4" id="col-wrapper1">
+				<div class="col-lg-4 animate__animated animate__fadeInLeft" id="col-wrapper1">
 
 					<label id="post_text">Intro</label><br>
 					<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
@@ -89,6 +89,15 @@ if(isset($_GET['profile_username'])) {
 							if($logged_in_user_obj->isFriend($username)) {
 								echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
 							}
+							else if ($logged_in_user_obj->didReceiveRequest($username)) {
+								echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
+							}
+							else if ($logged_in_user_obj->didSendRequest($username)) {
+								echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
+							}
+							else {
+								echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
+							}
 						}
 						?>
 
@@ -97,7 +106,7 @@ if(isset($_GET['profile_username'])) {
 				</div>
 				<!-- End Intro Column -->
 
-				<div class="col-lg-7" id="col-wrapper2">
+				<div class="col-lg-7 animate__animated animate__fadeInRight" id="col-wrapper2">
 					<h1>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
