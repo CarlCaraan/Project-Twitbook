@@ -29,9 +29,9 @@ if(isset($_GET['profile_username'])) {
 	<!-- Start Profile Header -->
 	<header>
 	<!--- Start Fixed Background IMG Dark -->
-	<div class="fixed-background">
+	<div class="fixed-background" id="toggle-dark">
 
-	<div class="dark">
+	<div class="light">
 
 		<div class="narrow center">
 				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle animate__animated animate__fadeInDown" width="200" alt=""><br>
@@ -64,7 +64,7 @@ if(isset($_GET['profile_username'])) {
 				<!-- Start Intro Column -->
 				<div class="col-lg-4 animate__animated animate__fadeInLeft" id="col-wrapper1">
 
-					<label id="post_text">Intro</label><br>
+					<label for="post_text" id="labeltitle">Intro</label><br>
 					<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
 					<div id="text_wrapper"><?php echo "Posts: " . $user_array['num_posts']; ?></div><br>
 

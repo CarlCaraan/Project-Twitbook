@@ -70,7 +70,7 @@
                     <button type="submit" class="comment_like" name="unlike_button" value="">
                         <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
                     </button>
-						<span>(' . $total_likes . ' Like)</span>
+						<span id="total_likes">(' . $total_likes . ' Like)</span>
                 </form>
             ';
 			}
@@ -80,7 +80,7 @@
                     <button type="submit" class="comment_like" name="unlike_button" value="">
                         <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
                     </button>
-						<span>(' . $total_likes . ' Likes)</span>
+						<span id="total_likes">(' . $total_likes . ' Likes)</span>
                 </form>
             ';
 			}
@@ -92,7 +92,7 @@
                     <button type="submit" class="comment_like" name="like_button" value="">
                         <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Like
                     </button>
-						<span>(' . $total_likes . ' Like)</span>
+						<span id="total_likes">(' . $total_likes . ' Like)</span>
                 </form>
 
             ';
@@ -102,7 +102,7 @@
                     <button type="submit" class="comment_like" name="like_button" value="">
                         <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Likes
                     </button>
-						<span>(' . $total_likes . ' Likes)</span>
+						<span id="total_likes">(' . $total_likes . ' Likes)</span>
                 </form>
 
             ';
@@ -110,6 +110,7 @@
         } //-- End Else --//
 
     ?>
+
 
 </body>
 </html>

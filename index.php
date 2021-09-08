@@ -63,7 +63,7 @@ include("includes/classes/Post.php");
         <div id="post-container">
           <form action="index.php" method="POST">
             <div class="form-group">
-              <label for="post_text">Create Post:</label>
+              <label for="post_text" id="labeltitle">Create Post:</label>
               <textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
             </div>
             <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" value="Tweet"></input>
@@ -161,7 +161,7 @@ include("includes/classes/Post.php");
 
 			<!-- Heading Text -->
     		<div class="os-animation" data-animation="fadeInRight">
-        	    <label for="post_text">Ads:</label>
+        	    <label for="post_text" id="labeltitle">Ads:</label>
 			</div>
 
 				<!-- Start Animation -->

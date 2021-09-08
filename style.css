@@ -22,6 +22,30 @@
     src: url('assets/fonts/JetBrainsMono-Regular.ttf');
 }
 
+/*============= LIGHT MODE & DARK MODE COLORS =============*/
+
+:root {
+  --primary-color: #5EAADA;
+  --on-primary: rgb(250, 250, 250);
+  --on-background: rgb(45, 45, 45);
+  --background: #F0F2F5;
+  --textarea: #F0F2F5;
+  --alinks: black;
+  --cards: white;
+  --likebutton: rgb(227, 227, 227);
+}
+
+[data-theme="dark"] {
+  --primary-color: #5EAADA;
+  --on-primary: #242526;
+  --on-background: rgba(255, 255, 255, 0.9);
+  --background: #121212;
+  --textarea: #3A3B3C;
+  --alinks: white;
+  --cards: rgba(48, 48, 48);
+  --likebutton: rgb(60, 60, 60);
+}
+
 /*!
 * Global Class Reference
 * Version - 6.9
@@ -30,6 +54,7 @@
 *
 * Copyright (c) 2021 Carl Caraan
 */
+
 * {
     margin: 0;
     padding: 0;
@@ -37,8 +62,8 @@
 body{
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
-  color: #f5f5f5;
-  background-color: #18191A;
+  color: var(--on-background);
+  background-color: var(--background);
 }
 .narrow {
   width: 75%;
@@ -158,10 +183,82 @@ input.btn {
     display: none;
 }
 
+/*============= DARK MODE TOGGLE =============*/
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 25px;
+  top: 70px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: var(--on-background);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background: var(--primary-color);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
 /*============= NAVIGATION =============*/
 
 .navbar.always-solid { /*Add this class for solid nav*/
-  background: rgb(48, 48, 48)!important;
+  background: var(--background)!important;
 }
 .navbar {
   font-family: 'Bellota-Bold', sans-serif;
@@ -185,23 +282,26 @@ input.btn {
     margin-top: 0;
 }
 a.navbar-brand {
-  color: white;
+  color: var(--alinks);
 }
 a.navbar-brand:hover {
   text-decoration: none;
   text-shadow: 0 .1rem .8rem black;
-  color: white;
+  color: var(--alinks);
 }
 .navbar-brand img {
   height: 2rem;
   margin-top: 0;
 }
-.svg-inline--fa.fa-w-14 {
-  color: white;
+.svg-inline--fa.fa-w-14 { /* hamburger icon */
   font-size: 1.6rem;
+  color: white;
+}
+#nav_icon {
+  color: #ACACAC!important;
 }
 .navbar-nav .nav-link {
-  color: white;
+  color: gray;
 }
 /*.navbar-nav .nav-link :hover,*/ /*for icon*/
 /*.navbar-nav .nav-link:hover*/ /*for text*/
@@ -210,11 +310,11 @@ a.navbar-brand:hover {
   color: #5EAADA;
 }
 .navbar.solid {
-  background: rgb(48, 48, 48, 0.9)!important; /*Change 0.7 for transparent nav scrolling*/
+  background: rgba(94, 170, 218, 0.3)!important; /*Change 0.7 for transparent nav scrolling*/
   transition: background-color 1s ease 0s;
 }
 .nav-item:hover {
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(176, 175, 175, .4);
     border-radius: 5px;
 }
 .nav-item {
@@ -283,7 +383,7 @@ a.navbar-brand:hover {
 /*============= MIDDLE HOME SECTION =============*/
 
 #middle-section {
-    background-color: #242526;
+    background-color: var(--on-primary);
 }
 .btn-sm {
   font-family: 'Bellota-BoldItalic', sans-serif;
@@ -296,19 +396,22 @@ a.navbar-brand:hover {
   color: #5EAADA;
 }
 .btn-sm:hover {
-  color: white;
+  color: var(--on-background);
   background-color: #5EAADA;
   border: 3px solid #5EAADA;
 }
+#labeltitle {
+    color: var(--alinks);
+}
 .form-control#post_text {
     overflow: hidden;
-    background-color: gray;
+    background-color: var(--textarea);
     border: 0;
     border-radius: 5px;
-    color: white!important;
+    color: var(--on-background)!important;
 }
 .form-control#post_text::placeholder  {
-    color: white;
+    color: var(--on-background);
 }
 .form-control#post_text:focus {
     box-shadow: inset 0 -1px 0 #ddd;
@@ -316,17 +419,14 @@ a.navbar-brand:hover {
 #post-container {
     padding: 1.7rem 2rem 3rem 2rem;
     border-radius: 8px;
-    background: rgba(48, 48, 48, .7)!important;
+    background: var(--cards)!important;
     margin: 0 0 1rem;
-}
-#post-container:hover {
-    background: rgba(48, 48, 48)!important;
 }
 /*-- Middle Posting(Card Style) --*/
 #middle-section .card {
-    color: white;
+    color: var(--on-background);
     border-radius: 8px;
-    background: rgba(48, 48, 48, .7)!important;
+    background: var(--cards)!important;
     margin: 0 0 1rem;
     padding: 0 0 .2rem;
 }
@@ -346,7 +446,7 @@ a.navbar-brand:hover {
 #middle-section .card-body a,
 #middle-section .card-body a:hover {
     font-family: 'JetBrainsMono-Bold', sans-serif;
-    color: white;
+    color: var(--alinks);
 }
 #middle-section .card-body span {
     color: #ACACAC;
@@ -368,12 +468,15 @@ a.navbar-brand:hover {
     border-radius: 3px;
 }
 .card .row .col:hover {
-    background: rgb(60, 60, 60);
+    background: var(--likebutton);
     transition: background-color .2s ease 0s;
 }
 .comment_like {
     border: 0;
     background: 0;
+    color: #ACACAC;
+}
+#total_likes {
     color: #ACACAC;
 }
 
@@ -393,7 +496,7 @@ iframe {
 #comment_form textarea {
     border-radius: 25px;
     overflow: hidden;
-    background-color: rgb(70, 70, 70);
+    background-color: var(--textarea);
     border: 0;
     padding: .4rem .4rem .4rem .4rem!important;
     color: white;
@@ -402,7 +505,7 @@ iframe {
 #comment_form textarea::placeholder,
 #comment_form textarea:focus{
     font-size: 1rem;
-    color: white!important;
+    color: var(--alinks)!important;
     box-shadow: inset 0 0 #ddd;
 }
 #comment_profilepic {
@@ -419,7 +522,7 @@ iframe {
 /*-- Load Comment(Load Section) --*/
 #comment_loadposts a {
     font-family: 'JetBrainsMono-Bold', sans-serif;
-    color: white;
+    color: var(--alinks);
 }
 #comment_loadposts span {
     font-size: .9rem;
@@ -432,7 +535,7 @@ iframe {
     margin-right: 5px;
 }
 #load_textcomment {
-    background-color: rgb(70, 70, 70);
+    background-color: var(--textarea);
     padding: .5rem;
     border-radius: 15px;
 }
@@ -456,7 +559,7 @@ iframe {
 
 /*============= PROFILE SECTION =============*/
 
-/*===== FIXED BACKGROUND IMG DARK =====*/
+/*===== FIXED BACKGROUND IMG DARK & LIGHT =====*/
 
 #fixed-2 {
   background-image: url('assets/images/fixed/background_dark.jpg');
@@ -464,6 +567,11 @@ iframe {
 }
 .dark {
   background-color: rgba(0, 0, 0, 0.75);
+  padding: 1rem 1rem;
+  z-index: 1000!important;
+}
+.light {
+  background-color: rgba( 255, 255, 255, .4);
   padding: 1rem 1rem;
   z-index: 1000!important;
 }
@@ -484,7 +592,7 @@ header .narrow img {
 #col-wrapper1,
 #col-wrapper2 {
     margin: 1rem .5rem;
-    background: rgba(48, 48, 48, .7);
+    background: var(--cards);
     border-radius: 8px;
 }
 #col-wrapper1 {
@@ -496,8 +604,8 @@ header .narrow img {
 .top-scroll svg.svg-inline--fa {
   font-size: 3rem;
   height: 1.7rem;
-  color: #53595f;
-  background: white;
+  color: var(--links)!important;
+  background: #ACACAC;
 }
 a.top-scroll {
   right: 1.2rem;
@@ -552,6 +660,13 @@ a.top-scroll:hover {
 
 /*============= MEDIA QUERIES =============*/
 
+/* Custom Query Devices under 1600px */
+@media (max-width: 1599px) {
+    .theme-switch-wrapper {
+        display: none;
+    }
+}
+
 /*-- Devices under 1200px (xl) --*/
 @media (max-width: 1199px) {
     #comment_loadposts span {
@@ -603,7 +718,6 @@ a.top-scroll:hover {
         padding: 1.7rem 2rem 3rem 2rem;
     }
     .form-control#post_text::placeholder  {
-        color: white;
         font-size: 1rem;
     }
     #comment_loadposts span {
@@ -630,7 +744,6 @@ a.top-scroll:hover {
         padding: 1.2rem 1.5rem 3rem 1.5rem;
     }
     .form-control#post_text::placeholder  {
-        color: white;
         font-size: 1rem;
     }
     #load_textcomment a,
