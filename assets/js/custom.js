@@ -36,6 +36,22 @@ $(document).ready(function() { //when document(DOM) loads completely.
         });
 });
 
+/*========== SWITCH BUTTON OPACITY TO ZERO ==========*/
+
+$(document).ready(function() { //when document(DOM) loads completely.
+        // Transition effect for darkmode switch
+        $(window).scroll(function() { //function is called while you scrolls
+          // checks if window is scrolled more than 300px, adds/removes solid class
+          if($(this).scrollTop() > 99) {
+              $('.theme-switch-wrapper').removeClass('animate__animated animate__fadeInDown');
+              $('.theme-switch-wrapper').addClass('animate__animated animate__fadeOutUp');
+          } else {
+              $('.theme-switch-wrapper').removeClass('animate__animated animate__fadeOutUp');
+              $('.theme-switch-wrapper').addClass('animate__animated animate__fadeInDown');
+          }
+        });
+});
+
 /*========== CLOSE MOBILE NAV ON CLICK ==========*/
 
 $(document).ready(function () { //when document loads completely.
