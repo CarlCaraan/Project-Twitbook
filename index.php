@@ -67,7 +67,7 @@ include("includes/classes/Post.php");
 		        <!-- Buttons -->
 		        <div class="button-container">
 		            <button class="twitter-button" id="twitter" title="Tweet This!">
-		                <i class="fab fa-twitter"></i>
+		                <i class="fab fa-twitter" id="twitter_logo"></i>
 		            </button>
 		            <button id="new-quote">New Quote</button>
 		        </div>
