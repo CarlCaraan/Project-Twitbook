@@ -37,7 +37,7 @@ include("includes/classes/Post.php");
         <div class="col-md-3" id="left-section">
 
         <div class="content position-fixed" id="left_width">
-            <div class="card" id="card"> <!-- Cards -->
+            <div class="card mb-4" id="card"> <!-- Cards -->
                 <a href="<?php echo $userLoggedIn; ?>"> <!-- go to profile using .htaccess -->
                     <img class="card-img-top"  src="<?php echo $user['profile_pic'] ?>" alt="Card image" style="width:100%">
                 </a>
@@ -52,6 +52,30 @@ include("includes/classes/Post.php");
                 </div>
             </div> <!-- End Card -->
             <hr class="socket">
+
+			<!-- Start Quote API -->
+		    <div class="quote-container mt-4" id="quote-container">
+		        <!-- Quote -->
+		        <div class="quote-text">
+		            <i class="fas fa-quote-left"></i>
+		            <span id="quote"></span>
+		        </div>
+		        <!-- Author -->
+		        <div class="quote-author">
+		            <span id="author"></span>
+		        </div>
+		        <!-- Buttons -->
+		        <div class="button-container">
+		            <button class="twitter-button" id="twitter" title="Tweet This!">
+		                <i class="fab fa-twitter"></i>
+		            </button>
+		            <button id="new-quote">New Quote</button>
+		        </div>
+		    </div>
+		    <!-- Loader -->
+		    <div class="loader mx-auto mt-5" id="loader"></div>
+			<!-- End Quote API -->
+
         </div>
 
         </div>

@@ -703,6 +703,11 @@ a.top-scroll:hover {
     #comment_loadposts span {
         margin-left: 6rem;
     }
+    #content {
+        width: 150%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /*-- Devices under 768px (md) --*/
