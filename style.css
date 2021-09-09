@@ -1,4 +1,5 @@
 /*============= ALL FONTS =============*/
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 @font-face {
@@ -85,16 +86,13 @@ body{
 ::-webkit-scrollbar {
   width: .5vw;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
-
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 25px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
