@@ -11,7 +11,7 @@ include("includes/classes/Post.php");
 	<title> Profile | Twitbook </title>
 </head>
 
-<body>
+<body id="profile_body">
 
 <!--- Start Profile section -->
 <div id="profile" class="offset">

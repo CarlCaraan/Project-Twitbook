@@ -177,7 +177,7 @@ include("includes/classes/Post.php");
         <!-- Start Right Section -->
         <div class="col-md-3" id="right-section">
 
-        <div class="content position-fixed" id="content_certificate">
+        <div class="content position-fixed" id="certificate_container">
 
         <div class="row">
 

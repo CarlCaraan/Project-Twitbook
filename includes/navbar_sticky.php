@@ -16,12 +16,14 @@ else {
 <div class="theme-switch-wrapper">
     <span id="toggle-icon">
         <span class="toggle-text">Light Mode</span>
-        <i class="fas fa-sun" data-fa-transform="grow-10"></i>
+        <i class="fas fa-sun" data-fa-transform="grow-5"></i>
     </span>
-    <label class="theme-switch">
-        <input type="checkbox">
-        <div class="slider round"></div>
-    </label>
+
+    <!-- Default bootstrap switch -->
+    <div class="theme-switch custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitches">
+      <label class="custom-control-label" for="customSwitches"></label>
+    </div>
 </div>
 
 <!--- Navigation -->
