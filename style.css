@@ -81,6 +81,24 @@ body{
     margin: .3rem;
 }
 
+/*-- Scroll Bar -- */
+::-webkit-scrollbar {
+  width: .5vw;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /*-- Nav Scrolling Offset --*/
 .offset:before {
   height: 4rem;
