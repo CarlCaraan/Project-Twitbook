@@ -419,9 +419,13 @@ a.navbar-brand:hover {
     border: 0;
     background: 0;
     color: #ACACAC;
+    width: 100%;
 }
 #total_likes {
     color: #ACACAC;
+}
+#comment_button {
+    cursor: pointer;
 }
 
 /*============= LOAD COMMENT SECTION(IFrame) =============*/

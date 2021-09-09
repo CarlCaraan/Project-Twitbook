@@ -214,7 +214,7 @@ class Post {
                                     <div class='col'>
                                         <iframe id='comment_iframe' src='like.php?post_id=$id'></iframe>
                                     </div>
-                                    <div class='col' onClick='javascript:toggle$id()'>
+                                    <div class='col' onClick='javascript:toggle$id()' id='comment_button'>
                                         <a><i class='far fa-comment-alt'></i> Comment($comments_check_num)</a>
                                     </div>
                                 </div>

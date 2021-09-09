@@ -69,8 +69,8 @@
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="unlike_button" value="">
                         <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
-                    </button>
 						<span id="total_likes">(' . $total_likes . ' Like)</span>
+                    </button>
                 </form>
             ';
 			}
@@ -79,8 +79,8 @@
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="unlike_button" value="">
                         <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
-                    </button>
 						<span id="total_likes">(' . $total_likes . ' Likes)</span>
+                    </button>
                 </form>
             ';
 			}
@@ -91,8 +91,8 @@
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="like_button" value="">
                         <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Like
-                    </button>
 						<span id="total_likes">(' . $total_likes . ' Like)</span>
+                    </button>
                 </form>
 
             ';
@@ -101,8 +101,8 @@
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="like_button" value="">
                         <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Likes
-                    </button>
 						<span id="total_likes">(' . $total_likes . ' Likes)</span>
+                    </button>
                 </form>
 
             ';
