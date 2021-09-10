@@ -52,7 +52,20 @@ if(isset($_GET['profile_username'])) {
 
 
 	<?php $page = 'profile';include 'includes/navbar_sticky.php'; ?>
+	<?php
+	if(isset($_POST['remove_friend'])) {
+		$user = new User($con, $userLoggedIn);
+		$user->removeFriend($username);
+	}
 
+	if(isset($_POST['add_friend'])) {
+		$user = new User($con, $userLoggedIn);
+		$user->sendRequest($username);
+	}
+	if(isset($_POST['respond_request'])) {
+		header("Location: requests.php");
+	}
+	 ?>
 
 	<!-- Start Section Content -->
 	<section>
@@ -76,30 +89,32 @@ if(isset($_GET['profile_username'])) {
 
 					<hr class="socket">
 
-					<form class="" action="<?php echo $username; ?>">
-						<?php
-						$profile_user_obj = new User($con, $username);
-						if($profile_user_obj->isClosed()) {
-							header("Location: user_closed.php");
-						}
+					<form class="" action="<?php echo $username; ?>" method="POST">
+						
+					<?php
+					$profile_user_obj = new User($con, $username);
+					if($profile_user_obj->isClosed()) {
+						header("Location: user_closed.php");
+					}
 
-						$logged_in_user_obj = new User($con, $userLoggedIn);
+					$logged_in_user_obj = new User($con, $userLoggedIn);
 
-						if($userLoggedIn != $username) {
-							if($logged_in_user_obj->isFriend($username)) {
-								echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
-							}
-							else if ($logged_in_user_obj->didReceiveRequest($username)) {
-								echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
-							}
-							else if ($logged_in_user_obj->didSendRequest($username)) {
-								echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
-							}
-							else {
-								echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
-							}
+					if($userLoggedIn != $username) {
+
+						if($logged_in_user_obj->isFriend($username)) {
+							echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
 						}
-						?>
+						else if ($logged_in_user_obj->didReceiveRequest($username)) {
+							echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
+						}
+						else if ($logged_in_user_obj->didSendRequest($username)) {
+							echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
+						}
+						else
+							echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
+
+					}
+					?>
 
 					</form>
 
