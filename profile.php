@@ -28,30 +28,32 @@ if(isset($_GET['profile_username'])) {
 
 	<!-- Start Profile Header -->
 	<header>
-	<!--- Start Fixed Background IMG Dark -->
+
+	<!-- Start Fixed Background IMG Dark -->
 	<div class="fixed-background" id="toggle-dark">
 
-	<div class="light">
-
-		<div class="narrow center">
+		<div class="light">
+			<div class="narrow center">
 				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle animate__animated animate__fadeInDown" width="200" alt=""><br>
-				<?php echo $username; ?>
-		</div> <!-- End narrow -->
+				<h2><?php echo $user_array['first_name'] . " " . $user_array['last_name']; ?></h2>
+			 </div> <!-- End narrow -->
+		</div> <!-- End of Light -->
 
-	</div> <!-- End of Dark -->
-
-		<div class="fixed-wrap">
-			<div id="fixed-2">
+			<div class="fixed-wrap">
+				<div id="fixed-2">
+				</div>
 			</div>
-		</div>
 
 	</div>
-	<!--- End Fixed Background IMG Dark -->
+	<!-- End Fixed Background IMG Dark -->
+
 	</header>
 	<!-- End Profile Header -->
 
 
+	<!-- Navigation -->
 	<?php $page = 'profile';include 'includes/navbar_sticky.php'; ?>
+
 	<?php
 	if(isset($_POST['remove_friend'])) {
 		$user = new User($con, $userLoggedIn);
@@ -65,88 +67,93 @@ if(isset($_GET['profile_username'])) {
 	if(isset($_POST['respond_request'])) {
 		header("Location: requests.php");
 	}
-	 ?>
+	?>
 
 	<!-- Start Section Content -->
 	<section>
-		<article>
-			<div class="container">
+	<article>
 
-			<div class="row">
+		<div class="container">
 
-				<!-- Start Intro Column -->
-				<div class="col-lg-4 animate__animated animate__fadeInLeft" id="col-wrapper1">
+		<div class="row">
 
-					<label for="post_text" id="labeltitle">Intro</label><br>
-					<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
-					<div id="text_wrapper"><?php echo "Posts: " . $user_array['num_posts']; ?></div><br>
+			<!-- Start Intro Section -->
+			<div class="col-lg-4 animate__animated animate__fadeInLeft" id="col-wrapper1">
 
-					<div id="icon_wrapper"><i class="fas fa-flag"></i></div>
-					<div id="text_wrapper"><?php echo "Likes: " . $user_array['num_likes']; ?></div><br>
+				<label for="post_text" id="labeltitle">Intro</label><br>
+				<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
+				<div id="text_wrapper"><?php echo "Posts: " . $user_array['num_posts']; ?></div><br>
 
-					<div id="icon_wrapper"><i class="fas fa-user-friends"></i></div>
-					<div id="text_wrapper"><?php echo "Friends: " . $num_friends; ?></div><br>
+				<div id="icon_wrapper"><i class="fas fa-flag"></i></div>
+				<div id="text_wrapper"><?php echo "Likes: " . $user_array['num_likes']; ?></div><br>
 
-					<hr class="socket">
+				<div id="icon_wrapper"><i class="fas fa-user-friends"></i></div>
+				<div id="text_wrapper"><?php echo "Friends: " . $num_friends; ?></div><br>
 
-					<form class="" action="<?php echo $username; ?>" method="POST">
-						
-					<?php
-					$profile_user_obj = new User($con, $username);
-					if($profile_user_obj->isClosed()) {
-						header("Location: user_closed.php");
+				<hr class="socket">
+
+				<!-- Add Remove Respond Button -->
+				<form class="" action="<?php echo $username; ?>" method="POST">
+
+				<?php
+				$profile_user_obj = new User($con, $username);
+				if($profile_user_obj->isClosed()) {
+					header("Location: user_closed.php");
+				}
+
+				$logged_in_user_obj = new User($con, $userLoggedIn);
+
+				if($userLoggedIn != $username) {
+
+					if($logged_in_user_obj->isFriend($username)) {
+						echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
 					}
-
-					$logged_in_user_obj = new User($con, $userLoggedIn);
-
-					if($userLoggedIn != $username) {
-
-						if($logged_in_user_obj->isFriend($username)) {
-							echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
-						}
-						else if ($logged_in_user_obj->didReceiveRequest($username)) {
-							echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
-						}
-						else if ($logged_in_user_obj->didSendRequest($username)) {
-							echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
-						}
-						else
-							echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
-
+					else if ($logged_in_user_obj->didReceiveRequest($username)) {
+						echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
 					}
-					?>
+					else if ($logged_in_user_obj->didSendRequest($username)) {
+						echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
+					}
+					else
+						echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
 
-					</form>
+				}
+				?>
 
-				</div>
-				<!-- End Intro Column -->
+				</form>
 
-				<div class="col-lg-7 animate__animated animate__fadeInRight" id="col-wrapper2">
-					<h1>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</h1>
-				</div>
+			</div>
+			<!-- End Intro Section -->
 
-			</div> <!-- End Row -->
+			<!-- Start Middle Section -->
+			<div class="col-lg-7 animate__animated animate__fadeInRight" id="col-wrapper2">
+				<h1>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</h1>
+			</div>
+			<!-- End Middle Section -->
 
-		</div> <!-- End Narrow -->
-		</article>
+		</div> <!-- End Row -->
+
+		</div> <!-- End Container -->
+
+	</article>
 	</section>
 	<!-- End Section Content -->
 
 
 
 </div>
-<!--- End Profile section -->
+<!-- End Profile section -->
 
 
-<!--- Top Scroll -->
+<!-- Top Scroll -->
 <a href="#profile" class="top-scroll">
 	<i class="fas fa-angle-up"></i>
 </a>
-<!--- End of Top Scroll -->
+<!-- End of Top Scroll -->
 
 
 <?php include 'includes/scripts.php'; ?>

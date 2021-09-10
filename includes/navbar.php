@@ -61,11 +61,11 @@ else {
 			</li>
 
 			<li class="nav-item text-center">
-				<a class="nav-link" href="#" id="friendrequest">
+				<a class="nav-link" href="requests.php" id="friendrequest">
 					<i id="nav_icon" class="fas fa-users fa-inverse <?php if($page=='friendrequest'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
                 <div class="spacing"></div>
-                <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
+                <div class=" <?php if($page=='friendrequest'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
