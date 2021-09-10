@@ -29,7 +29,7 @@ else {
 <!--- Navigation -->
 <nav class="navbar navbar-expand-md sticky-top always-solid">
 <div class="container-fluid">
-	<a class="navbar-brand" href="index.php"><img src="assets/images/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
+	<a class="navbar-brand" href="index.php"><img src="assets/images/icons/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 		<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
 	</button>
