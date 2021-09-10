@@ -114,7 +114,7 @@ body{
 
 /*===== FIXED BACKGROUND IMG =====*/
 #fixed {
-  background-image: url('https://source.unsplash.com/1600x900/?nature');
+  background-image: url('assets/images/background.jpg');
   z-index: -1;
 }
 #container-prop {
@@ -173,7 +173,7 @@ a.signup:hover {
 .spinner-border {
     color: white;
     position: absolute;
-    margin: 270px auto;
+    margin: 241px auto;
     opacity: .75;
 }
 /*-- Input Fields --*/

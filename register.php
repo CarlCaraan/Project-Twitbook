@@ -33,7 +33,7 @@ require 'includes/form_handlers/login_handler.php';
 
 <!-- Start Form Section -->
 	<!-- Spinner -->
-	<div class="animate__animated animate__fadeOut animate__delay-1s center">
+	<div class="center">
 		<div class="spinner-border" role="status"></div>
 	</div>
 
