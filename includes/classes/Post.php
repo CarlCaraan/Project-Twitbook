@@ -68,14 +68,14 @@ class Post {
                 $date_time = $row['date_added'];
 
                 //prepare user_to string so it can be included even if not posted to a user
-                if($row['user_to'] == "none") { //not to a user
-                    $user_to = "";
-                }
-                else {
-                    $user_to_obj = new User($con, $row['user_to']);
-                    $user_to_name = $user_to_obj->getFirstAndLastName();
-                    $user_to = "to <a href='" . $row ['user_to'] . "'>" . $user_to_name . "</a>";
-                }
+				if($row['user_to'] == "none") {
+					$user_to = "";
+				}
+				else {
+					$user_to_obj = new User($this->con, $row['user_to']);
+					$user_to_name = $user_to_obj->getFirstAndLastName();
+					$user_to = " to <a href='" . $row['user_to'] ."'>" . $user_to_name . "</a>";
+				}
 
                 //Check if user who posted, has their account closed
                 $added_by_obj = new User($this->con, $added_by);
@@ -100,6 +100,14 @@ class Post {
     				else {
     					$count++;
     				}
+
+                    //Delete Button
+                    if($userLoggedIn == $added_by)
+                        $delete_button = "<button class='btn float-right rounded-circle' id='post$id'>
+                                                <i class='far fa-trash-alt' data-fa-transform='shrink-3'></i>
+                                            </button>";
+                     else
+                        $delete_button = "";
 
                     $user_details_query = mysqli_query($this->con, "SELECT first_name, last_name, profile_pic FROM users WHERE username='$added_by'");
                     $user_row = mysqli_fetch_array($user_details_query);
@@ -203,6 +211,7 @@ class Post {
                                         <img class='rounded-circle' src='$profile_pic'>
                                     </a>
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
+                                    $delete_button
                                     <p>$body</p>
                                 </div>
 
@@ -227,11 +236,28 @@ class Post {
                             </div> <!-- End card -->
 
                             ";
-
-
-
                 } //-- End Display only friend posts --//
 
+                ?>
+
+                <!-- Delete bootbox.js -->
+                <script>
+
+                    $(document).ready(function() {
+                        $('#post<?php echo $id; ?>').on('click', function() {
+                            bootbox.confirm("Are you sure you want to delete this post?", function(result){
+
+                                $.post("includes/handlers/delete_post.php?post_id=<?php echo $id; ?>", {result, result});
+
+                                if(result)
+                                    location.reload();
+
+                            });
+                        });
+                    });
+
+                </script>
+                <?php
             } //-- End While loop --//
 
 			if($count > $limit)

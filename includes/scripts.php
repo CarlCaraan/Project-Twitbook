@@ -9,4 +9,5 @@
 <script src="assets/js/jquery.waypoints.min.js"></script> <!-- Waypoints + animate.css -->
 <script src="assets/js/darkmode.js"></script>
 <script src="assets/js/quote.js"></script>
+<script src="assets/js/bootbox.min.js"></script>
 <!-- End of Script Source Files -->

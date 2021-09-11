@@ -13,7 +13,7 @@ include("includes/classes/Post.php");
 
 <body id="profile_body">
 
-<!--- Start Profile section -->
+<!-- Start Profile section -->
 <div id="profile" class="offset">
 
 <?php
@@ -93,7 +93,7 @@ if(isset($_GET['profile_username'])) {
 				<hr class="socket">
 
 				<!-- Add Remove Respond Button -->
-				<form class="" action="<?php echo $username; ?>" method="POST">
+				<form class="center" action="<?php echo $username; ?>" method="POST">
 
 				<?php
 				$profile_user_obj = new User($con, $username);
@@ -106,24 +106,67 @@ if(isset($_GET['profile_username'])) {
 				if($userLoggedIn != $username) {
 
 					if($logged_in_user_obj->isFriend($username)) {
-						echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input>';
+						echo '<input type="submit" name="remove_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Unfriend"></input><hr class="socket">';
 					}
 					else if ($logged_in_user_obj->didReceiveRequest($username)) {
-						echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"></input>';
+						echo '<input type="submit" name="respond_request" class="btn btn-outline-light btn-sm shadow-sm" value="Respond to Request"><hr class="socket"></input>';
 					}
 					else if ($logged_in_user_obj->didSendRequest($username)) {
-						echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"></input>';
+						echo '<input type="submit" name="" class="btn btn-outline-light btn-sm shadow-sm" value="Request Sent"><hr class="socket"></input>';
 					}
 					else
-						echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"></input>';
+						echo '<input type="submit" name="add_friend" class="btn btn-outline-light btn-sm shadow-sm" value="Add Friend"><hr class="socket"></input>';
 
 				}
 				?>
-
 				</form>
+
+				<!-- Open Modal -->
+				<div class="center">
+					<button type="button" class="btn btn-outline-light btn-sm shadow-sm p-3 m-3" data-toggle="modal" data-target="#myModal">
+						Post Something.
+					</button>
+				</div>
 
 			</div>
 			<!-- End Intro Section -->
+
+
+			<!-- Start Modal -->
+			<div class="modal fade" id="myModal">
+			    <div class="modal-dialog modal-xl">
+			        <div class="modal-content">
+
+			        <!-- Modal Header -->
+			        <div class="modal-header">
+				        <h4 class="modal-title">Create Post:</h4>
+				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        </div>
+
+			        <!-- Modal body -->
+			        <div class="modal-body">
+			            <form class="profile_post" action="" method="POST">
+
+			            <div class="form-group">
+			            	<textarea class="form-control border border-dark" rows="5" id="post_text" name="post_body" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
+							<input type="hidden" name="user_from" value="<?php echo $userLoggedIn; ?>">
+							<input type="hidden" name="user_to" value="<?php echo $username; ?>">
+			            </div>
+
+				        </form>
+			        </div>
+
+			        <!-- Modal footer -->
+			        <div class="modal-footer">
+			            <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post_button" id="submit_profile_post" value="Tweet"></input>
+				        <button type="button" class="btn btn-outline-light btn-sm shadow-sm" data-dismiss="modal">Close</button>
+			        </div>
+
+			        </div>
+			    </div>
+			</div>
+			<!-- End Modal -->
+
 
 			<!-- Start Middle Section -->
 			<div class="col-lg-7 animate__animated animate__fadeInRight" id="col-wrapper2">
