@@ -11,7 +11,7 @@ require 'includes/form_handlers/login_handler.php';
 	<?php include 'includes/head.php'; ?>
 	<title>Login | Register | Twitbook</title>
 </head>
-<body>
+<body id="register_body">
 
 <!-- Fixed Register Button that proceed to login! -->
 	<?php
@@ -158,15 +158,8 @@ require 'includes/form_handlers/login_handler.php';
 
 	</div> <!-- End Control -->
 </div> <!-- End Container -->
-
-
-<!-- Start Fixed Background -->
-<div class="fixed-wrap">
-	<div id="fixed">
-	</div>
-</div> <!-- End Fixed Background -->
-
 <!-- End Form Section -->
+
 
 <?php include 'includes/scripts.php'; ?>
 
