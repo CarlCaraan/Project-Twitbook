@@ -34,7 +34,12 @@ if(isset($_GET['profile_username'])) {
 
 		<div class="light">
 			<div class="narrow center">
-				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm animate__animated animate__fadeInDown" width="200" alt=""><br>
+				<a href="upload.php">
+					<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm animate__animated animate__fadeInDown" width="200" alt=""><br>
+				</a>
+				<a href="upload.php">
+					<i class="fas fa-upload position-absolute animate__animated animate__fadeInDown shadow-lg" id="upload_icon" data-fa-transform="grow-10"></i>
+				</a>
 				<h2><?php echo $user_array['first_name'] . " " . $user_array['last_name']; ?></h2>
 			 </div> <!-- End narrow -->
 		</div> <!-- End of Light -->
@@ -90,6 +95,17 @@ if(isset($_GET['profile_username'])) {
 				<div id="icon_wrapper"><i class="fas fa-user-friends"></i></div>
 				<div id="text_wrapper"><?php echo "Friends: " . $num_friends; ?></div><br>
 
+				<?php
+				//Get Mutual Friends
+				$logged_in_user_obj = new User($con, $userLoggedIn);
+
+				if($userLoggedIn != $username) {
+					echo '<div id="icon_wrapper"><i class="fas fa-users"></i></div>';
+					echo '<div id="text_wrapper">&nbsp;Mutual Friends: ' . $logged_in_user_obj->getMutualFriends($username);
+					echo '</div>';
+				}
+				?>
+
 				<hr class="socket">
 
 				<!-- Add Remove Respond Button -->
@@ -127,6 +143,8 @@ if(isset($_GET['profile_username'])) {
 						Post Something.
 					</button>
 				</div>
+
+
 
 			</div>
 			<!-- End Intro Section -->

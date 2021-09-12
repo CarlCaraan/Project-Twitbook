@@ -12,3 +12,4 @@
 	<link rel="stylesheet" href="assets/css/waypoints.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- animation.css CDN Latest -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- FIX REGISTER SHOW/HIDE -->
+	<link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css"> <!-- Upload Profile Pic -->

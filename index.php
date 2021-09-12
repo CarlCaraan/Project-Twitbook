@@ -111,6 +111,7 @@ include("includes/classes/Post.php");
 	        }
 	    </script>
 
+
 		<!-- Display Posts and Loading GIF -->
 		<div class="posts_area"></div>
 		<img id="loading" src="assets/images/icons/loading.gif">

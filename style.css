@@ -329,6 +329,7 @@ a.navbar-brand:hover {
 
 #middle-section {
     background-color: var(--on-primary);
+    height: 100%;
 }
 .btn-sm {
   font-family: 'Bellota-BoldItalic', sans-serif;
@@ -530,6 +531,14 @@ iframe {
 header .narrow img {
     border: 3px solid var(--textarea);
 }
+#upload_icon {
+    top: 14rem;
+    margin-left: 3.5rem;
+    color: #5EAADA;
+}
+#upload_icon:hover {
+    color: var(--alinks);
+}
 /*-- Section Content --*/
 #icon_wrapper {
     width: 30px;
@@ -539,12 +548,13 @@ header .narrow img {
 #text_wrapper,
 #icon_wrapper {
     display: inline-block;
+    margin: .5rem 0 .5rem;
 }
 #col-wrapper1 {
     margin: 1rem .5rem;
     background: var(--cards);
     border-radius: 8px;
-    height: 280px;
+    height: 365px;
 }
 .modal-content {
     background: var(--background);
