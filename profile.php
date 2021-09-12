@@ -34,7 +34,7 @@ if(isset($_GET['profile_username'])) {
 
 		<div class="light">
 			<div class="narrow center">
-				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle animate__animated animate__fadeInDown" width="200" alt=""><br>
+				<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm animate__animated animate__fadeInDown" width="200" alt=""><br>
 				<h2><?php echo $user_array['first_name'] . " " . $user_array['last_name']; ?></h2>
 			 </div> <!-- End narrow -->
 		</div> <!-- End of Light -->

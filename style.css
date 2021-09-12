@@ -528,7 +528,7 @@ iframe {
 }
 /*-- Header Profile Section --*/
 header .narrow img {
-    border: 3px solid #ACACAC;
+    border: 3px solid var(--textarea);
 }
 /*-- Section Content --*/
 #icon_wrapper {

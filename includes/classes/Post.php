@@ -208,7 +208,7 @@ class Post {
                     $str .= "<div class='card'>
                                 <div class='card-body'>
                                     <a href='$added_by' id='profilepic_atag'>
-                                        <img class='rounded-circle' src='$profile_pic'>
+                                        <img class='rounded-circle shadow-sm' src='$profile_pic'>
                                     </a>
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
                                     $delete_button

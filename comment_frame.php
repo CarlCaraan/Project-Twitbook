@@ -79,7 +79,7 @@ else {
                     <div class="col-1">
                         <a href="<?php echo $userLoggedIn; ?>" target="_parent">
                     </div>
-                            <img class="rounded-circle" id="comment_profilepic" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $user_obj->getFirstAndLastName(); ?>">
+                            <img class="rounded-circle shadow-sm" id="comment_profilepic" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $user_obj->getFirstAndLastName(); ?>">
                         </a>
 
                     <div class="col-8">
@@ -201,7 +201,7 @@ else {
                     <div class="col-1" >
                         <a href="<?php echo $posted_by; ?>" target="_parent">
                     </div>
-                            <img class="rounded-circle" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $posted_by; ?>">
+                            <img class="rounded-circle shadow-sm" src="<?php echo $user_obj->getProfilePic(); ?>" alt="" title="<?php echo $posted_by; ?>">
                         </a>
 
                     <div class="col-9" id="load_textcomment">
