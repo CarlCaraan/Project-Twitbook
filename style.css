@@ -540,13 +540,10 @@ header .narrow img {
 #icon_wrapper {
     display: inline-block;
 }
-#col-wrapper1,
-#col-wrapper2 {
+#col-wrapper1 {
     margin: 1rem .5rem;
     background: var(--cards);
     border-radius: 8px;
-}
-#col-wrapper1 {
     height: 280px;
 }
 .modal-content {

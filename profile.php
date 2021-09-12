@@ -168,13 +168,69 @@ if(isset($_GET['profile_username'])) {
 			<!-- End Modal -->
 
 
+			<!-- Ajax Script limit post -->
+			<script>
+				var userLoggedIn = '<?php echo $userLoggedIn; ?>';
+				var profileUsername = '<?php echo $username; ?>'
+
+				$(document).ready(function() {
+
+					$('#loading').show();
+
+					//Original ajax request for loading first posts
+					$.ajax({
+						url: "includes/handlers/ajax_load_profile_posts.php",
+						type: "POST",
+						data: "page=1&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+						cache:false,
+
+						success: function(data) {
+							$('#loading').hide();
+							$('.posts_area').html(data);
+						}
+					});
+
+					$(window).scroll(function() {
+						var height = $('.posts_area').height(); //Div containing posts
+						var scroll_top = $(this).scrollTop();
+						var page = $('.posts_area').find('.nextPage').val();
+						var noMorePosts = $('.posts_area').find('.noMorePosts').val();
+
+						  if((window.innerHeight+window.scrollY>=document.body.offsetHeight-100) && noMorePosts == 'false') {
+							$('#loading').show();
+
+							var ajaxReq = $.ajax({
+								url: "includes/handlers/ajax_load_profile_posts.php",
+								type: "POST",
+								data: "page=" + page + "&userLoggedIn=" + userLoggedIn + "&profileUsername=" + profileUsername,
+								cache:false,
+
+								success: function(response) {
+									$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage
+									$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage
+
+									$('#loading').hide();
+									$('.posts_area').append(response);
+								}
+							});
+
+						} //End if
+
+						return false;
+
+					}); //End (window).scroll(function())
+
+
+				});
+				</script>
+
 			<!-- Start Middle Section -->
-			<div class="col-lg-7 animate__animated animate__fadeInRight" id="col-wrapper2">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</h1>
+			<div class="col-lg-7 animate__animated animate__fadeInRight" id="middle-section">
+
+				<!-- Display Posts and Loading GIF -->
+				<div class="posts_area"></div>
+				<img id="loading" src="assets/images/icons/loading.gif">
+
 			</div>
 			<!-- End Middle Section -->
 
