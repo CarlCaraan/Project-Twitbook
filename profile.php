@@ -37,7 +37,7 @@ if(isset($_GET['profile_username'])) {
 				<a href="upload.php">
 					<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm animate__animated animate__fadeInDown" width="200" alt=""><br>
 				</a>
-				<a href="upload.php">
+				<a href="upload.php" id="upload_icon_tag">
 					<i class="fas fa-upload position-absolute animate__animated animate__fadeInDown shadow-lg" id="upload_icon" data-fa-transform="grow-10"></i>
 				</a>
 				<h2><?php echo $user_array['first_name'] . " " . $user_array['last_name']; ?></h2>

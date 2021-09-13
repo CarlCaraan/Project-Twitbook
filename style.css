@@ -292,6 +292,9 @@ a.navbar-brand:hover {
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
     display: none;
 }
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before {
+    display: none;
+}
 
 /*============= HOME SECTION =============*/
 
@@ -674,6 +677,9 @@ a.top-scroll:hover {
 /* Custom Query Devices under 1600px */
 @media (max-width: 1599px) {
     .theme-switch-wrapper {
+        display: none;
+    }
+    #CroppingContainer {
         display: none;
     }
 }

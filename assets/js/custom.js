@@ -74,6 +74,7 @@ $(document).ready(function(){
   $('.nav-link#profile').tooltip({title: "Profile", placement: "bottom", animation: true});
   $('.nav-link#settings').tooltip({title: "Settings", placement: "bottom", animation: true});
   $('.nav-link#logout').tooltip({title: "LogOut", placement: "bottom", animation: true});
+  $('#upload_icon_tag').tooltip({title: "Update/Upload", placement: "top", animation: true});
 });
 
 /*========== OWL-CAROUSEL CERTIFICATE SECTION ==========*/
