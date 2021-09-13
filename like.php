@@ -68,7 +68,7 @@
 			if($total_likes < 2) {
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="unlike_button" value="">
-                        <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
+						<i class="far fa-thumbs-down" data-fa-transform="grow-1"></i> Unlike
 						<span id="total_likes">(' . $total_likes . ' Like)</span>
                     </button>
                 </form>
@@ -78,7 +78,7 @@
 			//grammar of 1likes
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="unlike_button" value="">
-                        <i class="far fa-thumbs-down" data-fa-transform="grow-10"></i> Unlike
+                        <i class="far fa-thumbs-down" data-fa-transform="grow-1"></i> Unlike
 						<span id="total_likes">(' . $total_likes . ' Likes)</span>
                     </button>
                 </form>
@@ -90,7 +90,7 @@
 			if($total_likes < 2) {
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="like_button" value="">
-                        <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Like
+                        <i class="far fa-thumbs-up" data-fa-transform="grow-1"></i> Like
 						<span id="total_likes">(' . $total_likes . ' Like)</span>
                     </button>
                 </form>
@@ -100,7 +100,7 @@
 			else {
             echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
                     <button type="submit" class="comment_like" name="like_button" value="">
-                        <i class="far fa-thumbs-up" data-fa-transform="grow-10"></i> Likes
+                        <i class="far fa-thumbs-up" data-fa-transform="grow-1"></i> Likes
 						<span id="total_likes">(' . $total_likes . ' Likes)</span>
                     </button>
                 </form>
@@ -111,6 +111,8 @@
 
     ?>
 
+
+<?php include 'includes/scripts.php'; ?>
 
 </body>
 </html>

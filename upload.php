@@ -9,7 +9,7 @@ include("includes/classes/Post.php");
 	<?php include 'includes/head.php'; ?>
 	<title>Settings | Twitbook</title>
 </head>
-<body>
+<body id="upload_body">
 
 <?php
 $page = 'settings';include 'includes/navbar.php';
@@ -188,9 +188,9 @@ if (isset($_POST['x'])){
 	    	$('#Overlay').show();
 			$('#formExample').hide();
 	    </script>
-	    <div class="mx-auto" id="CroppingContainer" style="width:800px; max-height:600px; margin-left: -200px; position:relative; overflow:hidden; z-index:2001; padding-bottom:0px;">
+	    <div class="mx-auto" id="CroppingContainer" style="width:800px; max-height: 100%; margin-left: -200px; position:relative; overflow:hidden; z-index:2001; padding-bottom:0px;">
 
-    		<div id="CroppingArea" style="width:500px; max-height:400px; position:relative; overflow:hidden; margin:40px 0px 40px 40px; border:2px #666 solid; float:left;">
+    		<div id="CroppingArea" style="width:500px; max-height: 100%; position:relative; overflow:hidden; margin:40px 0px 40px 40px; border:2px #666 solid; float:left;">
 	            <img src="<?=$imgSrc?>" border="0" id="jcrop_target" style="border:0px #990000 solid; position:relative; margin:0px 0px 0px 0px; padding:0px; " />
 	        </div>
 

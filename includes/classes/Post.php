@@ -242,7 +242,6 @@ class Post {
 
                 <!-- Delete bootbox.js -->
                 <script>
-
                     $(document).ready(function() {
                         $('#post<?php echo $id; ?>').on('click', function() {
                             bootbox.confirm("Are you sure you want to delete this post?", function(result){
@@ -255,8 +254,8 @@ class Post {
                             });
                         });
                     });
-
                 </script>
+
                 <?php
             } //-- End While loop --//
 

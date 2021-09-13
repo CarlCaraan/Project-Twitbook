@@ -37,21 +37,30 @@ include("includes/classes/Post.php");
         <div class="col-md-3" id="left-section">
 
         <div class="content position-fixed" id="left_width">
-            <div class="card mb-4" id="card"> <!-- Cards -->
-                <a href="<?php echo $userLoggedIn; ?>"> <!-- go to profile using .htaccess -->
-                    <img class="card-img-top"  src="<?php echo $user['profile_pic'] ?>" alt="Card image" style="width:100%">
-                </a>
-                <div class="card-body" id="card-body">
-                    <h4 class="card-title" id="card-title"><?php echo $user['first_name'] . " " . $user['last_name']; ?></h4>
-                    <p class="card-text" id="card-text">Some example text some example text. Carl is Web Developer!</p>
-                    <?php
-                    echo "Posts: " . $user['num_posts'] . "<br>";
-                    echo "Likes: " . $user['num_likes'];
-                    ?>
-                    <a href="<?php echo $userLoggedIn; ?>" class="btn btn-outline-light btn-lg shadow-sm">See Profile</a>
-                </div>
-            </div> <!-- End Card -->
-            <hr class="socket">
+
+			<a id="left_alinks" href="<?php echo $userLoggedIn; ?>">
+				<div class="w-100" id="left_links_container">
+					<div id="icon_wrapper"><img class="rounded-circle w-100"  src="<?php echo $user['profile_pic'] ?>" alt=""></i></div>
+					<div id="text_wrapper"><?php echo $user['first_name'] . " " . $user['last_name']; ?></div><br>
+				</div>
+			</a>
+
+			<a id="left_alinks" href="<?php echo $userLoggedIn; ?>">
+				<div class="w-100" id="left_links_container">
+					<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
+					<div id="text_wrapper"><?php echo "Posts: " . $user['num_posts']; ?></div><br>
+				</div>
+			</a>
+
+			<a id="left_alinks" href="<?php echo $userLoggedIn; ?>">
+				<div class="w-100" id="left_links_container">
+					<div id="icon_wrapper"><i class="fas fa-thumbs-up"></i></div>
+					<div id="text_wrapper"><?php echo "Likes: " . $user['num_likes']; ?></div>
+				</div>
+			</a><br>
+
+
+			<hr class="socket">
 
 			<!-- Start Quote API -->
 		    <div class="quote-container mt-4" id="quote-container">
