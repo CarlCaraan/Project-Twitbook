@@ -52,6 +52,22 @@ $(document).ready(function() { //when document(DOM) loads completely.
         });
 });
 
+/*========== NAVIGATION SLIDING DOWN ANIMATION ==========*/
+
+$(document).ready(function() { //when document(DOM) loads completely.
+
+        $(window).scroll(function() { //function is called while you scrolls
+          // checks if window is scrolled more than 300px, adds/removes solid class
+          if($(this).scrollTop() > 150) {
+              $('.navbar-toggle').removeClass('d-none');
+              $('.navbar-toggle').addClass('d-block');
+          } else {
+              $('.navbar-toggle').removeClass('d-block');
+              $('.navbar-toggle').addClass('d-none');
+          }
+        });
+});
+
 /*========== CLOSE MOBILE NAV ON CLICK ==========*/
 
 $(document).ready(function () { //when document loads completely.

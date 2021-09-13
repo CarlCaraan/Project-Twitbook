@@ -246,6 +246,7 @@ a.navbar-brand:hover {
 }
 .navbar-nav .nav-link {
   color: gray;
+  font-family: 'Lato', sans-serif;
 }
 /*.navbar-nav .nav-link :hover,*/ /*for icon*/
 /*.navbar-nav .nav-link:hover*/ /*for text*/
@@ -299,7 +300,7 @@ a.navbar-brand:hover {
 /*============= HOME SECTION =============*/
 
 #content {
-    padding-top: 3.45rem;
+    /*padding-top: 3.45rem; FOR no 3RD Navbar */
 }
 #left_width {
     width: 420px;
@@ -311,6 +312,7 @@ a.navbar-brand:hover {
     border-radius: 8px;
     padding-left: 1rem;
     cursor: pointer;
+    width: 20vw;
 }
 #left_alinks,
 #left_alinks:hover {
