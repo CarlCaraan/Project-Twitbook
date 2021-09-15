@@ -442,7 +442,7 @@ iframe {
 #comment_iframe {
     height: 19.5px;
 }
-#comment_form textarea {
+#text_area {
     border-radius: 25px;
     overflow: hidden;
     background-color: var(--textarea);
@@ -451,8 +451,8 @@ iframe {
     color: white;
     height: 37px;
 }
-#comment_form textarea::placeholder,
-#comment_form textarea:focus{
+#text_area::placeholder,
+#text_area:focus{
     font-size: 1rem;
     color: var(--alinks)!important;
     box-shadow: inset 0 0 #ddd;

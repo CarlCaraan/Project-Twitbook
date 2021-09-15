@@ -83,7 +83,7 @@ else {
                         </a>
 
                     <div class="col-8">
-                        <textarea class="form-control" rows="1" name="post_body" placeholder="Write a comment..."></textarea>
+                        <textarea class="form-control" id="text_area" rows="1" name="post_body" placeholder="Write a comment..."></textarea>
                     </div>
                     <div class="col-1">
                         <button class="btn btn-outline-light btn-sm shadow-sm" type="submit" name="postComment<?php echo $post_id; ?>" value="">

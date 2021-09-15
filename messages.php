@@ -30,12 +30,21 @@ if(isset($_GET['u']))
     $user_to = $_GET['u'];
 else {
     $user_to = $message_obj->getMostRecentUser();
-    if($user_to = false)
+    if($user_to == false)
         $user_to = 'new';
 }
 
 if($user_to != "new")
     $user_to_obj = new User($con, $user_to);
+
+if(isset($_POST['post_message'])) {
+
+	if(isset($_POST['message_body'])) {
+		$body = mysqli_real_escape_string($con, $_POST['message_body']);
+		$date = date("Y-m-d H:i:s");
+		$message_obj->sendMessage($user_to, $body, $date);
+	}
+}
 ?>
 
 
@@ -86,6 +95,48 @@ if($user_to != "new")
         if($user_to != "new")
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
         ?>
+		<form class="" action="" method="POST">
+			<?php
+			if($user_to == "new") {
+				echo "Select a friend you would like to send message <br><br>";
+				echo "To: <input type='text'>";
+				echo "<div class='results'></div>";
+			}
+			else {
+				echo "<div class='row center'>
+						<div class='col-10 m-0 p-0'>
+							<textarea class='form-control' rows='1' id='text_area' name='message_body' id='message_textarea' placeholder='Write your message...'></textarea>
+						</div>
+						<div class='col-0 mx-1 p-0'>
+							<button type='submit' name='post_message' class='btn btn-outline-light btn-sm shadow-sm' value=''>
+								<i class='far fa-paper-plane' data-fa-transform='grow-10'></i>
+							</button>
+						</div>
+				</div>";
+			}
+
+			?>
+
+		    <!-- Autogrow Text Area -->
+		    <script>
+		        var textarea = document.querySelector('textarea');
+
+		        textarea.addEventListener('keydown', autosize);
+
+		        function autosize(){
+		          var el = this;
+		          setTimeout(function(){
+		            el.style.cssText = 'height:auto; padding:0';
+		            // for box-sizing other than "content-box" use:
+		            // el.style.cssText = '-moz-box-sizing:content-box';
+		            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+		          },0);
+		        }
+		    </script>
+
+		</form>
+
+
         </div>
 
         </div>
