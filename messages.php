@@ -94,7 +94,7 @@ if(isset($_POST['post_message'])) {
         <?php
         if($user_to != "new") {
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
-			echo "<div>"
+			echo "<div>";
 			echo $message_obj->getMessages($user_to);
 			echo "</div>";
 		}
