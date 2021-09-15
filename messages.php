@@ -92,8 +92,10 @@ if(isset($_POST['post_message'])) {
 
         <div id="post-container">
         <?php
-        if($user_to != "new")
+        if($user_to != "new") {
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
+
+		}
         ?>
 		<form class="" action="" method="POST">
 			<?php

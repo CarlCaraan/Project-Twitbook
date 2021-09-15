@@ -33,6 +33,10 @@ class Message {
         }
     }
 
+    public function getMessages() {
+        
+    }
+
 }
 
 ?>
