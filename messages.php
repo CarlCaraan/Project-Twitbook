@@ -94,7 +94,7 @@ if(isset($_POST['post_message'])) {
         <?php
         if($user_to != "new") {
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
-			echo "<div class='loaded_messages'>";
+			echo "<div class='loaded_messages' id='scroll_messages'>";
 			echo $message_obj->getMessages($user_to);
 			echo "</div>";
 		}
@@ -141,6 +141,11 @@ if(isset($_POST['post_message'])) {
 		          },0);
 		        }
 		    </script>
+
+			<script>
+				var div = document.getElementById("scroll_messages");
+				div.scrollTop = div.scrollHeight;
+			</script>
 
 		</form>
 
