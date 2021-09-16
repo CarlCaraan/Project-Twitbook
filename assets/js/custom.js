@@ -36,7 +36,7 @@ $(document).ready(function() { //when document(DOM) loads completely.
         });
 });
 
-/*========== SWITCH BUTTON OPACITY TO ZERO ==========*/
+/*========== DARK MODE TOGGLER ANIMATE ONSCROLL ==========*/
 
 $(document).ready(function() { //when document(DOM) loads completely.
         // Transition effect for darkmode switch
