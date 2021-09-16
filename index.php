@@ -104,7 +104,7 @@ include("includes/classes/Post.php");
           </form>
         </div>
 
-	    <!-- Autogrow Text Area -->
+	    <!-- Autogrow Textarea -->
 	    <script>
 	        var textarea = document.querySelector('textarea');
 

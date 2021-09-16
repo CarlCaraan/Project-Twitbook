@@ -125,7 +125,7 @@ if(isset($_POST['post_message'])) {
 
 			?>
 
-		    <!-- Autogrow Text Area -->
+		    <!-- Autogrow Textarea -->
 		    <script>
 		        var textarea = document.querySelector('textarea');
 
