@@ -142,6 +142,7 @@ if(isset($_POST['post_message'])) {
 		        }
 		    </script>
 
+			<!-- Go to the bottom of the page on reload -->
 			<script>
 				var div = document.getElementById("scroll_messages");
 				div.scrollTop = div.scrollHeight;
