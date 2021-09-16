@@ -94,7 +94,7 @@ if(isset($_POST['post_message'])) {
         <?php
         if($user_to != "new") {
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
-			echo "<div>";
+			echo "<div class='loaded_messages'>";
 			echo $message_obj->getMessages($user_to);
 			echo "</div>";
 		}
@@ -102,6 +102,7 @@ if(isset($_POST['post_message'])) {
 			echo "<h4>New Message</h4>";
 		}
         ?>
+
 		<form class="" action="" method="POST">
 			<?php
 			if($user_to == "new") {
@@ -110,16 +111,16 @@ if(isset($_POST['post_message'])) {
 				echo "<div class='results'></div>";
 			}
 			else {
-				echo "<div class='row center'>
-						<div class='col-10 m-0 p-0'>
+				echo "<div class='row'>
+						<div class='col-11 m-0 p-0 mt-3'>
 							<textarea class='form-control' rows='1' id='text_area' name='message_body' id='message_textarea' placeholder='Write your message...'></textarea>
 						</div>
-						<div class='col-0 mx-1 p-0'>
+						<div class='col-1 p-0 mt-3'>
 							<button type='submit' name='post_message' class='btn btn-outline-light btn-sm shadow-sm' value=''>
 								<i class='far fa-paper-plane' data-fa-transform='grow-10'></i>
 							</button>
 						</div>
-				</div>";
+					</div>";
 			}
 
 			?>
@@ -144,6 +145,8 @@ if(isset($_POST['post_message'])) {
 		</form>
 
 
+
+
         </div>
 
         </div>
@@ -159,13 +162,6 @@ if(isset($_POST['post_message'])) {
 
 </div>
 <!-- End Message section -->
-
-
-<!--- Top Scroll -->
-<a href="#home" class="top-scroll">
-	<i class="fas fa-angle-up"></i>
-</a>
-<!--- End of Top Scroll -->
 
 
 <?php include 'includes/scripts.php'; ?>
