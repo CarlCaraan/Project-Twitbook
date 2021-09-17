@@ -63,7 +63,7 @@ class Message {
 
         $query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn'");
 
-        while($row = mysqli_fetch_array()) {
+        while($row = mysqli_fetch_array($query)) {
             $user_to_push = ($row['user_to'] != $userLoggedIn) ? $row['user_to'] : $row['user_from'];
 
             if(!in_array($user_to_push, $convos)) {
