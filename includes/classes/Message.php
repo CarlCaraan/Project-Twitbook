@@ -52,6 +52,10 @@ class Message {
         return $data;
     }
 
+    public function getConvos() {
+        
+    }
+
 }
 
 ?>

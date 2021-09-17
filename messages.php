@@ -125,6 +125,8 @@ if(isset($_POST['post_message'])) {
 
 			?>
 
+		</form>
+
 		    <!-- Autogrow Textarea -->
 		    <script>
 		        var textarea = document.querySelector('textarea');
@@ -147,10 +149,6 @@ if(isset($_POST['post_message'])) {
 				var div = document.getElementById("scroll_messages");
 				div.scrollTop = div.scrollHeight;
 			</script>
-
-		</form>
-
-
 
 
         </div>
