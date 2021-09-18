@@ -53,7 +53,7 @@ class Message {
     }
 
     public function getLatestMessage($userLoggedIn, $username) {
-
+        $details_array = array();
     }
 
     public function getConvos() {
