@@ -135,7 +135,7 @@ class Message {
         $return_string = "";
         $convos = array();
 
-        $query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn'");
+        $query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn' ORDER BY id DESC");
 
         while($row = mysqli_fetch_array($query)) {
             $user_to_push = ($row['user_to'] != $userLoggedIn) ? $row['user_to'] : $row['user_from'];
@@ -155,11 +155,11 @@ class Message {
 
             $return_string .= "<a id='left_alinks' href='messages.php?u=$username'>
                                     <div id='left_links_container'>
-                                        <div id='icon_wrapper'>
+                                        <div id='icon_wrapper' class='float-left my-3 mr-1'>
                                             <img src='" . $user_found_obj->getProfilePic() . "' class='rounded-circle w-100'>
                                         </div>
-                                        <div id='text_wrapper' class='bg-danger'>
-                                            " . $user_found_obj->getFirstAndLastName() . "<br>" . $latest_message_details[0] . $split . " " . "<span id=''>" . $latest_message_details[2] . "</span>
+                                        <div id='text_wrapper'>
+                                            " . $user_found_obj->getFirstAndLastName() . "<br>" . $latest_message_details[0] . $split . " " . "<span id='time_stamp'>" . $latest_message_details[2] . "</span>
                                         </div>
                                     </div>
                                 </a>";
