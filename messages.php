@@ -81,6 +81,7 @@ if(isset($_POST['post_message'])) {
 
             <hr class="socket">
 
+			<!-- Start Conversation List -->
 			<br>
 			<div class="" id="conversations">
 				<h4>Conversations</h4>
@@ -91,6 +92,7 @@ if(isset($_POST['post_message'])) {
 				<br>
 				<a href="messages.php?u=new">New Message</a>
 			</div>
+			<!-- End Conversation List -->
 
         </div>
 
