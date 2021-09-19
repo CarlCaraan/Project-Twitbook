@@ -152,6 +152,8 @@ class Message {
             $dots = (strlen($latest_message_details[1]) >= 12) ? "..." : "";
             $split = str_split($latest_message_details[1], 12);
             $split = $split[0] . $dots;
+
+            $return_string .= "<a href='messages.php?u=$username'>"
         }
     }
 
