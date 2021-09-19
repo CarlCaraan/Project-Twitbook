@@ -81,6 +81,17 @@ if(isset($_POST['post_message'])) {
 
             <hr class="socket">
 
+			<br>
+			<div class="" id="conversations">
+				<h4>Conversations</h4>
+
+				<div class="loaded_conversations">
+					<?php echo $message_obj->getConvos(); ?>
+				</div>
+				<br>
+				<a href="messages.php?u=new">New Message</a>
+			</div>
+
         </div>
 
         </div>
@@ -150,15 +161,6 @@ if(isset($_POST['post_message'])) {
 				div.scrollTop = div.scrollHeight;
 			</script>
 
-			<div class="" id="conversations">
-				<h4>Conversations</h4>
-
-				<div class="loaded_conversations">
-					<?php echo $message_obj->getConvos(); ?>
-				</div>
-				<br>
-				<a href="messages.php?u=new">New Message</a>
-			</div>
 
 
 
