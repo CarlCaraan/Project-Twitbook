@@ -57,19 +57,22 @@
 */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
 }
 body{
-  overflow-x: hidden;
-  font-family: 'Lato', sans-serif;
-  color: var(--on-background);
-  background-color: var(--background);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    color: var(--on-background);
+    background-color: var(--background);
 }
 .narrow {
-  width: 75%;
-  margin: 0 auto;
-  padding-top: 2rem;
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 .center {
     text-align: center;
