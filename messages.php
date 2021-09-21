@@ -90,9 +90,10 @@ if(isset($_POST['post_message'])) {
 					<?php echo $message_obj->getConvos(); ?>
 				</div>
 				<br>
-				<a href="messages.php?u=new">New Message</a>
 			</div>
 			<!-- End Conversation List -->
+			
+			<a href="messages.php?u=new">New Message</a>
 
         </div>
 

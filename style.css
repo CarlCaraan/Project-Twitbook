@@ -616,6 +616,10 @@ header .narrow img {
     font-size: .9rem;
     color: #ACACAC;
 }
+#conversations {
+    overflow-y: scroll;
+    height: 40vh;
+}
 
 /*============= DARK MODE TOGGLE SWITCH BOOTSTRAP =============*/
 

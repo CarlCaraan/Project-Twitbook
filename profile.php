@@ -63,11 +63,13 @@ if(isset($_GET['profile_username'])) {
 	if(isset($_POST['remove_friend'])) {
 		$user = new User($con, $userLoggedIn);
 		$user->removeFriend($username);
+		header("Refresh:0");
 	}
 
 	if(isset($_POST['add_friend'])) {
 		$user = new User($con, $userLoggedIn);
 		$user->sendRequest($username);
+		header("Refresh:0");
 	}
 	if(isset($_POST['respond_request'])) {
 		header("Location: requests.php");
@@ -108,7 +110,7 @@ if(isset($_GET['profile_username'])) {
 
 				<hr class="socket">
 
-				<!-- Add Remove Respond Button -->
+				<!-- Add, Remove, and Respond Button -->
 				<form class="center" action="<?php echo $username; ?>" method="POST">
 
 				<?php
