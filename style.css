@@ -710,9 +710,6 @@ a.top-scroll:hover {
 
 /* Custom Query Devices under 1600px */
 @media (max-width: 1599px) {
-    .theme-switch-wrapper {
-        display: none;
-    }
     #CroppingContainer {
         display: none;
     }
@@ -736,6 +733,9 @@ a.top-scroll:hover {
     }
     .col-lg-12 {
         padding-left: 0;
+    }
+    .theme-switch-wrapper {
+        display: none;
     }
 }
 
