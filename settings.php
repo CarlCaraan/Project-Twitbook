@@ -11,7 +11,7 @@ require 'config/config.php';
 
 <body id="settings_body">
 
-<!--- Start Settings section -->
+<!-- Start Settings section -->
 <div id="settings" class="offset">
 
 	<!-- Navigation -->
@@ -37,7 +37,7 @@ require 'config/config.php';
 
 
 </div>
-<!--- End Settings section -->
+<!-- End Settings section -->
 
 
 

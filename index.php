@@ -249,11 +249,11 @@ include("includes/classes/Post.php");
 <!-- End Home section -->
 
 
-<!--- Top Scroll -->
+<!-- Top Scroll -->
 <a href="#home" class="top-scroll">
 	<i class="fas fa-angle-up"></i>
 </a>
-<!--- End of Top Scroll -->
+<!-- End of Top Scroll -->
 
 
 <?php include 'includes/scripts.php'; ?>
