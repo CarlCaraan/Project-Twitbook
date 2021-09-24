@@ -169,6 +169,13 @@ $(document).ready(function() {
 	});
 });
 
+/*========== AJAX FRIEND SEARCH ==========*/
+function getUser(value, user) {
+	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data) {
+		$(".result").html(data);
+	});
+}
+
 /*========== TOP SCROLL BUTTON ==========*/
 
 $(document).ready(function() { //when document is ready
