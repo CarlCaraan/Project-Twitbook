@@ -170,9 +170,9 @@ $(document).ready(function() {
 });
 
 /*========== AJAX MESSAGE FRIEND SEARCH ==========*/
-function getUser(value, user) {
+function getUsers(value, user) {
 	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data) {
-		$(".result").html(data);
+		$(".results").html(data);
 	});
 }
 
