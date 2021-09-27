@@ -93,7 +93,7 @@ if(isset($_POST['post_message'])) {
 			</div>
 			<!-- End Conversation List -->
 
-			<a href="messages.php?u=new">New Message</a>
+			<br><a class="new_message" href="messages.php?u=new">New Message</a>
 
         </div>
 
@@ -123,7 +123,7 @@ if(isset($_POST['post_message'])) {
 				echo "Select a friend you would like to send message <br><br>";
 				?>
 
-				To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
+				To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'><br><br>
 
 				<?php
 				echo "<div class='results'></div>";

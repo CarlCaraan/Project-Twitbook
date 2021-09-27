@@ -620,6 +620,44 @@ header .narrow img {
     overflow-y: scroll;
     height: 40vh;
 }
+.resultDisplay {
+    padding: 5px 5px 0 5px;
+    border-bottom: 1px solid #ACACAC;
+    height: 80px;
+}
+.resultDisplay a {
+    float: none;
+}
+.resultDisplay a:hover {
+    text-decoration: none;
+}
+.resultDisplay:hover {
+    background-color: rgba(176, 175, 175, .4);
+    border-radius: 8px;
+}
+.liveSearchProfilePic img {
+    height: 60px;
+    border-radius: 50px;
+    float: left;
+    margin: 1px 12px 0 2px;
+}
+.liveSearchText {
+    margin-left: 1rem;
+    color: var(--alinks);
+}
+.liveSearchText p {
+    margin: 0;
+    font-size: .9rem;
+}
+.liveSearchText p#grey{
+    color: #ACACAC;
+}
+.new_message {
+    color: var(--primary-color);
+}
+.new_message:hover {
+    color: var(--primary-color);
+}
 
 /*============= DARK MODE TOGGLE SWITCH BOOTSTRAP =============*/
 
