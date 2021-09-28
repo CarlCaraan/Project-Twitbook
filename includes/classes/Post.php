@@ -241,20 +241,23 @@ class Post {
                 ?>
 
                 <!-- Delete bootbox.js -->
-                <script>
-                    $(document).ready(function() {
-                        $('#post<?php echo $id; ?>').on('click', function() {
-                            bootbox.confirm("Are you sure you want to delete this post?", function(result){
+				<script>
+					$(document).ready(function() {
 
-                                $.post("includes/handlers/delete_post.php?post_id=<?php echo $id; ?>", {result, result});
+						$('#post<?php echo $id; ?>').on('click', function() {
+							bootbox.confirm("Are you sure you want to delete this post?", function(result) {
 
-                                if(result)
-                                    location.reload();
+								$.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
 
-                            });
-                        });
-                    });
-                </script>
+								if(result)
+									location.reload();
+
+							});
+						});
+
+
+					});
+				</script>
 
                 <?php
             } //-- End While loop --//
@@ -453,22 +456,24 @@ class Post {
                 ?>
 
                 <!-- Delete bootbox.js -->
-                <script>
+				<script>
+					$(document).ready(function() {
 
-                    $(document).ready(function() {
-                        $('#post<?php echo $id; ?>').on('click', function() {
-                            bootbox.confirm("Are you sure you want to delete this post?", function(result){
+						$('#post<?php echo $id; ?>').on('click', function() {
+							bootbox.confirm("Are you sure you want to delete this post?", function(result) {
 
-                                $.post("includes/handlers/delete_post.php?post_id=<?php echo $id; ?>", {result, result});
+								$.post("includes/form_handlers/delete_post.php?post_id=<?php echo $id; ?>", {result:result});
 
-                                if(result)
-                                    location.reload();
+								if(result)
+									location.reload();
 
-                            });
-                        });
-                    });
+							});
+						});
 
-                </script>
+
+					});
+				</script>
+
                 <?php
             } //-- End While loop --//
 

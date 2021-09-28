@@ -125,7 +125,7 @@ if(isset($_POST['post_message'])) {
 
 				To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'><br><br>
 
-				<?php
+			<?php
 				echo "<div class='results'></div>";
 			}
 			else {
