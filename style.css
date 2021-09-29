@@ -63,6 +63,9 @@
     text-decoration: none;
     transition: all .2s linear;
 }
+html {
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;

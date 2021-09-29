@@ -109,7 +109,7 @@ if(isset($_POST['post_message'])) {
         if($user_to != "new") {
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4><br>";
 			echo "<div class='loaded_messages' id='scroll_messages'>";
-			echo $message_obj->getMessages($user_to);
+				echo $message_obj->getMessages($user_to);
 			echo "</div>";
 		}
 		else {
@@ -145,33 +145,31 @@ if(isset($_POST['post_message'])) {
 
 		</form>
 
-		    <!-- Autogrow Textarea -->
-		    <script>
-		        var textarea = document.querySelector('textarea');
+	    <!-- Autogrow Textarea -->
+	    <script>
+	        var textarea = document.querySelector('textarea');
 
-		        textarea.addEventListener('keydown', autosize);
+	        textarea.addEventListener('keydown', autosize);
 
-		        function autosize(){
-		          var el = this;
-		          setTimeout(function(){
-		            el.style.cssText = 'height:auto; padding:0';
-		            // for box-sizing other than "content-box" use:
-		            // el.style.cssText = '-moz-box-sizing:content-box';
-		            el.style.cssText = 'height:' + el.scrollHeight + 'px';
-		          },0);
-		        }
-		    </script>
+	        function autosize(){
+	          var el = this;
+	          setTimeout(function(){
+	            el.style.cssText = 'height:auto; padding:0';
+	            // for box-sizing other than "content-box" use:
+	            // el.style.cssText = '-moz-box-sizing:content-box';
+	            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+	          },0);
+	        }
+	    </script>
 
-			<!-- Go to the bottom of the page on reload -->
-			<script>
-				var div = document.getElementById("scroll_messages");
-				div.scrollTop = div.scrollHeight;
-			</script>
-
-
+		<!-- Go to the bottom of the page on reload -->
+		<script>
+			var div = document.getElementById("scroll_messages");
+			div.scrollTop = div.scrollHeight;
+		</script>
 
 
-        </div>
+		</div> <!-- End Post Container -->
 
         </div>
         <!-- End Middle Section -->

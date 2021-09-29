@@ -2,6 +2,7 @@
 require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
+include("includes/classes/Message.php");
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +75,25 @@ if(isset($_GET['profile_username'])) {
 	if(isset($_POST['respond_request'])) {
 		header("Location: requests.php");
 	}
+
+	$message_obj = new Message($con, $userLoggedIn);
+
+	if(isset($_POST['post_message'])) {
+	  if(isset($_POST['message_body'])) {
+	    $body = mysqli_real_escape_string($con, $_POST['message_body']);
+	    $date = date("Y-m-d H:i:s");
+	    $message_obj->sendMessage($username, $body, $date);
+	  }
+
+		//Remain to messages tab after sending message
+	 	$link = '#profileTabs a[href="#messages_div"]';
+	 	echo "<script>
+		        $(function() {
+		            $('" . $link ."').tab('show');
+		        });
+	        </script>";
+	}
+
 	?>
 
 	<!-- Start Section Content -->
@@ -247,9 +267,75 @@ if(isset($_GET['profile_username'])) {
 			<!-- Start Middle Section -->
 			<div class="col-lg-7 animate__animated animate__fadeInRight" id="middle-section">
 
-				<!-- Display Posts and Loading GIF -->
-				<div class="posts_area"></div>
-				<img id="loading" src="assets/images/icons/loading.gif">
+			    <!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified" role="tablist" id="profileTabs">
+				    <li class="nav-item">
+				    	<a class="nav-link active new_message" data-toggle="tab" href="#newsfeed_div">Newsfeed</a>
+				    </li>
+				    <li class="nav-item">
+				    	<a class="nav-link new_message" data-toggle="tab" href="#messages_div">Messages</a>
+				    </li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+				    <div id="newsfeed_div" class="container tab-pane active offset-tabs"><br>
+						<!-- Display Posts and Loading GIF -->
+						<div class="posts_area"></div>
+						<img id="loading" src="assets/images/icons/loading.gif">
+				    </div>
+
+				    <div id="messages_div" class="container tab-pane fade offset-tabs"><br>
+ 					    <?php
+				          echo "<h4>You and <a href='" . $username ."'>" . $profile_user_obj->getFirstAndLastName() . "</a></h4><hr><br>";
+
+				          echo "<div class='loaded_messages' id='scroll_messages'>";
+				            echo $message_obj->getMessages($username);
+				          echo "</div>";
+				        ?>
+
+						<form class="" action="" method="POST">
+							<div class='row'>
+								<div class='col-11 m-0 p-0 mt-3'>
+									<textarea class='form-control' rows='1' id='text_area' name='message_body' id='message_textarea' placeholder='Write your message...'></textarea>
+								</div>
+								<div class='col-1 p-0 mt-3'>
+									<button type='submit' name='post_message' class='btn btn-outline-light btn-sm shadow-sm' value=''>
+										<i class='far fa-paper-plane' data-fa-transform='grow-10'></i>
+									</button>
+								</div>
+							</div>
+						</form>
+
+
+
+
+					    <!-- Autogrow Textarea -->
+					    <script>
+					        var textarea = document.querySelector('textarea');
+
+					        textarea.addEventListener('keydown', autosize);
+
+					        function autosize(){
+					          var el = this;
+					          setTimeout(function(){
+					            el.style.cssText = 'height:auto; padding:0';
+					            // for box-sizing other than "content-box" use:
+					            // el.style.cssText = '-moz-box-sizing:content-box';
+					            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+					          },0);
+					        }
+					    </script>
+
+						<!-- Go to the bottom of the page on reload -->
+						<script>
+							var div = document.getElementById("scroll_messages");
+							div.scrollTop = div.scrollHeight;
+						</script>
+
+				    </div>
+				</div>
+
 
 			</div>
 			<!-- End Middle Section -->
