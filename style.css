@@ -1,6 +1,7 @@
 /*============= ALL FONTS =============*/
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 @font-face {
     font-family: 'Bellota-LightItalic';
@@ -708,6 +709,70 @@ a.top-scroll:hover {
   opacity: .5;
 }
 
+/*============= INTERNET NOTIFICATION POPUP MESSAGE =============*/
+
+.connection {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 360px;
+    height: 70px;
+    background: #242526;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.connection p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+.connection .refreshBtn {
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #469aff;
+}
+.connection .wifi-off {
+    margin-right: 20px;
+    font-size: 26px;
+    color: #7c7c7c;
+}
+.connection .close {
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    background: #474747;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.connection .wifi {
+    color: #029702;
+    font-size: 26px;
+    margin-right: 20px;
+}
+.online.active {
+    width: 420px;
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+}
+.offline.active {
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /*============= TOOLTIP CSS CHEATSHEET =============*/
 /*

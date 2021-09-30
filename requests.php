@@ -38,7 +38,7 @@ include("includes/classes/Post.php");
                     ?>
 
                     <br><hr class="socket">
-                    
+
                     <?php
                     echo $user_from_obj->getFirstAndLastName() . " sent you a friend request!";
 
@@ -85,6 +85,23 @@ include("includes/classes/Post.php");
 	<i class="fas fa-angle-up"></i>
 </a>
 <!-- End of Top Scroll -->
+
+<!-- Start Internet Notification Popup Message -->
+<div class="connections">
+	<div class="connection offline">
+		<i class="material-icons wifi-off">wifi_off</i>
+		<p>you are currently offline</p>
+		<a href="#" class="refreshBtn">Refresh</a>
+		<i class="material-icons close">close</i>
+	</div>
+	<div class="connection online">
+		<i class="material-icons wifi">wifi</i>
+		<p>your Internet connection was restored</p>
+		<i class="material-icons close">close</i>
+	</div>
+</div>
+<!-- End Internet Notification Popup Message -->
+
 
 <?php include 'includes/scripts.php'; ?>
 
