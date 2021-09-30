@@ -307,9 +307,6 @@ if(isset($_GET['profile_username'])) {
 							</div>
 						</form>
 
-
-
-
 					    <!-- Autogrow Textarea -->
 					    <script>
 					        var textarea = document.querySelector('textarea');
@@ -335,7 +332,6 @@ if(isset($_GET['profile_username'])) {
 
 				    </div>
 				</div>
-
 
 			</div>
 			<!-- End Middle Section -->
