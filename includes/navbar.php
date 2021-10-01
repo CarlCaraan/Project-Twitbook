@@ -26,7 +26,7 @@ else {
     </div>
 </div>
 
-<!--- Navigation -->
+<!-- Start Navigation -->
 <nav class="navbar navbar-expand-md fixed-top always-solid">
 <div class="container-fluid">
 	<a class="navbar-brand" href="index.php"><img src="assets/images/icons/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
@@ -96,4 +96,4 @@ else {
 	</div>
 </div>
 </nav>
-<!--- End Navigation -->
+<!-- End Navigation -->

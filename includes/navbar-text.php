@@ -15,7 +15,7 @@ else {
 
 <div class="navbar-toggle d-none">
 
-<!--- Navigation -->
+<!-- Start Navigation -->
 <nav class="navbar navbar-expand-md fixed-top always-solid animate__animated animate__fadeInDown" id="navbar_text">
 <div class="container-fluid">
 	<a class="navbar-brand" href="index.php"><img src="assets/images/icons/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
@@ -75,4 +75,4 @@ else {
 </nav>
 </div>
 
-<!--- End Navigation -->
+<!-- End Navigation -->

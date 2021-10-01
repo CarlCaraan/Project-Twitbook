@@ -26,7 +26,7 @@ else {
     </div>
 </div>
 
-<!--- Navigation -->
+<!-- Start Navigation -->
 <nav class="navbar navbar-expand-md always-solid">
 <div class="container-fluid">
 	<a class="navbar-brand" href="index.php"><img src="assets/images/icons/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
@@ -45,7 +45,7 @@ else {
 			</li>
 
 			<li class="nav-item text-center">
-				<a class="nav-link" href="#" id="messages">
+				<a class="nav-link" href="javascript:void(0)" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')" id="messages">
 					<i id="nav_icon" class="fas fa-envelope fa-inverse <?php if($page=='messages'){echo 'active';}?>" data-fa-transform="grow-10"></i>
                 </a>
                 <div class="spacing"></div>
@@ -96,4 +96,9 @@ else {
 	</div>
 </div>
 </nav>
-<!--- End Navigation -->
+<!-- End Navigation -->
+
+<!-- Start Message Window -->
+<div class="dropdown_data_window"></div>
+<input type="hidden" id="dropdown_data_type" name="" value="">
+<!-- End Message Window -->
