@@ -151,7 +151,9 @@ function getUsers(value, user) {
 /*========== AJAX NAVIGATION MESSAGE POP-UP ==========*/
 
 function getDropdownData(user, type) {
+
 	if($(".dropdown_data_window").css("height") == "0px") {
+
 		var pageName;
 
 		if(type == 'notification') {
@@ -165,19 +167,19 @@ function getDropdownData(user, type) {
 		var ajaxreq = $.ajax({
 			url: "includes/handlers/" + pageName,
 			type: "POST",
-			data: "page=1&user=" + user,
+			data: "page=1&userLoggedIn=" + user,
 			cache: false,
 
 			success: function(response) {
 				$(".dropdown_data_window").html(response);
-				$(".dropdown_data_window").css({"padding" : "0px", "height" : "280px"});
-				$("$dropdown_data_type").val(type);
+				$(".dropdown_data_window").css({"padding" : "0px", "height" : "280px", "border-top" : "1px solid var(--alinks)"});
+				$("#dropdown_data_type").val(type);
 			}
 		});
 	}
 	else {
 		$(".dropdown_data_window").html("");
-		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px"});
+		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px", "border-top" : "none"});
 	}
 }
 

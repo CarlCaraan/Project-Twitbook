@@ -2,6 +2,7 @@
 require("config/config.php");
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
+include("includes/classes/Message.php");
 ?>
 
 <!DOCTYPE html>
@@ -225,6 +226,10 @@ include("includes/classes/Post.php");
 
 					<div class="card center">
 						<img class="card-img-top" src="assets/images/certificate/cert6.png" alt="">
+					</div>
+
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert7.jpg" alt="">
 					</div>
 
         		</div>

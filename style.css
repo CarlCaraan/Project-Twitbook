@@ -285,6 +285,14 @@ a.navbar-brand:hover {
 .spacing {
     height: 18%;
 }
+#unread_message_badge {
+    position: absolute;
+    margin: -5px 0 0 -4px;
+}
+#unread_message_badge_text{
+    position: absolute;
+    margin: -7px 0 0 -3px;
+}
 /*-- BOOTSTRAP TOOLTIP --*/
 .tooltip-inner {
     max-width: 200px;
@@ -662,6 +670,18 @@ header .narrow img {
 .new_message:hover {
     color: var(--primary-color);
 }
+/*-- Dropdown Message --*/
+.dropdown_data_window {
+    background: var(--cards);
+    width: 395px;
+    z-index: 1000!important;
+    position: fixed;
+    right: 25px;
+    bottom: 0;
+    border-radius: 5px 5px 0 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 /*============= DARK MODE TOGGLE SWITCH BOOTSTRAP =============*/
 
@@ -841,6 +861,9 @@ a.top-scroll:hover {
         padding-left: 0;
     }
     .theme-switch-wrapper {
+        display: none;
+    }
+    .dropdown_data_window {
         display: none;
     }
 }

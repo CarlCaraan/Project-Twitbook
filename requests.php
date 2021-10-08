@@ -2,6 +2,7 @@
 require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
+include("includes/classes/Message.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +17,12 @@ include("includes/classes/Post.php");
 <div id="friendrequest" class="offset">
 
 	<!-- Navigation -->
-    <?php $page = 'friendrequest';include 'includes/navbar_sticky.php'; ?>
+    <?php $page = 'friendrequest';include 'includes/navbar.php'; ?>
 
 
 <!-- Start Section Content -->
 <div class="container">
-    <div class="narrow center"><br>
+    <div class="narrow center"><br><br><br>
         <div id="post-container">
             <h2>Friend Request</h2>
 
