@@ -22,6 +22,14 @@ else {
 		//Unread messages
 		$messages = new Message($con, $userLoggedIn);
 		$num_messages = $messages->getUnreadNumber();
+
+    	//Unread notifications
+    	$notifications = new Notification($con, $userLoggedIn);
+    	$num_notifications = $notifications->getUnreadNumber();
+
+    	//Unread friend requests
+    	$user_obj = new User($con, $userLoggedIn);
+    	$num_requests = $user_obj->getNumberOfFriendRequests();
 	?>
 
 <div class="container-fluid">
@@ -51,13 +59,25 @@ else {
 			</li>
 
 			<li class="nav-item text-center">
-				<a class="nav-link <?php if($page=='notification'){echo 'active';}?>" href="#"> Alerts</a>
+				<a class="nav-link <?php if($page=='notification'){echo 'active';}?>" href="javascript:void(0)" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')"> Alerts
+                    <?php
+                    //notification badge
+                    if($num_notifications > 0)
+                        echo '<span class="badge badge-danger" id="unread_message_badge_text">' . $num_notifications . '</span>';
+                    ?>
+                </a>
                 <div class="spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
 			</li>
 
 			<li class="nav-item text-center">
-				<a class="nav-link <?php if($page=='friendrequest'){echo 'active';}?>" href="requests.php"> Requests</a>
+				<a class="nav-link <?php if($page=='notification'){echo 'active';}?>" href="requests.php"> Request
+                    <?php
+                    //notification badge
+                    if($num_requests > 0)
+                        echo '<span class="badge badge-danger" id="unread_message_badge_text">' . $num_requests . '</span>';
+                    ?>
+                </a>
                 <div class="spacing"></div>
                 <div class=" <?php if($page=='friendrequest'){echo 'underline-active';}?>"></div>
 			</li>

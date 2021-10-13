@@ -293,6 +293,15 @@ a.navbar-brand:hover {
     position: absolute;
     margin: -7px 0 0 -3px;
 }
+/*-- Live Search --*/
+.search {
+    top: 7px;
+    right: 30px;
+    position: absolute;
+}
+#search_input {
+    width: 14vw;;
+}
 /*-- BOOTSTRAP TOOLTIP --*/
 .tooltip-inner {
     max-width: 200px;
@@ -866,6 +875,13 @@ a.top-scroll:hover {
     .dropdown_data_window {
         display: none;
     }
+    .search {
+        top: 65px;
+        z-index: 1000!important;
+    }
+    #certificate_container {
+        margin-top: 25px;
+    }
 }
 
 /*-- Devices under 992px (lg) --*/
@@ -914,6 +930,9 @@ a.top-scroll:hover {
     #content {
         width: 100%;
     }
+    .search {
+        display: none;
+    }
 }
 
 /*-- Devices under 576px (sm) --*/
@@ -937,6 +956,12 @@ a.top-scroll:hover {
     }
     #comment_loadposts span {
         margin-left: 5rem;
+    }
+    .search {
+        top: 7px;
+        right: 70px;
+        width: 72vw;
+        display: block;
     }
 }
 

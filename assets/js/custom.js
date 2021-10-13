@@ -157,7 +157,8 @@ function getDropdownData(user, type) {
 		var pageName;
 
 		if(type == 'notification') {
-
+			pageName = "ajax_load_notifications.php";
+			$("span").remove("#unread_notification");
 		}
 		else if (type == 'message') {
 			pageName = "ajax_load_messages.php";
@@ -181,6 +182,26 @@ function getDropdownData(user, type) {
 		$(".dropdown_data_window").html("");
 		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px", "border-top" : "none"});
 	}
+}
+
+/*========== AJAX LIVE SEARCH DROPDOWN ==========*/
+
+function getLiveSearchUsers(value, user) {
+	$.post("includes/handlers/ajax_search.php", {query:value, userLoggedIn:user}, function (data) {
+		if($(".search_results_footer_empty")[0]) {
+			$(".search_results_footer_empty").toggleClass("search_results_footer");
+			$(".search_results_footer_empty").toggleClass("search_results_footer_empty");
+		}
+
+		$('.search_results').html(data);
+		$('.search_results_footer').html("<a href='search.php?q=" + value + "'>See All Results</a>");
+
+		if(data="") {
+			$('.search_results_footer').html("");
+			$('.search_results_footer').toggleClass("search_results_footer_empty");
+			$('.search_results_footer').toggleClass("search_results_footer");
+		}
+	});
 }
 
 /*========== TOP SCROLL BUTTON ==========*/

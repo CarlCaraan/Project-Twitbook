@@ -33,7 +33,15 @@ else {
 		//Unread messages
 		$messages = new Message($con, $userLoggedIn);
 		$num_messages = $messages->getUnreadNumber();
-	?>
+
+    	//Unread notifications
+    	$notifications = new Notification($con, $userLoggedIn);
+    	$num_notifications = $notifications->getUnreadNumber();
+
+    	//Unread friend requests
+    	$user_obj = new User($con, $userLoggedIn);
+    	$num_requests = $user_obj->getNumberOfFriendRequests();
+    ?>
 
 <div class="container-fluid">
 	<a class="navbar-brand" href="index.php"><img src="assets/images/icons/twitter.ico" alt=""><span id="navbar_brand_text">Twitbook</span></a>
@@ -65,8 +73,13 @@ else {
 			</li>
 
 			<li class="nav-item text-center">
-				<a class="nav-link" href="#" id="notification">
+				<a class="nav-link" href="javascript:void(0)" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')" id="notification">
 					<i id="nav_icon" class="fas fa-globe-americas fa-inverse <?php if($page=='notification'){echo 'active';}?>" data-fa-transform="grow-10"></i>
+                    <?php
+                    //notification badge
+                    if($num_notifications > 0)
+                        echo '<span class="badge badge-pill badge-danger" id="unread_message_badge">' . $num_notifications . '</span>';
+                    ?>
                 </a>
                 <div class="spacing"></div>
                 <div class=" <?php if($page=='#'){echo 'underline-active';}?>"></div>
@@ -75,6 +88,11 @@ else {
 			<li class="nav-item text-center">
 				<a class="nav-link" href="requests.php" id="friendrequest">
 					<i id="nav_icon" class="fas fa-users fa-inverse <?php if($page=='friendrequest'){echo 'active';}?>" data-fa-transform="grow-10"></i>
+                    <?php
+                    //notification badge
+                    if($num_requests > 0)
+                        echo '<span class="badge badge-pill badge-danger" id="unread_message_badge">' . $num_requests . '</span>';
+                    ?>
                 </a>
                 <div class="spacing"></div>
                 <div class=" <?php if($page=='friendrequest'){echo 'underline-active';}?>"></div>
@@ -109,6 +127,27 @@ else {
 </div>
 </nav>
 <!-- End Navigation -->
+
+<!-- Start Live Search -->
+<div class="search">
+    <form class="form-inline" action="search.php" method="GET" name="search_form">
+        <div class="input-group">
+            <input id="search_input" type="text" class="form-control" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off">
+            <div class="input-group-append">
+                <button class="btn_search input-group-text"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <div class="search_results">
+
+    </div>
+    
+    <div class="search_results_footer_empty">
+
+    </div>
+</div>
+<!-- End Live Search -->
 
 <!-- Start Message Window -->
 <div class="dropdown_data_window px-1" style="height: 0px; border: none;"></div>

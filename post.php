@@ -10,26 +10,14 @@ include("includes/classes/Notification.php");
 <html lang="en">
 <head>
 	<?php include 'includes/head.php'; ?>
-	<title>Twitbook</title>
 </head>
-
 <body>
-
-<!-- Start Home section -->
-<div id="home">
 
 	<!-- Navigation -->
 	<header>
-	<?php $page = 'home';include 'includes/navbar-fixed.php'; ?>
-	<?php $page = 'home';include 'includes/navbar-text.php'; ?>
+	<?php $page = 'notification';include 'includes/navbar-fixed.php'; ?>
+	<?php $page = 'notification';include 'includes/navbar-text.php'; ?>
 	</header>
-
-<?php
-    if(isset($_POST['post'])){
-    $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['post_text'], 'none');
-}
-?>
 
     <!-- Start Three Section -->
 	<section>
@@ -93,97 +81,28 @@ include("includes/classes/Notification.php");
         </div>
         <!-- End Left Section -->
 
+        <?php
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }
+        else {
+            $id = 0;
+        }
+
+        ?>
+
         <!-- Start Middle Section -->
         <div class="col-md-6" id="middle-section">
 
-        <div id="post-container">
-          <form action="index.php" method="POST">
-            <div class="form-group">
-              <label for="post_text" id="labeltitle">Create Post:</label>
-              <textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
-            </div>
-            <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" value="Tweet"></input>
-          </form>
-        </div>
-
-	    <!-- Autogrow Textarea -->
-	    <script>
-	        var textarea = document.querySelector('textarea');
-
-	        textarea.addEventListener('keydown', autosize);
-
-	        function autosize(){
-	          var el = this;
-	          setTimeout(function(){
-	            el.style.cssText = 'height:auto; padding:0';
-	            // for box-sizing other than "content-box" use:
-	            // el.style.cssText = '-moz-box-sizing:content-box';
-	            el.style.cssText = 'height:' + el.scrollHeight + 'px';
-	          },0);
-	        }
-	    </script>
-
-
 		<!-- Display Posts and Loading GIF -->
-		<div class="posts_area"></div>
-		<img id="loading" src="assets/images/icons/loading.gif">
+    		<div class="posts_area">
+                <?php
+                    $post = new Post($con, $userLoggedIn);
+                    $post->getSinglePost($id);
+                ?>
+            </div>
 
         </div>
-
-		<!-- Ajax Script limit post -->
-		<script>
-		var userLoggedIn = '<?php echo $userLoggedIn; ?>';
-
-		$(document).ready(function() {
-
-			$('#loading').show();
-
-			//Original ajax request for loading first posts
-			$.ajax({
-				url: "includes/handlers/ajax_load_posts.php",
-				type: "POST",
-				data: "page=1&userLoggedIn=" + userLoggedIn,
-				cache:false,
-
-				success: function(data) {
-					$('#loading').hide();
-					$('.posts_area').html(data);
-				}
-			});
-
-			$(window).scroll(function() {
-				var height = $('.posts_area').height(); //Div containing posts
-				var scroll_top = $(this).scrollTop();
-				var page = $('.posts_area').find('.nextPage').val();
-				var noMorePosts = $('.posts_area').find('.noMorePosts').val();
-
-				if($(window).scrollTop() == $(document).height() - $(window).height() && noMorePosts == 'false') {
-					$('#loading').show();
-
-					var ajaxReq = $.ajax({
-						url: "includes/handlers/ajax_load_posts.php",
-						type: "POST",
-						data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
-						cache:false,
-
-						success: function(response) {
-							$('.posts_area').find('.nextPage').remove(); //Removes current .nextpage
-							$('.posts_area').find('.noMorePosts').remove(); //Removes current .nextpage
-
-							$('#loading').hide();
-							$('.posts_area').append(response);
-						}
-					});
-
-				} //End if
-
-				return false;
-
-			}); //End (window).scroll(function())
-
-
-		});
-		</script>
         <!-- End Middle Section -->
 
 
@@ -253,6 +172,7 @@ include("includes/classes/Notification.php");
 
 </div>
 <!-- End Home section -->
+
 
 
 <!-- Top Scroll -->
