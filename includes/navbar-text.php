@@ -16,7 +16,7 @@ else {
 <div class="navbar-toggle d-none">
 
 <!-- Start Navigation -->
-<nav class="navbar navbar-expand-md fixed-top always-solid animate__animated animate__fadeInDown" id="navbar_text">
+<nav class="navbar navbar-expand-md fixed-top always-solid animate__animated animate__fadeInDown" id="navbar_text" style="z-index: 100;">
 
 	<?php
 		//Unread messages
@@ -109,6 +109,27 @@ else {
 </div>
 
 <!-- End Navigation -->
+
+<!-- Start Live Search -->
+<div class="search navbar-toggle d-none animate__animated animate__fadeInDown" style="position: fixed;">
+    <form class="form-inline" action="search.php" method="GET" name="search_form">
+        <div class="input-group">
+            <input id="search_input" type="text" class="form-control" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off">
+            <div class="input-group-append">
+                <button class="btn_search input-group-text"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <div class="search_results">
+
+    </div>
+
+    <div class="search_results_footer_empty center" id="see_all_result">
+
+    </div>
+</div>
+<!-- End Live Search -->
 
 <!-- Start Message Window -->
 <div class="dropdown_data_window px-1" style="height: 0px; border: none;"></div>

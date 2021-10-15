@@ -187,7 +187,9 @@ function getDropdownData(user, type) {
 /*========== AJAX LIVE SEARCH DROPDOWN ==========*/
 
 function getLiveSearchUsers(value, user) {
-	$.post("includes/handlers/ajax_search.php", {query:value, userLoggedIn:user}, function (data) {
+
+	$.post("includes/handlers/ajax_search.php", {query:value, userLoggedIn: user}, function(data) {
+
 		if($(".search_results_footer_empty")[0]) {
 			$(".search_results_footer_empty").toggleClass("search_results_footer");
 			$(".search_results_footer_empty").toggleClass("search_results_footer_empty");
@@ -196,12 +198,14 @@ function getLiveSearchUsers(value, user) {
 		$('.search_results').html(data);
 		$('.search_results_footer').html("<a href='search.php?q=" + value + "'>See All Results</a>");
 
-		if(data="") {
+		if(data == "") {
 			$('.search_results_footer').html("");
 			$('.search_results_footer').toggleClass("search_results_footer_empty");
 			$('.search_results_footer').toggleClass("search_results_footer");
 		}
+
 	});
+
 }
 
 /*========== TOP SCROLL BUTTON ==========*/
@@ -256,3 +260,23 @@ for (let i = 0; i < closeBtn.length; i++) {
 refreshBtn.addEventListener("click",()=>{
 	window.location.reload();
 })
+
+/*========== CLOSE SEARCH DROPDOWN & NOTIFICATION DROPDOWN ON-CLICK ==========*/
+
+$(document).click(function(e){
+
+	//search dropdown
+	if(e.target.class != "search_results" && e.target.id != "search_text_input") {
+		$(".search_results").html("");
+		$('.search_results_footer').html("");
+		$('.search_results_footer').toggleClass("search_results_footer_empty");
+		$('.search_results_footer').toggleClass("search_results_footer");
+	}
+
+	//notification dropdown
+	if(e.target.class != "dropdown_data_window") {
+
+		$(".dropdown_data_window").html("");
+		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px", "border-top" : "none"});
+	}
+});

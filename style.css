@@ -298,9 +298,16 @@ a.navbar-brand:hover {
     top: 7px;
     right: 30px;
     position: absolute;
+    z-index: 1000!important;
 }
 #search_input {
-    width: 14vw;;
+    width: 14vw;
+}
+.search_results {
+    background-color: var(--textarea);
+}
+#see_all_result {
+    background-color: var(--textarea);
 }
 /*-- BOOTSTRAP TOOLTIP --*/
 .tooltip-inner {
@@ -702,7 +709,7 @@ header .narrow img {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   right: 25px;
   top: 70px;

@@ -27,7 +27,7 @@ else {
 </div>
 
 <!-- Start Navigation -->
-<nav class="navbar navbar-expand-md fixed-top always-solid">
+<nav class="navbar navbar-expand-md fixed-top always-solid" style="z-index: 100;">
 
     <?php
     	//Unread messages
@@ -37,7 +37,7 @@ else {
     	//Unread notifications
     	$notifications = new Notification($con, $userLoggedIn);
     	$num_notifications = $notifications->getUnreadNumber();
-        
+
     	//Unread friend requests
     	$user_obj = new User($con, $userLoggedIn);
     	$num_requests = $user_obj->getNumberOfFriendRequests();
@@ -127,6 +127,27 @@ else {
 </div>
 </nav>
 <!-- End Navigation -->
+
+<!-- Start Live Search -->
+<div class="search" style="position: fixed; z-index: 1000">
+    <form class="form-inline" action="search.php" method="GET" name="search_form">
+        <div class="input-group">
+            <input id="search_input" type="text" class="form-control" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off">
+            <div class="input-group-append">
+                <button class="btn_search input-group-text"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <div class="search_results">
+
+    </div>
+
+    <div class="search_results_footer_empty center" id="see_all_result">
+
+    </div>
+</div>
+<!-- End Live Search -->
 
 <!-- Start Message Window -->
 <div class="dropdown_data_window px-1" style="height: 0px; border: none;"></div>

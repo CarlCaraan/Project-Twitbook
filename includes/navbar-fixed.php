@@ -142,8 +142,8 @@ else {
     <div class="search_results">
 
     </div>
-    
-    <div class="search_results_footer_empty">
+
+    <div class="search_results_footer_empty center" id="see_all_result">
 
     </div>
 </div>
