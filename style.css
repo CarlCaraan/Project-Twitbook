@@ -889,6 +889,9 @@ a.top-scroll:hover {
     #certificate_container {
         margin-top: 25px;
     }
+    #search_username {
+        font-size: .8rem;
+    }
 }
 
 /*-- Devices under 992px (lg) --*/
@@ -939,6 +942,16 @@ a.top-scroll:hover {
     }
     .search {
         display: none;
+    }
+    #search_button {
+        font-size: .6rem;
+    }
+    #search_username {
+        font-size: .6rem;
+    }
+    #search_profilepic {
+        height: 40px;
+        margin-top: .7rem;
     }
 }
 

@@ -41,7 +41,7 @@ else {
 
 
 <div class="container">
-    <div class="narrow center"><br><br><br>
+    <div class="narrow center"><br><br><br><br>
         <div id="post-container">
 
         <?php
@@ -87,17 +87,64 @@ else {
 
                     //Generate button depending on friendship status
                     if($user_obj->isFriend($row['username']))
-                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' value='Remove Friend'>";
-                    else if($user->obj->didReceiveRequest($row['username']))
-                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' value='Respond to request'>";
+                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' id='search_button' value='Remove Friend'>";
+                    else if($user_obj->didReceiveRequest($row['username']))
+                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' id='search_button' value='Respond to request'>";
                     else if($user->obj->didSendRequest($row['username']))
-                        $button = "<input class='btn btn-outline-light btn-sm shadow-sm' value='Request Sent'>";
+                        $button = "<input class='btn btn-outline-light btn-sm shadow-sm' id='search_button' value='Request Sent'>";
                     else
-                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' value='Add Friend'>";
+                        $button = "<input type='submit' name='" . $row['username'] . "' class='btn btn-outline-light btn-sm shadow-sm' id='search_button' value='Add Friend'>";
 
 				    $mutual_friends = $user_obj->getMutualFriends($row['username']) . " friends in common";
+
+                    //Button forms
+    				if(isset($_POST[$row['username']])) {
+
+    					if($user_obj->isFriend($row['username'])) {
+    						$user_obj->removeFriend($row['username']);
+    						header("Location: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+    					}
+    					else if($user_obj->didReceiveRequest($row['username'])) {
+    						header("Location: requests.php");
+    					}
+    					else if($user_obj->didSendRequest($row['username'])) {
+
+    					}
+    					else {
+    						$user_obj->sendRequest($row['username']);
+    						header("Location: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+    					}
+
+    				}
+
+
                 }
-            }
+
+    			echo "<div class='resultDisplay'>
+
+                        <div class='row'>
+
+        					<div class='liveSearchProfilePic col-3 pt-0'>
+        						<a href='" . $row['username'] ."'><img src='". $row['profile_pic'] ."' class='rounded-circle float-right' id='search_profilepic'></a>
+        					</div>
+
+                            <div class='liveSearchText col-3 pt-0 pl-0 ml-0 float-left' id='search_username'>
+        						<a href='" . $row['username'] ."'> " . $row['first_name'] . " " . $row['last_name'] . "
+        					    	<br> " . $row['username'] ." <br>
+        						</a>
+        						" . $mutual_friends ."<br>
+                            </div>
+    		                <div class='searchPageFriendButtons col-6' id='search_username'>
+        						<form action='' method='POST'>
+        							" . $button . "
+        							<br>
+        						</form>
+        					</div>
+
+                        </div>
+    				</div>";
+
+            } //End While loop
         }
         ?>
 
