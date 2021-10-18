@@ -28,7 +28,7 @@ else {
 	<?php include 'includes/head.php'; ?>
 	<title>Twitbook</title>
 </head>
-<body>
+<body id="search_body">
 
 
 <!-- Start Search section -->

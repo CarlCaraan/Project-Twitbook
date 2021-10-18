@@ -132,7 +132,7 @@ else {
 <div class="search">
     <form class="form-inline" action="search.php" method="GET" name="search_form">
         <div class="input-group">
-            <input id="search_input" type="text" class="form-control" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off">
+            <input id="search_input" type="text" class="form-control rounded" onkeyup="getLiveSearchUsers(this.value, '<?php echo $userLoggedIn; ?>')" name="q" placeholder="Search..." autocomplete="off">
             <div class="input-group-append">
                 <button class="btn_search input-group-text"><i class="fas fa-search"></i></button>
             </div>
