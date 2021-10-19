@@ -8,7 +8,7 @@ class Post {
         $this->user_obj = new User($con, $user);
 	}
 
-	public function submitPost($body, $user_to) {
+	public function submitPost($body, $user_to, $imageName) {
         $body = strip_tags($body); //remove html tags
 		$body = mysqli_real_escape_string($this->con, $body);
         $check_empty = preg_replace('/\s+/', '', $body); //delete all spaces
@@ -42,7 +42,7 @@ class Post {
             }
 
             //Insert post
-            $query = mysqli_query($this->con, "INSERT INTO posts VALUES ('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no','0')");
+            $query = mysqli_query($this->con, "INSERT INTO posts VALUES ('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no','0', '$imageName')");
             $returned_id = mysqli_insert_id($this->con);
 
             //Insert notification
@@ -160,6 +160,7 @@ class Post {
                 $body = $row['body'];
                 $added_by = $row['added_by'];
                 $date_time = $row['date_added'];
+                $imagePath = $row['image'];
 
                 //prepare user_to string so it can be included even if not posted to a user
 				if($row['user_to'] == "none") {
@@ -298,6 +299,18 @@ class Post {
                             $time_message = $interval->s . " seconds ago";
                         }
                     }
+
+                    if($imagePath != "") {
+                        $imageDiv = "<div class='postedImage'>
+                                        <img src='$imagePath' style='width:100%!important;'>
+                                    </div>";
+                    }
+                    else {
+                        $imageDiv = "";
+                    }
+
+
+
                     //Same as $str = $str . " "
                     $str .= "<div class='card'>
                                 <div class='card-body'>
@@ -307,6 +320,7 @@ class Post {
                                     <a href='$added_by'> $first_name $last_name</a>$user_to &nbsp;&nbsp;&nbsp;&nbsp;<span>$time_message</span>
                                     $delete_button
                                     <p>$body</p>
+                                    $imageDiv
                                 </div>
 
                                 <img class='card-img' src='assets/images/test1.jpg' alt=''>

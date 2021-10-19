@@ -25,9 +25,52 @@ include("includes/classes/Notification.php");
 	</header>
 
 <?php
-    if(isset($_POST['post'])){
-    $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['post_text'], 'none');
+$errorContainer = "";
+
+if(isset($_POST['post'])){
+
+	//Upload Submit Form
+	$uploadOk = 1;
+	$imageName = $_FILES['fileToUpload']['name'];
+	$errorMessage = "";
+
+	if($imageName != "") {
+		$targetDir = "assets/images/posts/";
+		$imageName = $targetDir . uniqid() . basename($imageName);
+		$imageFileType = pathinfo($imageName, PATHINFO_EXTENSION);
+
+		if($_FILES['fileToUpload']['size'] > 10000000) {
+			$errorMessage = "<strong>Sorry!</strong> your file is too large";
+			$uploadOk = 0;
+		}
+
+		if(strtolower($imageFileType) != "jpeg" && strtolower($imageFileType) != "png" && strtolower($imageFileType) != "jpg") {
+			$errorMessage = "<strong>Invalid Format!</strong> only jpeg, jpg and png files are allowed";
+			$uploadOk = 0;
+		}
+
+		if($uploadOk) {
+			if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $imageName)) {
+				//image uploaded okay
+			}
+			else {
+				//image did not upload
+				$uploadOk = 0;
+			}
+		}
+
+	}
+
+	if($uploadOk) {
+		$post = new Post($con, $userLoggedIn);
+		$post->submitPost($_POST['post_text'], 'none', $imageName);
+	}
+	else {
+		$errorContainer = "<div class='alert alert-danger alert-dismissible fade show mx-auto mt-2 mb-0'>
+			 					<button type='button' class='close' data-dismiss='alert'>&times;</button>
+			 					$errorMessage
+			  				</div>";
+	}
 }
 ?>
 
@@ -123,13 +166,15 @@ include("includes/classes/Notification.php");
         <div class="col-md-6" id="middle-section">
 
         <div id="post-container">
-          <form action="index.php" method="POST">
-            <div class="form-group">
-              <label for="post_text" id="labeltitle">Create Post:</label>
-              <textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
-            </div>
+            <form action="index.php" method="POST" enctype="multipart/form-data">
+        	    <div class="form-group">
+            	    <label for="post_text" id="labeltitle">Create Post:</label>
+                	<textarea class="form-control" rows="5" id="post_text" name="post_text" placeholder="What's on your mind, <?php echo $user['first_name'] ?> ?"></textarea>
+					<?php echo $errorContainer; ?>
+					<input class="float-left mt-3 rounded" type="file" name="fileToUpload" id="fileToUpload">
+            	</div>
             <input type="submit" class="btn btn-outline-light btn-sm shadow-sm float-right" name="post" value="Tweet"></input>
-          </form>
+            </form>
         </div>
 
 	    <!-- Autogrow Textarea -->
