@@ -65,6 +65,32 @@ include("includes/classes/Notification.php");
 
 			<hr class="socket">
 
+			<!-- Start Trends -->
+			<div class="trends mt-3 mb-4">
+				<h4>Trends for you</h4>
+
+				<?php
+				$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
+
+				while($row = mysqli_fetch_array($query)) {
+					$word = $row['title'];
+					$word_dot = strlen($word) >= 14 ? "..." : "";
+
+					$trimmed_word = str_split($word, 14);
+					$trimmed_word = $trimmed_word[0];
+
+					echo "<div class='pl-1'>";
+					echo "#" . $trimmed_word . $word_dot;
+					echo "<br></div>";
+				}
+
+
+				?>
+			</div>
+			<!-- End Trends -->
+
+			<hr class="socket">
+
 			<!-- Start Quote API -->
 		    <div class="quote-container mt-4" id="quote-container">
 		        <!-- Quote -->
