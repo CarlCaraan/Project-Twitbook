@@ -6,6 +6,8 @@ if(isset($_POST['update_details'])) {
 	$last_name = $_POST['last_name'];
 	$email = $_POST['email'];
 
+    ini_set('display_errors', 'Off');
+	
 	$email_check = mysqli_query($con, "SELECT * FROM users WHERE email='$email'");
 	$row = mysqli_fetch_array($email_check);
 	$matched_user = $row['username'];
