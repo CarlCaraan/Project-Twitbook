@@ -304,6 +304,10 @@ if(isset($_POST['post'])){
 						<img class="card-img-top" src="assets/images/certificate/cert7.jpg" alt="">
 					</div>
 
+					<div class="card center">
+						<img class="card-img-top" src="assets/images/certificate/cert8.png" alt="">
+					</div>
+
         		</div>
 			</div> <!-- End Animation -->
         	</div> <!-- End col-12 -->
