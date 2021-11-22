@@ -1,4 +1,5 @@
 <?php
+include("includes/classes/Notification.php");
 //Stop access when not logged in!
 if (isset($_SESSION['username'])) {
     $userLoggedIn = $_SESSION['username'];
