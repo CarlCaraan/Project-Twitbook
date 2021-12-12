@@ -37,10 +37,10 @@ if(isset($_GET['profile_username'])) {
 		<div class="light">
 			<div class="narrow center">
 				<a href="upload.php">
-					<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm animate__animated animate__fadeInDown" width="200" alt=""><br>
+					<img src="<?php echo $user_array['profile_pic']; ?>" class="rounded-circle shadow-sm" width="200" alt=""><br>
 				</a>
 				<a href="upload.php" id="upload_icon_tag">
-					<i class="fas fa-upload position-absolute animate__animated animate__fadeInDown shadow-lg" id="upload_icon" data-fa-transform="grow-10"></i>
+					<i class="fas fa-upload position-absolute shadow-lg" id="upload_icon" data-fa-transform="grow-10"></i>
 				</a>
 				<h2><?php echo $user_array['first_name'] . " " . $user_array['last_name']; ?></h2>
 			 </div> <!-- End narrow -->
@@ -106,7 +106,7 @@ if(isset($_GET['profile_username'])) {
 		<div class="row">
 
 			<!-- Start Intro Section -->
-			<div class="col-lg-4 animate__animated animate__fadeInLeft" id="col-wrapper1">
+			<div class="col-lg-4" id="col-wrapper1">
 
 				<label for="post_text" id="labeltitle">Intro</label><br>
 				<div id="icon_wrapper"><i class="fas fa-file-alt"></i></div>
@@ -266,7 +266,7 @@ if(isset($_GET['profile_username'])) {
 			</script>
 
 			<!-- Start Middle Section -->
-			<div class="col-lg-7 animate__animated animate__fadeInRight" id="middle-section">
+			<div class="col-lg-7" id="middle-section">
 
 			    <!-- Nav tabs -->
 				<ul class="nav nav-tabs nav-justified" role="tablist" id="profileTabs">
