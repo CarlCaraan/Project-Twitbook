@@ -76,7 +76,6 @@ $date = date("Y-m-d"); //Current date
 		array_push($error_array, "Emails don't match<br>");
 	}
 
-
 	if(strlen($fname) > 25 || strlen($fname) < 2) {
 		array_push($error_array, "Your first name must be between 2 and 25 characters<br>");
 	}
